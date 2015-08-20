@@ -2,6 +2,11 @@
 
 The Soaring Book web backend.
 
+![](https://travis-ci.org/soaringbook/cumulus.svg)
+[![Code Climate](https://codeclimate.com/github/soaringbook/cumulus/badges/gpa.svg)](https://codeclimate.com/github/soaringbook/cumulus)
+[![Test Coverage](https://codeclimate.com/github/soaringbook/cumulus/badges/coverage.svg)](https://codeclimate.com/github/soaringbook/cumulus/coverage)
+
+
 ## BOOTSTRAP
 
 Setup the application by running the `./scripts/bootstrap` command in the project root.
