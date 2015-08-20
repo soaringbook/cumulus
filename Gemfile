@@ -46,9 +46,49 @@ group :development, :test do
   # Rails application preloader
   # [spring](http://github.com/rails/spring)
   gem "spring", "~> 1.3.6"
+end
 
+group :development do
   # help to kill N+1 queries and unused eager loading.
   # [bullet](http://github.com/flyerhzm/bullet)
   gem "bullet", "~> 4.14.7"
+end
+
+group :test do
+  # Faker, a port of Data::Faker from Perl, is used to easily generate fake data
+  # [faker](https://github.com/stympy/faker)
+  gem "faker", "~> 1.4.3"
+
+  # RSpec for Rails
+  # [rspec-rails](http://github.com/rspec/rspec-rails)
+  gem "rspec-rails", "~> 3.2.2"
+
+  # factory_girl_rails provides integration between
+  # [factory_girl_rails](http://github.com/thoughtbot/factory_girl_rails)
+  gem "factory_girl_rails", "~> 4.5.0"
+
+  # Guard::RSpec automatically run your specs (much like autotest).
+  # [guard-rspec](https://rubygems.org/gems/guard-rspec)
+  gem "guard-rspec", "~> 4.5.2", require: false
+
+  # Making tests easy on the fingers and eyes
+  # [shoulda-matchers](http://thoughtbot.com/community/)
+  gem "shoulda-matchers", "~> 2.8.0"
+
+  # Strategies for cleaning databases. Can be used to ensure a clean state for t
+  # [database_cleaner](http://github.com/DatabaseCleaner/database_cleaner)
+  gem "database_cleaner", "~> 1.4.1"
+
+  # Send User Notifications on Mac OS X 10.8 or higher.
+  # [terminal-notifier](https://github.com/alloy/terminal-notifier)
+  gem "terminal-notifier", "~> 1.6.3"
+
+  # Send User Notifications on Mac OS X 10.8 - with status icons.
+  # [terminal-notifier-guard](https://github.com/Springest/terminal-notifier-guard)
+  gem "terminal-notifier-guard", "~> 1.6.4"
+
+  # Collects test coverage data from your Ruby test suite and sends it to Code C
+  # [codeclimate-test-reporter]()
+  gem "codeclimate-test-reporter", "~> 0.4.7"
 end
 
