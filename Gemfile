@@ -30,6 +30,10 @@ gem "turbolinks", "~> 2.5.3"
 # [simple_form](https://github.com/plataformatec/simple_form)
 gem "simple_form", "~> 3.1.0"
 
+# Haml-rails provides Haml generators for Rails 4. It also enables Haml as the
+# [haml-rails](http://github.com/indirect/haml-rails)
+gem "haml-rails", "~> 0.9.0"
+
 group :development, :test do
   # Rails application preloader
   # [spring](http://github.com/rails/spring)
