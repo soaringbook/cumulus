@@ -26,6 +26,10 @@ gem "jquery-rails", "~> 4.0.4"
 # [turbolinks](https://github.com/rails/turbolinks/)
 gem "turbolinks", "~> 2.5.3"
 
+# Forms made easy!
+# [simple_form](https://github.com/plataformatec/simple_form)
+gem "simple_form", "~> 3.1.0"
+
 group :development, :test do
   # Rails application preloader
   # [spring](http://github.com/rails/spring)
