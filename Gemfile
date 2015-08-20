@@ -48,6 +48,16 @@ group :development, :test do
   gem "spring", "~> 1.3.6"
 end
 
+group :production do
+  # Run Rails the 12factor way
+  # [rails_12factor](https://github.com/heroku/rails_12factor)
+  gem "rails_12factor", "~> 0.0.3"
+
+  # Puma is a simple, fast, threaded, and highly concurrent HTTP 1.1 server for 
+  # [puma](http://puma.io)
+  gem "puma", "~> 2.13.4"
+end
+
 group :development do
   # help to kill N+1 queries and unused eager loading.
   # [bullet](http://github.com/flyerhzm/bullet)
