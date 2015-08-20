@@ -34,6 +34,14 @@ gem "simple_form", "~> 3.1.0"
 # [haml-rails](http://github.com/indirect/haml-rails)
 gem "haml-rails", "~> 0.9.0"
 
+# Call JavaScript code and manipulate JavaScript objects from Ruby. Call Ruby 
+# [therubyracer](http://github.com/cowboyd/therubyracer)
+gem "therubyracer", "~> 0.12.2"
+
+# The dynamic stylesheet language for the Rails asset pipeline. Allows other g
+# [less-rails](http://github.com/metaskills/less-rails)
+gem "less-rails", "~> 2.7.0"
+
 group :development, :test do
   # Rails application preloader
   # [spring](http://github.com/rails/spring)
