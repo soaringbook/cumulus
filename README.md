@@ -2,6 +2,14 @@
 
 The Soaring Book web backend.
 
+## BOOTSTRAP
+
+Setup the application by running the `./scripts/bootstrap` command in the project root.
+
+## SERVER
+
+Use [Pow](http://pow.cx) to serve the application, or you just start the server with the `rails s` command. 
+
 ## LICENSE
 
 The MIT License (MIT)
