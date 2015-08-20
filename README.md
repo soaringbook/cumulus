@@ -10,6 +10,16 @@ Setup the application by running the `./scripts/bootstrap` command in the projec
 
 Use [Pow](http://pow.cx) to serve the application, or you just start the server with the `rails s` command. 
 
+## TESTING
+
+You can run the tests like this:
+
+    $ rspec
+
+Use guard to run your tests automagically during development.
+
+    $ guard
+
 ## LICENSE
 
 The MIT License (MIT)
