@@ -81,6 +81,14 @@ group :test do
   # [rspec-rails](http://github.com/rspec/rspec-rails)
   gem "rspec-rails", "~> 3.2.2"
 
+  # Capybara is an integration testing tool for rack based web applications. It 
+  # [capybara](http://github.com/jnicklas/capybara)
+  gem "capybara", "~> 2.4.4"
+
+  # Test your ActionMailer and Mailer messages in Capybara
+  # [capybara-email](https://github.com/dockyard/capybara-email)
+  gem "capybara-email", "~> 2.4.0"
+
   # factory_girl_rails provides integration between
   # [factory_girl_rails](http://github.com/thoughtbot/factory_girl_rails)
   gem "factory_girl_rails", "~> 4.5.0"
