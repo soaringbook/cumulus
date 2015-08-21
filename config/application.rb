@@ -32,10 +32,6 @@ module Cumulus
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
 
-    # LESS configuration.
-    config.less.paths << File.join(Rails.root, 'vendor', 'less')
-    config.less.compress = true
-
     # Configure generators.
     config.generators do |g|
       g.test_framework :rspec, fixture: true, views: false
