@@ -3,8 +3,9 @@ en:
     title: 'Soaring Book'
     application:
       title: 'Cumulus'
+      welcome: 'Welcome!'
     login:
-      description: 'Welcome to the administrative Soaring Book application. We keep track of everything that happens inside your gliding club.'
+      description: 'This is Cumulus, an administrative Soaring Book application. We keep track of everything that happens inside your gliding club without you having to worry about it.'
       sign_in: 'Sign in'
       log_in: 'Log in'
       sign_up: 'Create yours now!'
