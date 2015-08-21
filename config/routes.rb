@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resource :registration, only: [:new, :create], 
                             path: 'pilots', 
                             path_names: { new: 'sign_up' }, 
-                            controller: 'devise/registrations', 
+                            controller: 'registrations', 
                             as: :pilot_registration
   end
 

@@ -7,4 +7,8 @@ class Pilot < ActiveRecord::Base
          :rememberable, 
          :trackable, 
          :validatable
+
+  validates :club, presence: true
+
+  accepts_nested_attributes_for :club
 end
