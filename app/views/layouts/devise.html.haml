@@ -1,7 +1,7 @@
 !!!
 %html
   %head
-    %title Cumulus
+    %title= t 'global.title'
 
     %meta{ content: 'text/html; charset=UTF-8', 'http-equiv' => 'Content-Type' }
 
@@ -11,37 +11,10 @@
     = csrf_meta_tags
 
   %body.page-login-v2.layout-full.page-dark
-    .page.animsition{ "data-animsition-in" => "fade-in", "data-animsition-out" => "fade-out" }
+    - page_class = alert ? nil : 'animsition'
+    .page{ class: page_class, data: { animsition: { in: "fade-in", out: "fade-out" } } }
       .page-content
-        .page-brand-info
-          .brand
-            %img.brand-img{ src: asset_path('Logo') }
-              %h2.brand-text.font-size-40 Soaring Book
-          %p.font-size-20
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua.
+        = render partial: 'layouts/devise/brand'
         .page-login-main
-          .brand.visible-xs
-            %img.brand-img{ src: asset_path('LogoBlue') }
-              %h3.brand-text.font-size-40 Remark
-          %h3.font-size-24 Sign In
-          %p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          %form
-            .form-group
-              %label.sr-only{:for => "inputEmail"} Email
-              %input#inputEmail.form-control{:name => "email", :placeholder => "Email", :type => "email"}
-            .form-group
-              %label.sr-only{:for => "inputPassword"} Password
-              %input#inputPassword.form-control{:name => "password", :placeholder => "Password", :type => "password"}
-            .form-group.clearfix
-              .checkbox-custom.checkbox-inline.checkbox-primary.pull-left
-                %input#remember{:name => "checkbox", :type => "checkbox"}
-                  %label{:for => "inputCheckbox"} Remember me
-              %a.pull-right{:href => "forgot-password.html"} Forgot password?
-            %button.btn.btn-primary.btn-block{:type => "submit"} Sign in
-          %p
-            No account?
-            %a{:href => "register-v2.html"} Sign Up
-          %footer.page-copyright
-            %p CREATED BY Jelle Vandebeeck
-            %p © 2015 SOME RIGHT RESERVED.
+          = yield
+          = render partial: 'layouts/devise/footer'
