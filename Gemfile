@@ -2,6 +2,10 @@ source 'https://rubygems.org'
 
 ruby '2.1.7'
 
+# Autoload dotenv in Rails.
+# [dotenv-rails](https://github.com/bkeepers/dotenv)
+gem "dotenv-rails", "~> 2.0.2", require: 'dotenv/rails-now', groups: [:development, :test]
+
 # Ruby on Rails is a full-stack web framework optimized for programmer happine
 # [rails](http://www.rubyonrails.org)
 gem "rails", "~> 4.2.3"
