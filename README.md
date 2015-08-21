@@ -11,6 +11,12 @@ The Soaring Book web backend.
 
 Setup the application by running the `./scripts/bootstrap` command in the project root.
 
+## ENV
+
+Copy the `.env.sample` to `.env` in order to use the correct environment variables. Replace the variables with your desired values.
+
+    cp .env.sample .env
+
 ## SERVER
 
 Use [Pow](http://pow.cx) to serve the application, or you just start the server with the `rails s` command. 

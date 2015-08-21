@@ -1,13 +1,13 @@
 module ControllerHelpers
-#  def sign_in(user = double(:user))
-#    @user = user
-#    allow(request.env['warden']).to receive(:authenticate!) { user }
-#    allow(controller).to receive(:current_user) { user }
-#  end
+  def sign_in(pilot = double(:pilot))
+    @pilot = pilot
+    allow(request.env['warden']).to receive(:authenticate!) { pilot }
+    allow(controller).to receive(:current_pilot) { pilot }
+  end
 
   def redirect_for_login(&block)
     yield
-    redirect_to(new_user_session_path)
+    redirect_to(new_pilot_session_path)
   end
 
   def redirect_to_path(path, &block)
@@ -22,8 +22,6 @@ module ControllerHelpers
 end
 
 RSpec.configure do |config|
-  #config.include Devise::TestHelpers, type: :controller
+  config.include Devise::TestHelpers, type: :controller
   config.include ControllerHelpers,   type: :controller
 end
-
-

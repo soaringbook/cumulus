@@ -11,4 +11,11 @@
     = csrf_meta_tags
 
   %body
+
+    %p.notice= notice
+    %p.alert= alert
+
     = yield
+
+    = link_to 'Logout', destroy_pilot_session_path, method: :delete
+    

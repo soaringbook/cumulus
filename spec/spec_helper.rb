@@ -1,4 +1,7 @@
+require 'capybara/rspec'
+require 'capybara/email/rspec'
 require "codeclimate-test-reporter"
+
 CodeClimate::TestReporter.start
 
 RSpec.configure do |config|

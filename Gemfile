@@ -2,6 +2,10 @@ source 'https://rubygems.org'
 
 ruby '2.1.7'
 
+# Autoload dotenv in Rails.
+# [dotenv-rails](https://github.com/bkeepers/dotenv)
+gem "dotenv-rails", "~> 2.0.2", require: 'dotenv/rails-now', groups: [:development, :test]
+
 # Ruby on Rails is a full-stack web framework optimized for programmer happine
 # [rails](http://www.rubyonrails.org)
 gem "rails", "~> 4.2.3"
@@ -42,6 +46,10 @@ gem "therubyracer", "~> 0.12.2"
 # [less-rails](http://github.com/metaskills/less-rails)
 gem "less-rails", "~> 2.7.0"
 
+# Flexible authentication solution for Rails with Warden
+# [devise](https://github.com/plataformatec/devise)
+gem "devise", "~> 3.5.2"
+
 group :development, :test do
   # Rails application preloader
   # [spring](http://github.com/rails/spring)
@@ -72,6 +80,14 @@ group :test do
   # RSpec for Rails
   # [rspec-rails](http://github.com/rspec/rspec-rails)
   gem "rspec-rails", "~> 3.2.2"
+
+  # Capybara is an integration testing tool for rack based web applications. It 
+  # [capybara](http://github.com/jnicklas/capybara)
+  gem "capybara", "~> 2.4.4"
+
+  # Test your ActionMailer and Mailer messages in Capybara
+  # [capybara-email](https://github.com/dockyard/capybara-email)
+  gem "capybara-email", "~> 2.4.0"
 
   # factory_girl_rails provides integration between
   # [factory_girl_rails](http://github.com/thoughtbot/factory_girl_rails)
