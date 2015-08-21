@@ -40,6 +40,6 @@ describe 'The registration flow', type: :feature do
 
   def show_registration_path
     visit root_path
-    click_link 'Sign up'
+    click_link 'Create yours now!'
   end
 end
