@@ -16,6 +16,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require retina_tag
 //
 //= require remark/vendor/bootstrap/bootstrap
 //= require remark/vendor/animsition/jquery.animsition

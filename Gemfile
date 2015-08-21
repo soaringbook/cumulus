@@ -50,6 +50,10 @@ gem "less-rails", "~> 2.7.0"
 # [devise](https://github.com/plataformatec/devise)
 gem "devise", "~> 3.5.2"
 
+# This gem overrides image_tag to support retina resolution images using asset
+# [retina_tag](http://github.com/davydotcom/retina_tag)
+gem "retina_tag", "~> 1.3.1"
+
 group :development, :test do
   # Faker, a port of Data::Faker from Perl, is used to easily generate fake data
   # [faker](https://github.com/stympy/faker)
