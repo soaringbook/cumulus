@@ -51,6 +51,10 @@ gem "less-rails", "~> 2.7.0"
 gem "devise", "~> 3.5.2"
 
 group :development, :test do
+  # Faker, a port of Data::Faker from Perl, is used to easily generate fake data
+  # [faker](https://github.com/stympy/faker)
+  gem "faker", "~> 1.4.3"
+
   # Rails application preloader
   # [spring](http://github.com/rails/spring)
   gem "spring", "~> 1.3.6"
@@ -73,10 +77,6 @@ group :development do
 end
 
 group :test do
-  # Faker, a port of Data::Faker from Perl, is used to easily generate fake data
-  # [faker](https://github.com/stympy/faker)
-  gem "faker", "~> 1.4.3"
-
   # RSpec for Rails
   # [rspec-rails](http://github.com/rspec/rspec-rails)
   gem "rspec-rails", "~> 3.2.2"
