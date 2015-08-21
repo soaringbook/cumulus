@@ -1,7 +1,7 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
-  config.mailer_sender = 'no-reply@soaringbook.com'
+  config.mailer_sender = ENV['CUMULUS_MAILER_FROM']
 
   # ==> ORM configuration
   # Load and configure the ORM. Supports :active_record (default) and
