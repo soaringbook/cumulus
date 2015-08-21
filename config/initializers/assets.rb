@@ -8,4 +8,4 @@ Rails.application.config.less.paths << File.join(Rails.root, 'vendor', 'less')
 Rails.application.config.less.compress = true
 
 # Extra layouts.
-Rails.application.config.assets.precompile += %w( devise.css )
+Rails.application.config.assets.precompile += %w( devise.css devise.js )

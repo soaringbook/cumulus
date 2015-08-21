@@ -5,14 +5,43 @@
 
     %meta{ content: 'text/html; charset=UTF-8', 'http-equiv' => 'Content-Type' }
 
-    = stylesheet_link_tag    'devise', media: 'all', 'data-turbolinks-track' => true
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = stylesheet_link_tag    'devise', 'data-turbolinks-track' => true, media: 'all'
+    = javascript_include_tag 'devise', 'data-turbolinks-track' => true
 
     = csrf_meta_tags
 
-  %body
-
-    %p.notice= notice
-    %p.alert= alert
-
-    = yield
+  %body.page-login-v2.layout-full.page-dark
+    .page.animsition{ "data-animsition-in" => "fade-in", "data-animsition-out" => "fade-out" }
+      .page-content
+        .page-brand-info
+          .brand
+            %img.brand-img{ src: asset_path('Logo') }
+              %h2.brand-text.font-size-40 Soaring Book
+          %p.font-size-20
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua.
+        .page-login-main
+          .brand.visible-xs
+            %img.brand-img{ src: asset_path('LogoBlue') }
+              %h3.brand-text.font-size-40 Remark
+          %h3.font-size-24 Sign In
+          %p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          %form
+            .form-group
+              %label.sr-only{:for => "inputEmail"} Email
+              %input#inputEmail.form-control{:name => "email", :placeholder => "Email", :type => "email"}
+            .form-group
+              %label.sr-only{:for => "inputPassword"} Password
+              %input#inputPassword.form-control{:name => "password", :placeholder => "Password", :type => "password"}
+            .form-group.clearfix
+              .checkbox-custom.checkbox-inline.checkbox-primary.pull-left
+                %input#remember{:name => "checkbox", :type => "checkbox"}
+                  %label{:for => "inputCheckbox"} Remember me
+              %a.pull-right{:href => "forgot-password.html"} Forgot password?
+            %button.btn.btn-primary.btn-block{:type => "submit"} Sign in
+          %p
+            No account?
+            %a{:href => "register-v2.html"} Sign Up
+          %footer.page-copyright
+            %p CREATED BY Jelle Vandebeeck
+            %p © 2015 SOME RIGHT RESERVED.
