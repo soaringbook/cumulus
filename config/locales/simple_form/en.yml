@@ -7,6 +7,9 @@ en:
       pilot:
         email: 'Email'
         password: 'Password'
+        password_confirmation: 'Confirm password'
+      club:
+        short_name: 'Club abbreviation (ex. BZC)'
 
     required:
       text: 'required'

@@ -1,13 +1,24 @@
-%h2 Sign up
+.brand.visible-xs
+  = image_tag 'LogoBlue.png', class: 'brand-img', height: '36px'
+  %h3.brand-text.font-size-40= t 'global.application.title'
+
+%h3.font-size-24= t 'global.register.sign_up'
+%p= t 'global.register.sign_up_description'
+
+= render partial: 'layouts/devise/alerts'
 
 = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = f.error_notification
   .form-inputs
     = f.simple_fields_for :club do |c|
-      = c.input :short_name, required: true, autofocus: true
-    = f.input :email, required: true
-    = f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length)
-    = f.input :password_confirmation, required: true
+      = c.input :short_name, label: false, required: true, autofocus: true
+  .form-inputs
+    = f.input :email,                 label: false, required: true
+    = f.input :password,              label: false, required: true
+    = f.input :password_confirmation, label: false, required: true
+
   .form-actions
-    = f.button :submit, "Sign up"
-= render "devise/shared/links"
+    = f.button :submit, t('global.register.create'), class: 'btn btn-primary btn-block'
+
+%p
+  = t 'global.register.already_a_club'
+  = link_to t('global.register.sign_in'), new_session_path(resource_name), data: { no_turbolink: true }

@@ -13,6 +13,13 @@ en:
       remember_me: 'Remember me'
       forgot_password: 'Forgot password?'
       no_club: 'Your club not available?'
+    register:
+      sign_up: 'Create your club'
+      sign_in: 'Sign in'
+      sign_up_description: 'Sign up to Soaring Book Cumulus and create your club.'
+      create: 'Create your club'
+      already_a_club: 'Already registered to a club?'
+      short_label_hint: 'This is the abbreviated name for your club.'
     footer:
       created_by: 'Created by %{name}'
       rights_reserved: '2013-%{year} Some Rights Reserved'
