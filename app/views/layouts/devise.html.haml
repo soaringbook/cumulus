@@ -5,6 +5,9 @@
 
     %meta{ content: 'text/html; charset=UTF-8', 'http-equiv' => 'Content-Type' }
 
+    %link{ rel: "apple-touch-icon", href: asset_path('apple-touch-icon.png') }
+    %link{ rel: "shortcut icon", href: asset_path('favicon.ico') }
+
     = stylesheet_link_tag    'devise', 'data-turbolinks-track' => true, media: 'all'
     = javascript_include_tag 'devise', 'data-turbolinks-track' => true
 
