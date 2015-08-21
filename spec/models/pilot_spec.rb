@@ -7,4 +7,8 @@ describe Pilot do
       expect(pilot.valid?).to be_truthy
     end
   end
+
+  context 'Associations' do
+    it { should belong_to(:club) }
+  end
 end

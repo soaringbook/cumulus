@@ -11,10 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150821103037) do
+ActiveRecord::Schema.define(version: 20150821124541) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "clubs", force: :cascade do |t|
+    t.string   "short_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "pilots", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -29,6 +35,7 @@ ActiveRecord::Schema.define(version: 20150821103037) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.integer  "club_id"
   end
 
   add_index "pilots", ["email"], name: "index_pilots_on_email", unique: true, using: :btree
