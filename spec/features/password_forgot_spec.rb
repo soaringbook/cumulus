@@ -10,7 +10,7 @@ describe 'The password forget flow', type: :feature do
 
   it 'should send reset instructions' do
     fill_in 'Email', with: @pilot.email
-    click_button 'Send me reset password instructions'
+    click_button 'Reset your password'
 
     expect(page).to have_content('Sign in')
     
@@ -20,9 +20,9 @@ describe 'The password forget flow', type: :feature do
 
   it 'should fail to send reset instructions' do
     fill_in 'Email', with: 'jake@snake.be'
-    click_button 'Send me reset password instructions'
+    click_button 'Reset your password'
 
-    expect(page).to have_content('Please review the problems below')
+    expect(page).to have_content('not found')
     expect(current_email).to be_nil
   end
 
