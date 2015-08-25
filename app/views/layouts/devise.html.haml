@@ -14,8 +14,7 @@
     = csrf_meta_tags
 
   %body.page-login-v2.layout-full.page-dark
-    - page_class = alert ? nil : 'animsition'
-    .page{ class: page_class, data: { animsition: { in: "fade-in", out: "fade-out" } } }
+    .page
       .page-content
         = render partial: 'layouts/devise/brand'
         .page-login-main

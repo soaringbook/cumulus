@@ -19,7 +19,6 @@
 //= require retina_tag
 //
 //= require remark/vendor/bootstrap/bootstrap
-//= require remark/vendor/animsition/jquery.animsition
 //= require remark/vendor/asscroll/jquery-asScroll
 //= require remark/vendor/mousewheel/jquery.mousewheel
 //= require remark/vendor/asscrollable/jquery.asScrollable.all
@@ -38,12 +37,13 @@
 //= require remark/configs/config-colors
 //= require remark/configs/config-tour
 //= require remark/components/asscrollable
-//= require remark/components/animsition
 //= require remark/components/slidepanel
 //= require remark/components/switchery
 
 (function(document, window, $) {
   'use strict';
+
+  Breakpoints();
 
   var Site = window.Site;
   $(document).ready(function() {
