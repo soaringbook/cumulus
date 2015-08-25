@@ -39,6 +39,16 @@ en:
       links:
         sign_in: 'Sign in'
 
+    change_password:
+      title: 'Change your password'
+      subtitle: 'Enter your new password with confirmation.'
+      labels:
+        already_a_club: 'Already registered to a club?'
+      buttons:
+        submit: 'Change my password'
+      links:
+        sign_in: 'Sign in'
+
     footer:
       created_by: 'CRAFTED BY %{name}'
       rights_reserved: '%{year} SOME RIGHTS RESERVED'
