@@ -10,15 +10,13 @@
     %link{ rel: "apple-touch-icon", href: asset_path('apple-touch-icon.png') }
     %link{ rel: "shortcut icon", href: asset_path('favicon.ico') }
 
-    = stylesheet_link_tag    'devise', 'data-turbolinks-track' => true, media: 'all'
+    = stylesheet_link_tag    'errors', 'data-turbolinks-track' => true, media: 'all'
     = javascript_include_tag 'devise', 'data-turbolinks-track' => true
 
     = csrf_meta_tags
 
-  %body.page-login-v2.layout-full.page-dark
-    .page
-      .page-content
-        = render partial: 'layouts/devise/brand'
-        .page-login-main
-          = yield
-          = render partial: 'layouts/devise/footer'
+  %body.page-error.page-error.layout-full
+    .page.vertical-align.text-center
+      .page-content.vertical-align-middle
+        = yield
+        = render partial: 'layouts/devise/footer'

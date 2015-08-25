@@ -14,5 +14,10 @@ Rails.application.routes.draw do
     # Make sure we don't get the authentication message when we didn't login.
     root 'dashboard#index', as: :authenticated_root
   end
+
+  match "/404", via: :get, to: "errors#show"
+  match "/422", via: :get, to: "errors#show"
+  match "/500", via: :get, to: "errors#show"
+  
   root :to => redirect('/pilots/sign_in')
 end

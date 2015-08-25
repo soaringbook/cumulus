@@ -37,5 +37,7 @@ module Cumulus
     end
 
     config.action_mailer.default_url_options = { host: ENV['CUMULUS_DEFAULT_URL_HOST'] }
+
+    config.exceptions_app = self.routes
   end
 end
