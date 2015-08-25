@@ -15,9 +15,9 @@ Rails.application.routes.draw do
     root 'dashboard#index', as: :authenticated_root
   end
 
-  match "/404", via: :get, to: "errors#show"
-  match "/422", via: :get, to: "errors#show"
-  match "/500", via: :get, to: "errors#show"
+  %w(404 422 500 503).each do |code|
+    get code, to: "errors#show", code: code
+  end
   
   root :to => redirect('/pilots/sign_in')
 end

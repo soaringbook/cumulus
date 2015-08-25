@@ -7,6 +7,16 @@ en:
       welcome: 'Welcome!'
       description: 'This is Cumulus, an administrative Soaring Book application. We keep track of everything that happens inside your gliding club without you having to worry about it.'
 
+    errors:
+      labels:
+        advise: 'YOU SEEM TO BE TRYING TO FIND HIS WAY HOME'
+        '404': 'Not found'
+        '422': 'Unprocessable Entity'
+        '500': 'Internal Server Error'
+        '503': 'Service Unavailable'
+      links:
+        dashboard: 'GO TO DASHBOARD'
+
     sign_in:
       title: 'Sign in'
       subtitle: 'Sign in to Soaring Book Cumulus.'

@@ -1,6 +1,6 @@
 %header
-  %h1.animation-slide-top 404
-  %p Page not found!
-%p.error-advise YOU SEEM TO BE TRYING TO FIND HIS WAY HOME
-= link_to 'GO TO HOME PAGE', root_path, class: 'btn btn-primary btn-round'
+  %h1.animation-slide-top= @status_code
+  %p= t "global.errors.labels.#{@status_code.to_i}"
+%p.error-advise= t 'global.errors.labels.advise'
+= link_to t('global.errors.links.dashboard'), root_path, class: 'btn btn-primary btn-round'
 

@@ -4,5 +4,6 @@ class ErrorsController < ApplicationController
   layout 'error'
 
   def show
+    @status_code = params[:code] || 500
   end
 end
