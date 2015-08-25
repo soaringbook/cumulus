@@ -1,25 +1,44 @@
 en:
   global:
     title: 'Soaring Book'
+
     application:
       title: 'Cumulus'
       welcome: 'Welcome!'
-    login:
       description: 'This is Cumulus, an administrative Soaring Book application. We keep track of everything that happens inside your gliding club without you having to worry about it.'
-      sign_in: 'Sign in'
-      log_in: 'Log in'
-      sign_up: 'Create yours now!'
-      sign_in_description: 'Sign in to Soaring Book Cumulus.'
-      remember_me: 'Remember me'
-      forgot_password: 'Forgot password?'
-      no_club: 'Your club not available?'
-    register:
-      sign_up: 'Create your club'
-      sign_in: 'Sign in'
-      sign_up_description: 'Sign up to Soaring Book Cumulus and create your club.'
-      create: 'Create your club'
-      already_a_club: 'Already registered to a club?'
-      short_label_hint: 'This is the abbreviated name for your club.'
+
+    sign_in:
+      title: 'Sign in'
+      subtitle: 'Sign in to Soaring Book Cumulus.'
+      labels:
+        no_club: 'Your club not available?'
+      buttons:
+        submit: 'Log in'
+      links:
+        sign_up: 'Create yours now!'
+        forgot_password: 'Forgot password?'
+
+    sign_up:
+      title: 'Create your club'
+      subtitle: 'Sign up to Soaring Book Cumulus and create your club.'
+      labels:
+        already_a_club: 'Already registered to a club?'
+        short_label_hint: 'This is the abbreviated name for your club.'
+      links:
+        sign_in: 'Sign in'
+      buttons:
+        submit: 'Create yours'
+
+    password_forget:
+      title: 'Forgot your password?'
+      subtitle: 'Enter your email to reset your password.'
+      labels:
+        already_a_club: 'Already registered to a club?'
+      buttons:
+        submit: 'Reset your password'
+      links:
+        sign_in: 'Sign in'
+
     footer:
-      created_by: 'Created by %{name}'
-      rights_reserved: '2013-%{year} Some Rights Reserved'
+      created_by: 'CRAFTED BY %{name}'
+      rights_reserved: '%{year} SOME RIGHTS RESERVED'

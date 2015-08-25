@@ -2,8 +2,8 @@
   = image_tag 'LogoBlue.png', class: 'brand-img', height: '36px'
   %h3.brand-text.font-size-40= t 'global.application.title'
 
-%h3.font-size-24= t 'global.login.sign_in'
-%p= t 'global.login.sign_in_description'
+%h3.font-size-24= t 'global.sign_in.title'
+%p= t 'global.sign_in.subtitle'
 
 = render partial: 'layouts/devise/alerts'
 
@@ -16,11 +16,11 @@
     .checkbox-custom.checkbox-inline.checkbox-primary.pull-left
       = f.check_box :remember_me
       = f.label :remember_me
-    = link_to t('global.login.forgot_password'), new_password_path(resource_name), class: 'pull-right', data: { no_turbolink: true }
+    = link_to t('global.sign_in.links.forgot_password'), new_password_path(resource_name), class: 'pull-right', data: { no_turbolink: true }
     
   .form-actions
-    = f.button :submit, t('global.login.log_in'), class: 'btn btn-primary btn-block'
+    = f.button :submit, t('global.sign_in.buttons.submit'), class: 'btn btn-primary btn-block'
 
 %p
-  = t 'global.login.no_club'
-  = link_to t('global.login.sign_up'), new_registration_path(resource_name), data: { no_turbolink: true }
+  = t 'global.sign_in.labels.no_club'
+  = link_to t('global.sign_in.sign_up'), new_registration_path(resource_name), data: { no_turbolink: true }

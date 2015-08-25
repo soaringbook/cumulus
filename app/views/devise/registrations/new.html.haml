@@ -2,8 +2,8 @@
   = image_tag 'LogoBlue.png', class: 'brand-img', height: '36px'
   %h3.brand-text.font-size-40= t 'global.application.title'
 
-%h3.font-size-24= t 'global.register.sign_up'
-%p= t 'global.register.sign_up_description'
+%h3.font-size-24= t 'global.sign_up.title'
+%p= t 'global.sign_up.subtitle'
 
 = render partial: 'layouts/devise/alerts'
 
@@ -17,8 +17,8 @@
     = f.input :password_confirmation, label: false, required: true
 
   .form-actions
-    = f.button :submit, t('global.register.create'), class: 'btn btn-primary btn-block'
+    = f.button :submit, t('global.sign_up.buttons.submit'), class: 'btn btn-primary btn-block'
 
 %p
-  = t 'global.register.already_a_club'
-  = link_to t('global.register.sign_in'), new_session_path(resource_name), data: { no_turbolink: true }
+  = t 'global.sign_up.labels.already_a_club'
+  = link_to t('global.sign_up.links.sign_in'), new_session_path(resource_name), data: { no_turbolink: true }
