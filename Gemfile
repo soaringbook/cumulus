@@ -62,6 +62,10 @@ group :development, :test do
   # Rails application preloader
   # [spring](http://github.com/rails/spring)
   gem "spring", "~> 1.3.6"
+
+  # help to kill N+1 queries and unused eager loading.
+  # [bullet](http://github.com/flyerhzm/bullet)
+  gem "bullet", "~> 4.14.7"
 end
 
 group :production do
@@ -72,12 +76,6 @@ group :production do
   # Puma is a simple, fast, threaded, and highly concurrent HTTP 1.1 server for 
   # [puma](http://puma.io)
   gem "puma", "~> 2.13.4"
-end
-
-group :development do
-  # help to kill N+1 queries and unused eager loading.
-  # [bullet](http://github.com/flyerhzm/bullet)
-  gem "bullet", "~> 4.14.7"
 end
 
 group :test do
