@@ -3,7 +3,7 @@ en:
     title: 'Soaring Book'
 
     application:
-      title: 'Cumulus'
+      title: 'CUMULUS'
       welcome: 'Welcome!'
       description: 'This is Cumulus, an administrative Soaring Book application. We keep track of everything that happens inside your gliding club without you having to worry about it.'
 
