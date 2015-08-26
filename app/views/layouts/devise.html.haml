@@ -11,7 +11,6 @@
     %link{ rel: "shortcut icon", href: asset_path('favicon.ico') }
 
     = stylesheet_link_tag    'devise', 'data-turbolinks-track' => true, media: 'all'
-    = javascript_include_tag 'devise', 'data-turbolinks-track' => true
 
     = csrf_meta_tags
 
@@ -22,3 +21,5 @@
         .page-login-main
           = yield
           = render partial: 'layouts/devise/footer'
+
+    = javascript_include_tag 'devise', 'data-turbolinks-track' => true
