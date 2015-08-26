@@ -1,12 +1,9 @@
 .navbar-header
-  %button.navbar-toggle.hamburger.hamburger-close.navbar-toggle-left.hided{"data-toggle" => "menubar", :type => "button"}
+  %button.navbar-toggle.hamburger.hamburger-close.navbar-toggle-left.hided{ "data-toggle" => "menubar", type: "button"}
     %span.sr-only Toggle navigation
     %span.hamburger-bar
-  %button.navbar-toggle.collapsed{"data-target" => "#site-navbar-collapse", "data-toggle" => "collapse", :type => "button"}
-    %i.icon.wb-more-horizontal{"aria-hidden" => "true"}
-  .navbar-brand.navbar-brand-center.site-gridmenu-toggle{"data-toggle" => "gridmenu"}
-    %img.navbar-brand-logo{:src => asset_path('Logo.png'), :title => "Remark"}/
-    %span.navbar-brand-text Remark
-  %button.navbar-toggle.collapsed{"data-target" => "#site-navbar-search", "data-toggle" => "collapse", :type => "button"}
-    %span.sr-only Toggle Search
-    %i.icon.wb-search{"aria-hidden" => "true"}
+  %button.navbar-toggle.collapsed{ data: { target: "#site-navbar-collapse", toggle: "collapse" }, type: "button" }
+    %i.icon.wb-more-horizontal{ "aria-hidden" => "true" }
+  .navbar-brand.navbar-brand-center.site-gridmenu-toggle{ "data-toggle" => "gridmenu" }
+    = image_tag 'Logo.png', title: t('global.title').upcase, class: 'navbar-brand-logo'
+    %span.navbar-brand-text= t('global.title').upcase
