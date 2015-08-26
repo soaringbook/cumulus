@@ -42,10 +42,6 @@ gem "haml-rails", "~> 0.9.0"
 # [therubyracer](http://github.com/cowboyd/therubyracer)
 gem "therubyracer", "~> 0.12.2"
 
-# The dynamic stylesheet language for the Rails asset pipeline. Allows other g
-# [less-rails](http://github.com/metaskills/less-rails)
-gem "less-rails", "~> 2.7.0"
-
 # Flexible authentication solution for Rails with Warden
 # [devise](https://github.com/plataformatec/devise)
 gem "devise", "~> 3.5.2"

@@ -4,12 +4,8 @@
 Rails.application.config.assets.version = '1.0'
 
 # Font configuration.
-Rails.application.config.assets.paths << Rails.root.join('app', 'assets', 'fonts')  
+Rails.application.config.assets.paths << Rails.root.join('vendor', 'assets', 'fonts')  
 Rails.application.config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
-
-# LESS configuration.
-Rails.application.config.less.paths << File.join(Rails.root, 'app', 'assets', 'less')
-Rails.application.config.less.compress = true
 
 # Extra layouts.
 Rails.application.config.assets.precompile += %w( devise.css devise.js )
