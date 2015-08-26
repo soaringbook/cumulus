@@ -28,7 +28,7 @@
  *= require vendor/brand-icons
  *
  *** Inline
- *= require login
+ *= require remark/login
  *
  *= require_self
  */

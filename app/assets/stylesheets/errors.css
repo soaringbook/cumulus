@@ -10,20 +10,25 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require remark_errors
+ *** Stylesheets
+ *= require bootstrap
+ *= require bootstrap-extend
+ *= require site
+ *
+ *** Plugins
+ *= require vendor/animsition
+ *= require vendor/asScrollable
+ *= require vendor/switchery
+ *= require vendor/introjs
+ *= require vendor/slidePanel
+ *= require vendor/flag-icon
+ *
+ *** Fonts
+ *= require vendor/web-icons
+ *= require vendor/brand-icons
+ *
+ *** Inline
+ *= require remark/errors
  *
  *= require_self
  */
-
-@import 'vars';
-@import 'bootstrap';
-@import 'bootstrap-extend';
-@import 'site';
-
-@import 'vendor/asscrollable/asScrollable';
-@import 'vendor/switchery/switchery';
-@import 'vendor/intro-js/introjs';
-@import 'vendor/slidepanel/slidePanel';
-@import 'vendor/flag-icon-css/flag-icon';
-@import 'fonts/web-icons/web-icons';
-@import 'fonts/brand-icons/brand-icons';
