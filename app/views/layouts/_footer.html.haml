@@ -1,10 +1,3 @@
 %footer.site-footer
-  %span.site-footer-legal
-    © 2015
-    %a{:href => "http://themeforest.net/item/remark-responsive-bootstrap-admin-template/11989202"} Remark
-  .site-footer-right
-    Crafted with
-    %i.red-600.wb.wb-heart
-    by
-    %a{:href => "http://themeforest.net/user/amazingSurge"} amazingSurge
-
+  %span.site-footer-legal= t 'global.footer.rights_reserved', year: Time.now.year
+  .site-footer-right= t('global.footer.crafter_with', icon: content_tag(:i, nil, class: 'red-600 fa-beer'), name: 'Jelle Vandebeeck').html_safe

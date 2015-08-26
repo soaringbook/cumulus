@@ -60,5 +60,6 @@ en:
         sign_in: 'Sign in'
 
     footer:
-      created_by: 'CRAFTED BY %{name}'
-      rights_reserved: '%{year} SOME RIGHTS RESERVED'
+      crafted_by: 'Crafted by %{name}'
+      rights_reserved: '%{year} Some Rights Reserved'
+      crafter_with: 'Crafted with %{icon} by %{name}'
