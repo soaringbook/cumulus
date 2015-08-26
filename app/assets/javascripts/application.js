@@ -15,7 +15,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+// require turbolinks
 //= require retina_tag
 //
 //= require remark/vendor/bootstrap/bootstrap
@@ -39,6 +39,7 @@
 //= require remark/components/asscrollable
 //= require remark/components/slidepanel
 //= require remark/components/switchery
+
 
 (function(document, window, $) {
   'use strict';
