@@ -12,4 +12,14 @@ module MenuHelper
       end
     end
   end
+
+  def menu_top_link_tag name, icon, path, options = {}
+    content_tag :li, role: 'presentation' do
+      link_to path, options.merge(role: 'menuitem') do
+        content = content_tag(:i, nil, class: "icon #{icon}", 'aria-hidden' => 'true')
+        content << name
+        content
+      end
+    end
+  end
 end
