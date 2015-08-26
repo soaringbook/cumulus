@@ -10,27 +10,27 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *** Stylesheets
+ *= require bootstrap
+ *= require bootstrap-extend
+ *= require site
+ *
+ *** Plugins
+ *= require vendor/animsition
+ *= require vendor/asScrollable
+ *= require vendor/switchery
+ *= require vendor/introjs
+ *= require vendor/slidePanel
+ *= require vendor/flag-icon
+ *
+ *** Fonts
+ *= require vendor/web-icons
+ *= require vendor/brand-icons
+ *
  *= require_self
  */
 
-@import 'vars';
-@import 'bootstrap';
-@import 'bootstrap-extend';
-@import 'site';
-
-@import 'vendor/asscrollable/asScrollable';
-@import 'vendor/switchery/switchery';
-@import 'vendor/intro-js/introjs';
-@import 'vendor/slidepanel/slidePanel';
-@import 'vendor/flag-icon-css/flag-icon';
-@import 'fonts/web-icons/web-icons';
-@import 'fonts/brand-icons/brand-icons';
-@import "fonts/font-awesome/font-awesome";
-
-.alert-success,
-.alert-danger {
-  max-width: 350px;
-  font-family: Roboto, sans-serif;
-  font-size: 14px;
-  font-weight: 300;
+/* Correct the English flag icon */
+.flag-icon-en {
+  background-image: url(<%= asset_path('flags/gb.svg') %>);
 }
