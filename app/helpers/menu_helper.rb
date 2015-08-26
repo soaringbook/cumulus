@@ -22,4 +22,14 @@ module MenuHelper
       end
     end
   end
+
+  def menu_grid_link_tag name, icon, path
+    content_tag :li do
+      link_to path do
+        content = content_tag(:i, nil, class: "icon #{icon}")
+        content << name
+        content
+      end
+    end
+  end
 end
