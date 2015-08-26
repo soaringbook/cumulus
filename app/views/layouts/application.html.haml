@@ -1,21 +1,29 @@
 !!!
 %html
   %head
-    %title Cumulus
+    %title= t 'global.title'
 
-    %meta{ content: 'text/html; charset=UTF-8', 'http-equiv' => 'Content-Type' }
+    %meta{ content: 'text/html; charset=UTF-8',                                           'http-equiv' => 'Content-Type' }
+    %meta{ content: 'IE=edge',                                                            'http-equiv' => 'X-UA-Compatible' }
+    %meta{ content: 'width=device-width, initial-scale=1.0, user-scalable=0', name: 'viewport' }
 
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    %link{ rel: "apple-touch-icon", href: asset_path('apple-touch-icon.png') }
+    %link{ rel: "shortcut icon", href: asset_path('favicon.ico') }
+
+    = stylesheet_link_tag    'application', 'data-turbolinks-track' => true, media: 'all'
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
 
     = csrf_meta_tags
 
   %body
+    %nav.site-navbar.navbar.navbar-default.navbar-fixed-top.navbar-mega
+      = render partial: 'layouts/brand'
+      = render partial: 'layouts/top_navigation'
 
-    %p.notice= notice
-    %p.alert= alert
+    = render partial: 'layouts/left_navigation'
+    = render partial: 'layouts/grid_navigation'
 
-    = yield
+    .page
+      .page-content= yield
 
-    = link_to 'Logout', destroy_pilot_session_path, method: :delete
-    
+    = render partial: 'layouts/footer'

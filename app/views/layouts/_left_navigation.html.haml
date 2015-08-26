@@ -1,0 +1,18 @@
+.site-menubar
+  .site-menubar-body
+    %div
+      %div
+        %ul.site-menu
+          %li.site-menu-category General
+          %li.site-menu-item
+            %a
+              %i.site-menu-icon.wb-dashboard{"aria-hidden" => "true"}
+              %span.site-menu-title Dashboard
+
+  .site-menubar-footer
+    %a.fold-show{"data-original-title" => "Settings", "data-placement" => "top", "data-toggle" => "tooltip", :href => "javascript: void(0);"}
+      %span.icon.wb-settings{"aria-hidden" => "true"}
+    %a{"data-original-title" => "Lock", "data-placement" => "top", "data-toggle" => "tooltip", :href => "javascript: void(0);"}
+      %span.icon.wb-eye-close{"aria-hidden" => "true"}
+    %a{"data-original-title" => "Logout", "data-placement" => "top", "data-toggle" => "tooltip", :href => "javascript: void(0);"}
+      %span.icon.wb-power{"aria-hidden" => "true"}
