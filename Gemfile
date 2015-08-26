@@ -111,6 +111,10 @@ group :test do
   # [terminal-notifier-guard](https://github.com/Springest/terminal-notifier-guard)
   gem "terminal-notifier-guard", "~> 1.6.4"
 
+  # Guard::Rubocop automatically checks Ruby code style with RuboCop when files 
+  # [guard-rubocop](https://github.com/yujinakayama/guard-rubocop)
+  gem "guard-rubocop", "~> 1.2.0"
+
   # Collects test coverage data from your Ruby test suite and sends it to Code C
   # [codeclimate-test-reporter]()
   gem "codeclimate-test-reporter", "~> 0.4.7"
