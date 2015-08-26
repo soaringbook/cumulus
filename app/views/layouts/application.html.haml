@@ -28,6 +28,8 @@
     = render partial: 'layouts/grid_navigation'
 
     .page
+      .page-header
+        %h1.page-title= yield(:title)
       .page-content= yield
 
     = render partial: 'layouts/footer'
