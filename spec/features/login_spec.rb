@@ -4,7 +4,7 @@ describe 'The login flow', type: :feature do
   before do
     @pilot = create(:pilot, password: '123123123', password_confirmation: '123123123')
 
-    visit root_path 
+    visit root_path
   end
 
   it 'should login' do

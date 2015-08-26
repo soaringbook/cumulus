@@ -1,5 +1,5 @@
 class ErrorsController < ApplicationController
-  skip_before_filter :authenticate_pilot!
+  skip_before_action :authenticate_pilot!
 
   layout 'error'
 

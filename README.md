@@ -31,6 +31,12 @@ Use guard to run your tests automagically during development.
 
     $ guard
 
+## CODING GUIDELINES
+
+You can test the code with Rubocop. Run the following script or just check it automatically with guard.
+
+    $ ./script/rubocop
+
 ## LICENSE
 
 The MIT License (MIT)

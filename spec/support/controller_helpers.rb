@@ -5,17 +5,17 @@ module ControllerHelpers
     allow(controller).to receive(:current_pilot) { pilot }
   end
 
-  def redirect_for_login(&block)
+  def redirect_for_login(&_block)
     yield
     redirect_to(new_pilot_session_path)
   end
 
-  def redirect_to_path(path, &block)
+  def redirect_to_path(path, &_block)
     yield
     redirect_to(path)
   end
 
-  def render_template_name(template_name, &block)
+  def render_template_name(template_name, &_block)
     yield
     render_template template_name
   end
