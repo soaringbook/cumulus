@@ -17,7 +17,12 @@
   %body
     %nav.site-navbar.navbar.navbar-default.navbar-fixed-top.navbar-mega{ role: 'navigation' }
       = render partial: 'layouts/brand'
-      = render partial: 'layouts/top_navigation'
+      .navbar-container.container-fluid
+        #site-navbar-collapse.collapse.navbar-collapse.navbar-collapse-toolbar
+          = render partial: 'layouts/top_navigation_menu'
+          %ul.nav.navbar-toolbar.navbar-right.navbar-toolbar-right
+            = render partial: 'layouts/top_navigation_language'
+            = render partial: 'layouts/top_navigation_user'
 
     = render partial: 'layouts/left_navigation'
     = render partial: 'layouts/grid_navigation'

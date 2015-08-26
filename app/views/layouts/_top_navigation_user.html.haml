@@ -1,0 +1,15 @@
+%li.dropdown
+  %a.navbar-avatar.dropdown-toggle{"aria-expanded" => "false", "data-animation" => "scale-up", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+    %span.avatar.avatar-online
+      %img{:alt => "...", :src => asset_path('Avatar.jpg') }/
+      %i
+  %ul.dropdown-menu{:role => "menu"}
+    %li{:role => "presentation"}
+      %a{:href => "javascript:void(0)", :role => "menuitem"}
+        %i.icon.wb-user{"aria-hidden" => "true"}
+        Profile
+    %li.divider{:role => "presentation"}
+    %li{:role => "presentation"}
+      %a{:href => "javascript:void(0)", :role => "menuitem"}
+        %i.icon.wb-power{"aria-hidden" => "true"}
+        Logout
