@@ -1,0 +1,7 @@
+.site-menubar
+  .site-menubar-body
+    %div
+      %div
+        %ul.site-menu
+          = menu_group_tag 'General'
+          = menu_link_tag 'Dashboard', 'wb-dashboard', root_path, controller_name == 'dashboard'
