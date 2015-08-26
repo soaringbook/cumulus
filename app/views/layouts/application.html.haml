@@ -29,6 +29,8 @@
 
     .page
       .page-header
+        = render_breadcrumbs separator: ' / '
+
         %h1.page-title= yield(:title)
       .page-content= yield
 
