@@ -1,8 +1,7 @@
 class RegistrationsController < Devise::RegistrationsController
-
   protected
 
-  def build_resource(hash=nil)
+  def build_resource(hash = nil)
     super
     resource.build_club unless resource.club
   end

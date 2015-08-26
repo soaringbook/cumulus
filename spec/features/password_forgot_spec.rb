@@ -1,7 +1,7 @@
 require 'rails_helper.rb'
 
 describe 'The password forget flow', type: :feature do
-  before do 
+  before do
     @pilot = create(:pilot)
 
     clear_emails
@@ -13,7 +13,7 @@ describe 'The password forget flow', type: :feature do
     click_button 'Reset your password'
 
     expect(page).to have_content('Sign in')
-    
+
     open_email(@pilot.email)
     expect(current_email).to have_content('Change my password')
   end

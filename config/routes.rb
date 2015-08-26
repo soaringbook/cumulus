@@ -3,10 +3,10 @@ Rails.application.routes.draw do
 
   devise_scope :pilot do
     # Remove the edit registrations route.
-    resource :registration, only: [:new, :create], 
-                            path: 'pilots', 
-                            path_names: { new: 'sign_up' }, 
-                            controller: 'registrations', 
+    resource :registration, only: [:new, :create],
+                            path: 'pilots',
+                            path_names: { new: 'sign_up' },
+                            controller: 'registrations',
                             as: :pilot_registration
   end
 
@@ -16,8 +16,8 @@ Rails.application.routes.draw do
   end
 
   %w(404 422 500 503).each do |code|
-    get code, to: "errors#show", code: code
+    get code, to: 'errors#show', code: code
   end
-  
-  root :to => redirect('/pilots/sign_in')
+
+  root to: redirect('/pilots/sign_in')
 end
