@@ -9,6 +9,12 @@ en:
       languages:
         en: 'English'
         nl: 'Dutch'
+      navigation: 
+        toggle: 'Toggle navigation'
+      menu:
+        toggle: 'Toggle menu bar'
+        dashboard: 'Dashboard'
+        logout: 'Logout'
 
     errors:
       labels:

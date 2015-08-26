@@ -4,6 +4,5 @@
       = image_tag 'Avatar.jpg'
 
   %ul.dropdown-menu{ role: "menu" }
-    = menu_top_link_tag 'Profile', 'wb-user', root_path
-    %li.divider{ role: "presentation" }
-    = menu_top_link_tag 'Logout', 'wb-power', destroy_pilot_session_path, method: :delete
+    /%li.divider{ role: "presentation" }
+    = menu_top_link_tag t('global.application.menu.logout'), 'wb-power', destroy_pilot_session_path, method: :delete
