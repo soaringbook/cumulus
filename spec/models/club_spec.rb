@@ -4,7 +4,7 @@ describe Club do
   context 'Validations' do
     it { should validate_presence_of(:short_name) }
     it { should validate_uniqueness_of(:short_name) }
-    it { should validate_length_of(:short_name).is_at_least(4) }
+    it { should validate_length_of(:short_name).is_at_least(3) }
 
     it 'should have a valid factory' do
       club = create(:club)
