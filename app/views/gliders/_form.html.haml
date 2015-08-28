@@ -1,0 +1,22 @@
+= form_for @glider do |f|
+  - if @glider.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@glider.errors.count, "error")} prohibited this glider from being saved:"
+      %ul
+        - @glider.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :immatriculation
+    = f.text_field :immatriculation
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :double_seater
+    = f.check_box :double_seater
+  .field
+    = f.label :self_launching
+    = f.check_box :self_launching
+  .actions
+    = f.submit 'Save'

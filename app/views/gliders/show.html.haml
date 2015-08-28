@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Immatriculation:
+  = @glider.immatriculation
+%p
+  %b Name:
+  = @glider.name
+%p
+  %b Double seater:
+  = @glider.double_seater
+%p
+  %b Self launching:
+  = @glider.self_launching
+
+= link_to 'Edit', edit_glider_path(@glider)
+\|
+= link_to 'Back', gliders_path

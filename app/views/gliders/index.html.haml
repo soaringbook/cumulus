@@ -1,0 +1,27 @@
+%h1 Listing gliders
+
+%table
+  %thead
+    %tr
+      %th Immatriculation
+      %th Name
+      %th Double seater
+      %th Self launching
+      %th
+      %th
+      %th
+
+  %tbody
+    - @gliders.each do |glider|
+      %tr
+        %td= glider.immatriculation
+        %td= glider.name
+        %td= glider.double_seater
+        %td= glider.self_launching
+        %td= link_to 'Show', glider
+        %td= link_to 'Edit', edit_glider_path(glider)
+        %td= link_to 'Destroy', glider, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Glider', new_glider_path

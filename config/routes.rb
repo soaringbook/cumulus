@@ -15,6 +15,8 @@ Rails.application.routes.draw do
     root 'dashboard#index', as: :authenticated_root
   end
 
+  resources :gliders
+
   %w(404 422 500 503).each do |code|
     get code, to: 'errors#show', code: code
   end
