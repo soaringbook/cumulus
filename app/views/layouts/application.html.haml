@@ -28,9 +28,10 @@
 
     .page
       .page-header
-        = render_breadcrumbs separator: ' / '
-
         %h1.page-title= yield(:title)
+        = render_breadcrumbs separator: ' / '
+        - if header_actions = yield(:actions)
+          .page-header-actions= header_actions
       .page-content= yield
 
     = render partial: 'layouts/footer'

@@ -1,27 +1,28 @@
-%h1 Listing gliders
+- content_for :title, t('pages.gliders.index')
+- content_for :actions do
+  = link_to new_glider_path, class: 'btn btn-sm btn-default btn-outline btn-round' do
+    %i.icon.wb-plus{ aria: { hidden: 'true' } }
+    %span.hidden-xs Add new glider
 
-%table
-  %thead
-    %tr
-      %th Immatriculation
-      %th Name
-      %th Double seater
-      %th Self launching
-      %th
-      %th
-      %th
-
-  %tbody
-    - @gliders.each do |glider|
-      %tr
-        %td= glider.immatriculation
-        %td= glider.name
-        %td= glider.double_seater
-        %td= glider.self_launching
-        %td= link_to 'Show', glider
-        %td= link_to 'Edit', edit_glider_path(glider)
-        %td= link_to 'Destroy', glider, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
-= link_to 'New Glider', new_glider_path
+.row
+  .col-lg-12
+    .panel
+      %header.panel-heading
+        %h3.panel-title= 'Overview'
+      .panel-body
+        %table.table.table-responsive.table-hover.table-striped
+          %thead
+            %tr
+              %th Immatriculation
+              %th Name
+              %th{ style: 'width: 6em' }
+          %tbody
+            - @gliders.each do |glider|
+              %tr
+                %td= link_to glider.immatriculation, glider
+                %td= glider.name
+                %td
+                  = link_to edit_glider_path(glider), class: 'btn btn-sm btn-icon btn-flat btn-default', data: { toggle: 'tooltip', original: { title: 'Edit' } } do
+                    %i.icon.wb-wrench{ aria: { hidden: 'true' } }
+                  = link_to glider, method: :delete, class: 'btn btn-sm btn-icon btn-flat btn-default', data: { confirm: 'Are you sure?', toggle: 'tooltip', original: { title: 'Edit' } } do
+                    %i.icon.wb-close{ aria: { hidden: 'true' } }

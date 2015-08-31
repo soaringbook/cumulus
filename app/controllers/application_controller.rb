@@ -9,4 +9,8 @@ class ApplicationController < ActionController::Base
   def set_locale
     I18n.locale = current_pilot.try(:locale) || I18n.default_locale
   end
+
+  def current_club
+    current_pilot.try :club
+  end
 end
