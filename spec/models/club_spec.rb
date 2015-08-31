@@ -14,5 +14,6 @@ describe Club do
 
   context 'Associations' do
     it { should have_many(:pilots) }
+    it { should have_many(:gliders) }
   end
 end

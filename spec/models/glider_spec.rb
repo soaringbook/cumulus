@@ -11,4 +11,8 @@ describe Glider do
       expect(glider.valid?).to be_truthy
     end
   end
+
+  context 'Associations' do
+    it { should belong_to(:club) }
+  end
 end
