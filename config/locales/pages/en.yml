@@ -2,6 +2,9 @@ en:
   pages:
     dashboard:
       title: 'Your dashboard'
+
     gliders:
-      index: 'Gliders'
-      new: 'Create a glider'
+      titles:
+        index: 'Gliders'
+        new: 'Create a glider'
+

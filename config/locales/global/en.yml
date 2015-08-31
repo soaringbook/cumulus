@@ -18,6 +18,17 @@ en:
         gliders: 'Gliders'
         logout: 'Logout'
 
+    titles:
+      overview: 'Overview'
+
+    labels:
+      delete_confirmation: 'Are you sure you want to delete this line?'
+
+    links:
+      edit: 'Edit'
+      new: 'Create'
+      delete: 'Delete'
+
     errors:
       labels:
         advise: 'YOU SEEM TO BE TRYING TO FIND HIS WAY HOME'

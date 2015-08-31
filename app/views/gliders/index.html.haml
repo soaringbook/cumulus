@@ -1,16 +1,16 @@
-- content_for :title, t('pages.gliders.index')
+- content_for :title, t('pages.gliders.titles.index')
 - content_for :actions do
   = link_to new_glider_path, class: 'btn btn-sm btn-default btn-outline btn-round' do
     %i.icon.wb-plus{ aria: { hidden: 'true' } }
-    %span.hidden-xs Add new glider
+    %span.hidden-xs= t 'global.links.new'
 
 .row
   .col-lg-12
     .panel
       %header.panel-heading
-        %h3.panel-title= 'Overview'
+        %h3.panel-title= t 'global.titles.overview'
       .panel-body
-        %table.table.table-responsive.table-hover.table-striped
+        %table.table.table-responsive
           %thead
             %tr
               %th Immatriculation
@@ -22,7 +22,7 @@
                 %td= link_to glider.immatriculation, glider
                 %td= glider.name
                 %td
-                  = link_to edit_glider_path(glider), class: 'btn btn-sm btn-icon btn-flat btn-default', data: { toggle: 'tooltip', original: { title: 'Edit' } } do
+                  = link_to edit_glider_path(glider), class: 'btn btn-sm btn-icon btn-flat btn-default', data: { toggle: 'tooltip', 'original-title' => t('global.links.edit') } do
                     %i.icon.wb-wrench{ aria: { hidden: 'true' } }
-                  = link_to glider, method: :delete, class: 'btn btn-sm btn-icon btn-flat btn-default', data: { confirm: 'Are you sure?', toggle: 'tooltip', original: { title: 'Edit' } } do
+                  = link_to glider, method: :delete, class: 'btn btn-sm btn-icon btn-flat btn-default', data: { confirm: t('global.labels.delete_confirmation'), toggle: 'tooltip', 'original-title' => t('global.links.delete') } do
                     %i.icon.wb-close{ aria: { hidden: 'true' } }
