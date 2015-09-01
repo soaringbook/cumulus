@@ -2,7 +2,7 @@ class GlidersController < ApplicationController
   before_action :set_glider, only: [:show, :edit, :update, :destroy]
 
   def index
-    @gliders = current_club.gliders.all
+    @gliders = current_club.gliders.search params[:search]
   end
 
   def show
