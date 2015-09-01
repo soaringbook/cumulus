@@ -1,0 +1,14 @@
+sheet = workbook.create_worksheet
+sheet.name = t('pages.gliders.titles.index')
+
+sheet.row(0).push Glider.human_attribute_name('immatriculation')
+sheet.row(0).push Glider.human_attribute_name('name')
+sheet.row(0).push Glider.human_attribute_name('self_launching')
+sheet.row(0).push Glider.human_attribute_name('double_seater')
+
+@gliders.each_with_index do |glider, index|
+  sheet.row(index+1).push glider.immatriculation
+  sheet.row(index+1).push glider.name
+  sheet.row(index+1).push glider.self_launching ? 'X' : ''
+  sheet.row(index+1).push glider.double_seater ? 'X' : ''
+end

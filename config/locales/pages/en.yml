@@ -18,3 +18,5 @@ en:
         hours:
           one: 'Hour'
           other: 'Hours'
+      filename:
+        xls: '%{timestamp}-gliders-export'
