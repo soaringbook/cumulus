@@ -1,4 +1,10 @@
 module TagHelper
+  def avatar_image_tag(avatar, version, options = {})
+    non_retina = avatar.url(version, :non_retina)
+    retina = avatar.url(version, :retina)
+    image_tag non_retina, options.merge('data-interchange' => "[#{retina}, (retina)]", class: 'img img-rounded')
+  end
+
   def boolean_tag(value)
     value_class = value ? 'check teal' : 'close red'
     content_tag :i, nil, class: "icon wb-#{value_class}-600"

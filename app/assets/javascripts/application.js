@@ -18,6 +18,9 @@
 // require turbolinks
 //= require retina_tag
 //
+//= require foundation/foundation
+//= require foundation/foundation.interchange
+//
 //= require remark/vendor/bootstrap/bootstrap
 //= require remark/vendor/asscroll/jquery-asScroll
 //= require remark/vendor/mousewheel/jquery.mousewheel

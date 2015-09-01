@@ -17,7 +17,21 @@ class AvatarUploader < CarrierWave::Uploader::Base
   process convert: 'jpg'
 
   version :thumb do
-    process resize_to_fill: [128, 128]
+    version :non_retina do
+      process resize_to_fill: [128, 128]
+    end
+    version :retina do
+      process resize_to_fill: [256, 256]
+    end
+  end
+
+  version :placeholder do
+    version :non_retina do
+      process resize_to_fill: [380, 380]
+    end
+    version :retina do
+      process resize_to_fill: [760, 760]
+    end
   end
 
   def extension_white_list
