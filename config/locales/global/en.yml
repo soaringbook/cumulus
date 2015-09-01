@@ -12,6 +12,7 @@ en:
       navigation: 
         toggle: 'Toggle navigation'
       menu:
+        fullscreen: 'Toggle fullscreen'
         toggle: 'Toggle menu bar'
         dashboard: 'Dashboard'
         club: 'Club Area'
