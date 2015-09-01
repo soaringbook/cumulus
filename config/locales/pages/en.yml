@@ -11,6 +11,7 @@ en:
         general_information: 'General information'
         image: 'Image'
       labels:
+        empty: 'No gliders found'
         flights:
           one: 'Flight'
           other: 'Flights'

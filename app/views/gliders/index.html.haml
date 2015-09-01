@@ -22,7 +22,7 @@
             %tbody
               - if @gliders.count == 0
                 %tr.no-records-found
-                  %td{ colspan: 5 } No gliders found
+                  %td{ colspan: 5 }= t 'pages.gliders.labels.empty'
               - else
                 - @gliders.each do |glider|
                   %tr
@@ -32,5 +32,5 @@
                     %td= boolean_tag glider.double_seater
                     %td
                       = edit_link_to edit_glider_path(glider)
-                      = delete_link_to edit_glider_path(glider)
+                      = delete_link_to glider
         = paginate @gliders

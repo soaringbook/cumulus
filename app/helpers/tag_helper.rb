@@ -14,7 +14,7 @@ module TagHelper
     form_tag path, method: :get do
       content_tag :div, nil, class: 'input-search input-search-dark' do
         content = content_tag(:i, nil, class: 'input-search-icon wb-search', aria: { hidden: 'true' })
-        content << text_field_tag(:search, params[:search], placeholder: 'Search', class: 'form-control', autofocus: true)
+        content << text_field_tag(:search, params[:search], placeholder: 'Search', class: 'form-control')
         content
       end
     end

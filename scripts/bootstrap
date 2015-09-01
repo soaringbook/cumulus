@@ -28,6 +28,10 @@ def describe(header)
   puts '#' * width
 end
 
+describe('Installing qt')
+run 'brew install qt5'
+run 'brew link --force qt5'
+
 describe('Installing bundle')
 run 'bundle install'
 

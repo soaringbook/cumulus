@@ -55,6 +55,9 @@ GEM
     capybara-email (2.4.0)
       capybara (~> 2.4)
       mail
+    capybara-webkit (1.7.0)
+      capybara (>= 2.3.0, < 2.6.0)
+      json
     carrierwave (0.10.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
@@ -404,6 +407,7 @@ DEPENDENCIES
   bullet (~> 4.14.7)
   capybara (~> 2.4.4)
   capybara-email (~> 2.4.0)
+  capybara-webkit (~> 1.7.0)
   carrierwave_direct (~> 0.0.15)
   codeclimate-test-reporter (~> 0.4.7)
   coffee-rails (~> 4.1.0)

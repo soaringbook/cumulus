@@ -107,6 +107,10 @@ group :test do
   # [capybara-email](https://github.com/dockyard/capybara-email)
   gem 'capybara-email', '~> 2.4.0'
 
+  # Headless Webkit driver for Capybara
+  # [capybara-webkit](http://github.com/thoughtbot/capybara-webkit)
+  gem "capybara-webkit", "~> 1.7.0"
+
   # factory_girl_rails provides integration between
   # [factory_girl_rails](http://github.com/thoughtbot/factory_girl_rails)
   gem 'factory_girl_rails', '~> 4.5.0'
