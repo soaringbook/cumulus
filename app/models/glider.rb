@@ -4,6 +4,8 @@ class Glider < ActiveRecord::Base
   extend FriendlyId
   friendly_id :immatriculation, use: :slugged
 
+  mount_uploader :avatar, AvatarUploader
+
   belongs_to :club
 
   validates :immatriculation, presence: true, uniqueness: true

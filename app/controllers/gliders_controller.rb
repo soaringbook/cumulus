@@ -45,6 +45,6 @@ class GlidersController < ApplicationController
   end
 
   def glider_params
-    params.require(:glider).permit(:immatriculation, :name, :double_seater, :self_launching)
+    params.require(:glider).permit(:immatriculation, :name, :double_seater, :self_launching, :avatar)
   end
 end

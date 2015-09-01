@@ -46,6 +46,14 @@ gem "gretel", "~> 3.0.8"
 # [kaminari](https://github.com/amatsuda/kaminari)
 gem "kaminari", "~> 0.16.3"
 
+# Manipulate images with minimal use of memory via ImageMagick / GraphicsMagic
+# [mini_magick](https://github.com/minimagick/minimagick)
+gem "mini_magick", "~> 4.2.10"
+
+# Process your uploads in the background by uploading directly to S3
+# [carrierwave_direct](https://github.com/dwilkie/carrierwave_direct)
+gem "carrierwave_direct", "~> 0.0.15"
+
 # FriendlyId is the "Swiss Army bulldozer" of slugging and permalink plugins f
 # [friendly_id](http://github.com/norman/friendly_id)
 gem "friendly_id", "~> 5.1.0"
