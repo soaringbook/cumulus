@@ -10,19 +10,26 @@
             %i.icon.wb-plus{ aria: { hidden: 'true' } }
 
       .panel-body
-        %table.table.table-responsive
-          %thead
-            %tr
-              %th Immatriculation
-              %th Name
-              %th{ style: 'width: 8em' }
-          %tbody
-            - @gliders.each do |glider|
+        .table-responsive
+          %table.table
+            %thead
               %tr
-                %td= link_to glider.immatriculation, glider
-                %td= glider.name
-                %td
-                  = link_to edit_glider_path(glider), class: 'btn btn-sm btn-icon btn-flat btn-default', data: { toggle: 'tooltip', 'original-title' => t('global.links.edit') } do
-                    %i.icon.wb-wrench{ aria: { hidden: 'true' } }
-                  = link_to glider, method: :delete, class: 'btn btn-sm btn-icon btn-flat btn-default', data: { confirm: t('global.labels.delete_confirmation'), toggle: 'tooltip', 'original-title' => t('global.links.delete') } do
-                    %i.icon.wb-close{ aria: { hidden: 'true' } }
+                %th= Glider.human_attribute_name('immatriculation')
+                %th= Glider.human_attribute_name('name')
+                %th= Glider.human_attribute_name('self_launching')
+                %th= Glider.human_attribute_name('double_seater')
+                %th{ style: 'width: 8em' }
+            %tbody
+              - @gliders.each do |glider|
+                %tr
+                  %td= link_to glider.immatriculation, glider
+                  %td= glider.name
+                  %td
+                    %i.icon.wb-close.red-600
+                  %td
+                    %i.icon.wb-check.teal-600
+                  %td
+                    = link_to edit_glider_path(glider), class: 'btn btn-sm btn-icon btn-flat btn-default', data: { toggle: 'tooltip', 'original-title' => t('global.links.edit') } do
+                      %i.icon.wb-wrench{ aria: { hidden: 'true' } }
+                    = link_to glider, method: :delete, class: 'btn btn-sm btn-icon btn-flat btn-default', data: { confirm: t('global.labels.delete_confirmation'), toggle: 'tooltip', 'original-title' => t('global.links.delete') } do
+                      %i.icon.wb-close{ aria: { hidden: 'true' } }

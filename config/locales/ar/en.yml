@@ -1,0 +1,12 @@
+en: 
+  activerecord:
+    models:
+      glider:
+        one: 'Glider'
+        other: 'Gliders'
+    attributes:
+      glider:
+        immatriculation: 'Immatriculation'
+        name: 'Type'
+        self_launching: 'Self Launching'
+        double_seater: 'Double Seater'
