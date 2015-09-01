@@ -42,6 +42,10 @@ gem 'haml-rails', '~> 0.9.0'
 # [gretel](http://github.com/lassebunk/gretel)
 gem "gretel", "~> 3.0.8"
 
+# Kaminari is a Scope &amp; Engine based, clean, powerful, agnostic, customiza
+# [kaminari](https://github.com/amatsuda/kaminari)
+gem "kaminari", "~> 0.16.3"
+
 # Call JavaScript code and manipulate JavaScript objects from Ruby. Call Ruby
 # [therubyracer](http://github.com/cowboyd/therubyracer)
 gem 'therubyracer', '~> 0.12.2'
