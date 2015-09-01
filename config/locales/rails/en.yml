@@ -140,7 +140,7 @@ en:
     select:
       prompt: Please select
     submit:
-      create: Create %{model}
+      create: Add %{model}
       submit: Save %{model}
       update: Update %{model}
   number:

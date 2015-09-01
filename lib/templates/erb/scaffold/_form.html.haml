@@ -4,5 +4,5 @@
   - attributes.each do |attribute|
     \%= f.%= attribute.reference? ? :association : :input %&gt; :#{attribute.name} %&gt;
 .form-actions
-  \%= f.button :submit %&gt;
+  \%= f.button :submit class: 'btn btn-primary' %&gt;
 \% end %&gt;

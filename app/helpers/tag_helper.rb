@@ -13,4 +13,14 @@ module TagHelper
       end
     end
   end
+
+  def checkbox_tag form, field
+    content_tag :div, class: 'form-group' do
+      content_tag :div, class: 'checkbox-custom checkbox-primary' do
+        content = form.check_box field
+        content << form.label(field)
+        content
+      end
+    end
+  end
 end
