@@ -1,0 +1,36 @@
+- breadcrumb :gliders
+
+- content_for :title, t('pages.gliders.titles.index')
+- content_for :actions do
+  = search_form_tag gliders_path
+
+.row
+  .col-lg-12
+    = panel do
+      = panel_heading t('global.titles.overview') do
+        = add_link_to new_glider_path
+      = panel_body do
+        .table-responsive
+          %table.table
+            %thead
+              %tr
+                %th= Glider.human_attribute_name('immatriculation')
+                %th= Glider.human_attribute_name('name')
+                %th= Glider.human_attribute_name('self_launching')
+                %th= Glider.human_attribute_name('double_seater')
+                %th{ style: 'width: 8em' }
+            %tbody
+              - if @gliders.count == 0
+                %tr.no-records-found
+                  %td{ colspan: 5 } No gliders found
+              - else
+                - @gliders.each do |glider|
+                  %tr
+                    %td= link_to glider.immatriculation, glider
+                    %td= glider.name
+                    %td= boolean_tag glider.self_launching
+                    %td= boolean_tag glider.double_seater
+                    %td
+                      = edit_link_to edit_glider_path(glider)
+                      = delete_link_to edit_glider_path(glider)
+        = paginate @gliders

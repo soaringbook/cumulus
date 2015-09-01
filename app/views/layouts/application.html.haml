@@ -21,7 +21,6 @@
         #site-navbar-collapse.collapse.navbar-collapse.navbar-collapse-toolbar
           = render partial: 'layouts/top_navigation_menu'
           %ul.nav.navbar-toolbar.navbar-right.navbar-toolbar-right
-            = render partial: 'layouts/top_navigation_language'
             = render partial: 'layouts/top_navigation_user'
 
     = render partial: 'layouts/left_navigation'
@@ -29,9 +28,10 @@
 
     .page
       .page-header
-        = render_breadcrumbs separator: ' / '
-
         %h1.page-title= yield(:title)
+        = breadcrumbs style: :ol, class: 'breadcrumb', current_class: 'active'
+        - if header_actions = yield(:actions)
+          .page-header-actions= header_actions
       .page-content= yield
 
     = render partial: 'layouts/footer'

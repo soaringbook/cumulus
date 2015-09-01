@@ -1,0 +1,20 @@
+- breadcrumb :glider, @glider, false
+
+- content_for :title, @glider.immatriculation
+- content_for :actions do
+  = edit_action_link_to edit_glider_path(@glider)
+
+.row
+  .col-lg-6
+    = panel do
+      = panel_heading t('pages.gliders.titles.general_information')
+      = panel_body do
+        %dl.dl-horizontal
+          %dt= Glider.human_attribute_name('immatriculation')
+          %dd= @glider.immatriculation
+          %dt= Glider.human_attribute_name('name')
+          %dd= @glider.name
+          %dt= Glider.human_attribute_name('self_launching')
+          %dd= boolean_tag @glider.self_launching
+          %dt= Glider.human_attribute_name('double_seater')
+          %dd= boolean_tag @glider.double_seater

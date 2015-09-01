@@ -2,3 +2,10 @@ en:
   pages:
     dashboard:
       title: 'Your dashboard'
+
+    gliders:
+      titles:
+        index: 'Gliders'
+        new: 'Add a new glider'
+        edit: 'Edit glider %{immatriculation}'
+        general_information: 'General information'

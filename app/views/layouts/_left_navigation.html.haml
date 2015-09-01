@@ -4,4 +4,6 @@
       %div
         %ul.site-menu
           = menu_group_tag ''
-          = menu_link_tag t('global.application.menu.dashboard'), 'wb-dashboard', root_path, controller_name == 'dashboard'
+          = menu_link_tag t('global.application.menu.dashboard'), 'fa-dashboard', root_path, controller_name == 'dashboard'
+          = menu_group_tag t('global.application.menu.club')
+          = menu_link_tag t('global.application.menu.gliders'), 'fa-plane', gliders_path, controller_name == 'gliders'

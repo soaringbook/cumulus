@@ -35,3 +35,19 @@
 .flag-icon-en {
   background-image: url(<%= asset_path('flags/gb.svg') %>);
 }
+
+/* Correct the table styling. */
+.table thead th {
+  text-transform: uppercase;
+  font-size: 80%;
+}
+
+.table .no-records-found {
+  text-align: center;
+}
+
+/* Better description styling. */
+.dl-horizontal dt,
+.dl-horizontal dd {
+  line-height: 2em;
+}

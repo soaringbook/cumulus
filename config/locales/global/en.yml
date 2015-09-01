@@ -14,7 +14,20 @@ en:
       menu:
         toggle: 'Toggle menu bar'
         dashboard: 'Dashboard'
+        club: 'Club Area'
+        gliders: 'Gliders'
         logout: 'Logout'
+
+    titles:
+      overview: 'Overview'
+
+    labels:
+      delete_confirmation: 'Are you sure you want to delete this line?'
+
+    links:
+      edit: 'Edit'
+      new: 'Add'
+      delete: 'Delete'
 
     errors:
       labels:
