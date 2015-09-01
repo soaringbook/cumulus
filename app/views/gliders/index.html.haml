@@ -2,14 +2,10 @@
 
 .row
   .col-lg-12
-    .panel
-      %header.panel-heading
-        %h3.panel-title= t 'global.titles.overview'
-        .panel-actions
-          = link_to new_glider_path, class: 'btn btn-sm btn-icon btn-flat btn-default', data: { toggle: 'tooltip', 'original-title' => t('global.links.new') } do
-            %i.icon.wb-plus{ aria: { hidden: 'true' } }
-
-      .panel-body
+    = panel do
+      = panel_heading t('global.titles.overview') do
+        = add_link_to new_glider_path
+      = panel_body do
         .table-responsive
           %table.table
             %thead
@@ -28,12 +24,8 @@
                   %tr
                     %td= link_to glider.immatriculation, glider
                     %td= glider.name
+                    %td= boolean_tag glider.self_launching
+                    %td= boolean_tag glider.double_seater
                     %td
-                      %i.icon.wb-close.red-600
-                    %td
-                      %i.icon.wb-check.teal-600
-                    %td
-                      = link_to edit_glider_path(glider), class: 'btn btn-sm btn-icon btn-flat btn-default', data: { toggle: 'tooltip', 'original-title' => t('global.links.edit') } do
-                        %i.icon.wb-wrench{ aria: { hidden: 'true' } }
-                      = link_to glider, method: :delete, class: 'btn btn-sm btn-icon btn-flat btn-default', data: { confirm: t('global.labels.delete_confirmation'), toggle: 'tooltip', 'original-title' => t('global.links.delete') } do
-                        %i.icon.wb-close{ aria: { hidden: 'true' } }
+                      = edit_link_to edit_glider_path(glider)
+                      = delete_link_to edit_glider_path(glider)
