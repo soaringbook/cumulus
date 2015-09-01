@@ -1,6 +1,6 @@
 require 'rails_helper.rb'
 
-describe 'The glider index flow', type: :feature do
+describe 'The glider list flow', type: :feature do
   before do
     @pilot = create(:pilot)
     login_as(@pilot, scope: :pilot)
