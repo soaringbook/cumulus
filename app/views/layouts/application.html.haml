@@ -32,7 +32,9 @@
         = breadcrumbs style: :ol, class: 'breadcrumb', current_class: 'active'
         - if header_actions = yield(:actions)
           .page-header-actions= header_actions
-      .page-content= yield
+      .page-content
+        = flashes
+        = yield
 
     = render partial: 'layouts/footer'
 
