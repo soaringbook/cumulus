@@ -28,4 +28,37 @@ module LinkHelper
       content_tag :i, nil, class: 'icon wb-eye', aria: { hidden: 'true' }
     end
   end
+
+  def export_tag(&_block)
+    content_tag :div, class: 'dropdown' do
+      content = link_to '#', class: 'dropdown-toggle btn btn-sm btn-icon btn-flat btn-default', data: { toggle: 'dropdown' } do
+        content_tag :i, nil, class: 'icon wb-download'
+      end
+      list = content_tag :ul, class: 'dropdown-menu bullet dropdown-menu-right' do
+        yield
+      end
+      content << list
+      content
+    end
+  end
+
+  def export_pdf_to(path)
+    content_tag :li do
+      link_to path do
+        content = content_tag :i, nil, class: 'icon wb-file'
+        content << t('global.links.export.pdf')
+        content
+      end
+    end
+  end
+
+  def export_xls_to(path)
+    content_tag :li do
+      link_to path do
+        content = content_tag :i, nil, class: 'icon wb-table'
+        content << t('global.links.export.xls')
+        content
+      end
+    end
+  end
 end

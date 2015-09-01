@@ -70,6 +70,10 @@ gem 'devise', '~> 3.5.2'
 # [retina_tag](http://github.com/davydotcom/retina_tag)
 gem 'retina_tag', '~> 1.3.1'
 
+# A gem to generate xls documents by using rxls templates.
+# [spreadsheet_on_rails](https://github.com/10to1/spreadsheet_on_rails)
+gem "spreadsheet_on_rails", "~> 1.0.0"
+
 group :development, :test do
   # Faker, a port of Data::Faker from Perl, is used to easily generate fake data
   # [faker](https://github.com/stympy/faker)

@@ -1,0 +1,20 @@
+sheet = workbook.create_worksheet
+sheet.name = t('pages.gliders.titles.index')
+
+sheet.row(0).push Glider.human_attribute_name('immatriculation').upcase
+sheet.row(0).push Glider.human_attribute_name('name').upcase
+sheet.row(0).push Glider.human_attribute_name('self_launching').upcase
+sheet.row(0).push Glider.human_attribute_name('double_seater').upcase
+
+format = Spreadsheet::Format.new weight: :bold, size: 12
+format_row sheet.row(0), format
+sheet.row(0).set_format(3, format)
+
+format = Spreadsheet::Format.new size: 10
+@gliders.each_with_index do |glider, index|
+  sheet.row(index+1).push glider.immatriculation
+  sheet.row(index+1).push glider.name
+  sheet.row(index+1).push glider.self_launching ? 'X' : ''
+  sheet.row(index+1).push glider.double_seater ? 'X' : ''
+  format_row sheet.row(index+1), format
+end

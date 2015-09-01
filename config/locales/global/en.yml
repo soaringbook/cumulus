@@ -29,6 +29,9 @@ en:
       edit: 'Edit'
       new: 'Add'
       delete: 'Delete'
+      export:
+        pdf: 'Export PDF'
+        xls: 'Export Excel'
 
     errors:
       labels:
