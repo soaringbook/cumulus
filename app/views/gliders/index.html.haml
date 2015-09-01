@@ -9,7 +9,6 @@
     = panel do
       = panel_heading t('global.titles.overview') do
         = export_tag do
-          = export_pdf_to ''
           = export_xls_to gliders_path(format: :xls)
         = add_link_to new_glider_path
       = panel_body do
