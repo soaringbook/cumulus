@@ -38,8 +38,8 @@ describe GlidersController do
       end
 
       context 'Strong params' do
-        it { should permit(:immatriculation, :name, :self_launching, :double_seater, :avatar).for(:create) }
-        it { should permit(:immatriculation, :name, :self_launching, :double_seater, :avatar).for(:update, params: { id: glider.id }) }
+        it { should permit(:immatriculation, :name, :self_launching, :double_seater, :avatar, :remove_avatar).for(:create) }
+        it { should permit(:immatriculation, :name, :self_launching, :double_seater, :avatar, :remove_avatar).for(:update, params: { id: glider.id }) }
       end
     end
 

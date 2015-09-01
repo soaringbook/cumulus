@@ -11,13 +11,13 @@ class AvatarUploader < CarrierWave::Uploader::Base
   end
 
   def default_url
-    ActionController::Base.helpers.asset_path([model.class.to_s.underscore, "default.png"].compact.join('_'))
+    ActionController::Base.helpers.asset_path([model.class.to_s.underscore, 'default.png'].compact.join('_'))
   end
 
   process convert: 'jpg'
 
   version :thumb do
-    process :resize_to_fit => [128, 128]
+    process resize_to_fill: [128, 128]
   end
 
   def extension_white_list
@@ -25,6 +25,6 @@ class AvatarUploader < CarrierWave::Uploader::Base
   end
 
   def filename
-    "avatar.jpg" if original_filename
+    'avatar.jpg' if original_filename
   end
 end
