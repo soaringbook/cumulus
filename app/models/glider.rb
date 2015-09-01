@@ -1,6 +1,9 @@
 class Glider < ActiveRecord::Base
   include Searchable
 
+  extend FriendlyId
+  friendly_id :immatriculation, use: :slugged
+
   belongs_to :club
 
   validates :immatriculation, presence: true, uniqueness: true

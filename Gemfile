@@ -46,6 +46,10 @@ gem "gretel", "~> 3.0.8"
 # [kaminari](https://github.com/amatsuda/kaminari)
 gem "kaminari", "~> 0.16.3"
 
+# FriendlyId is the "Swiss Army bulldozer" of slugging and permalink plugins f
+# [friendly_id](http://github.com/norman/friendly_id)
+gem "friendly_id", "~> 5.1.0"
+
 # Call JavaScript code and manipulate JavaScript objects from Ruby. Call Ruby
 # [therubyracer](http://github.com/cowboyd/therubyracer)
 gem 'therubyracer', '~> 0.12.2'
