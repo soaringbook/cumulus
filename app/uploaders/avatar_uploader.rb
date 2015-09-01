@@ -11,7 +11,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
   end
 
   def default_url
-    ActionController::Base.helpers.asset_path([model.class.to_s.underscore, 'default.png'].compact.join('_'))
+    ActionController::Base.helpers.asset_path([model.class.to_s.underscore, version_name, 'default.png'].compact.join('_'))
   end
 
   process convert: 'jpg'
