@@ -15,4 +15,16 @@ describe Glider do
   context 'Associations' do
     it { should belong_to(:club) }
   end
+
+  context 'Searching' do
+    it 'should find a glider by name' do
+      create(:glider, name: 'Some name')
+      expect(Glider.search('me n').count).to eq(1)
+    end
+
+    it 'should find a glider by immatriculation' do
+      create(:glider, immatriculation: 'OO-YDB')
+      expect(Glider.search('DB').count).to eq(1)
+    end
+  end
 end
