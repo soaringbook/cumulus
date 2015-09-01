@@ -17,7 +17,7 @@
               = f.input :avatar
             - if @glider.avatar.file
               .col-sm-6
-                = avatar_image_tag @glider.avatar, :thumb
+                = avatar_image_tag @glider.avatar, :thumb, class: 'lazy'
                 = checkbox_tag f, :remove_avatar
 
           %hr

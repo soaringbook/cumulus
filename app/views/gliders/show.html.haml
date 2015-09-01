@@ -9,7 +9,7 @@
     = widget do
       = widget_header do
         %span.avatar.avatar-lg
-          = avatar_image_tag @glider.avatar, :thumb
+          = avatar_image_tag @glider.avatar, :thumb, class: 'lazy'
         %h4.profile-user= @glider.immatriculation
         %p.profile-job= @glider.name
       = widget_footer do

@@ -27,7 +27,7 @@
                 - @gliders.each do |glider|
                   %tr
                     %td
-                      %span.avatar= avatar_image_tag glider.avatar, :thumb, height: 40
+                      %span.avatar= avatar_image_tag glider.avatar, :thumb, height: 40, class: 'img img-rounded lazy'
                       = link_to glider.immatriculation, glider
                     %td= glider.name
                     %td= boolean_tag glider.self_launching
