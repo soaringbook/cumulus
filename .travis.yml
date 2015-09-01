@@ -6,6 +6,8 @@ branches:
 addons:
   postgresql: '9.3'
 
+script: xvfb-run rspec
+
 before_script:
   - cp config/database.yml.travis config/database.yml
   - psql -c 'create database cumulus_test;' -U postgres
