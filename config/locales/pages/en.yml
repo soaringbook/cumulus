@@ -7,3 +7,5 @@ en:
       titles:
         index: 'Gliders'
         new: 'Add a new glider'
+        edit: 'Edit glider %{immatriculation}'
+        general_information: 'General information'
