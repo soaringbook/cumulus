@@ -1,7 +1,5 @@
-%h1 Editing glider
+- breadcrumb :glider, @glider, true
+
+- content_for :title, t('pages.gliders.titles.new')
 
 = render 'form'
-
-= link_to 'Show', @glider
-\|
-= link_to 'Back', gliders_path

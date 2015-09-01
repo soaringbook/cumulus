@@ -9,14 +9,14 @@ class GlidersController < ApplicationController
   end
 
   def new
-    @glider = Glider.new
+    @glider = current_club.gliders.new
   end
 
   def edit
   end
 
   def create
-    @glider = Glider.new(glider_params)
+    @glider = current_club.gliders.new(glider_params)
 
     if @glider.save
       redirect_to @glider, notice: 'Glider was successfully created.'
@@ -41,7 +41,7 @@ class GlidersController < ApplicationController
   private
 
   def set_glider
-    @glider = Glider.find(params[:id])
+    @glider = current_club.gliders.friendly.find(params[:id])
   end
 
   def glider_params

@@ -7,5 +7,3 @@ en:
       titles:
         index: 'Gliders'
         new: 'Add a new glider'
-      breadcrumbs:
-        new: 'Add'
