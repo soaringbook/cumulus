@@ -6,9 +6,13 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_pilot!
   before_action :set_locale
 
+  ## Locale
+
   def set_locale
     I18n.locale = current_pilot.try(:locale) || I18n.default_locale
   end
+
+  ## Club
 
   def current_club
     current_pilot.try :club
