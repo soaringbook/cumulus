@@ -38,9 +38,9 @@ gem 'simple_form', '~> 3.1.0'
 # [haml-rails](http://github.com/indirect/haml-rails)
 gem 'haml-rails', '~> 0.9.0'
 
-# BreadcrumbsOnRails is a simple Ruby on Rails plugin for creating and managin
-# [breadcrumbs_on_rails](http://www.simonecarletti.com/code/breadcrumbs_on_rails)
-gem "breadcrumbs_on_rails", "~> 2.3.1"
+# Gretel is a Ruby on Rails plugin that makes it easy yet flexible to create b
+# [gretel](http://github.com/lassebunk/gretel)
+gem "gretel", "~> 3.0.8"
 
 # Call JavaScript code and manipulate JavaScript objects from Ruby. Call Ruby
 # [therubyracer](http://github.com/cowboyd/therubyracer)
