@@ -7,7 +7,7 @@ module FlashHelper
     end
   end
 
-  def flash_tag text, success = true
+  def flash_tag(text, success = true)
     icon_class = success ? 'check' : 'close'
     alert_class = success ? 'success' : 'danger'
     content_tag :div, class: "alert alert-icon alert-#{alert_class} alert-dismissible", role: 'alert' do
