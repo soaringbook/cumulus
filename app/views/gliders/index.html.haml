@@ -1,4 +1,6 @@
 - content_for :title, t('pages.gliders.titles.index')
+- content_for :actions do
+  = search_form_tag gliders_path
 
 .row
   .col-lg-12
