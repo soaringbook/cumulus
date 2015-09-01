@@ -8,6 +8,9 @@
   .col-lg-12
     = panel do
       = panel_heading t('global.titles.overview') do
+        = export_tag do
+          = export_pdf_to ''
+          = export_xls_to ''
         = add_link_to new_glider_path
       = panel_body do
         .table-responsive
