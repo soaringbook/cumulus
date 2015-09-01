@@ -16,4 +16,16 @@ module LinkHelper
       content_tag :i, nil, class: 'icon wb-close', aria: { hidden: 'true' }
     end
   end
+
+  def edit_action_link_to path
+    link_to path, class: 'btn btn-sm btn-icon btn-inverse btn-round', data: { toggle: 'tooltip', 'original-title' => t('global.links.edit') } do
+      content_tag :i, nil, class: 'icon wb-wrench', aria: { hidden: 'true' }
+    end
+  end
+
+  def show_action_link_to path
+    link_to path, class: 'btn btn-sm btn-icon btn-inverse btn-round', data: { toggle: 'tooltip', 'original-title' => t('global.links.edit') } do
+      content_tag :i, nil, class: 'icon wb-eye', aria: { hidden: 'true' }
+    end
+  end
 end
