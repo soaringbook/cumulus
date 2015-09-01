@@ -4,17 +4,19 @@
 - content_for :actions do
   = edit_action_link_to edit_glider_path(@glider)
 
-.row
-  .col-lg-6
-    = panel do
-      = panel_heading t('pages.gliders.titles.general_information')
-      = panel_body do
-        %dl.dl-horizontal
-          %dt= Glider.human_attribute_name('immatriculation')
-          %dd= @glider.immatriculation
-          %dt= Glider.human_attribute_name('name')
-          %dd= @glider.name
-          %dt= Glider.human_attribute_name('self_launching')
-          %dd= boolean_tag @glider.self_launching
-          %dt= Glider.human_attribute_name('double_seater')
-          %dd= boolean_tag @glider.double_seater
+.row.page-profile
+  .col-lg-3
+    = widget do
+      = widget_header do
+        %span.avatar.avatar-lg
+          = avatar_image_tag @glider.avatar, :thumb, class: 'lazy'
+        %h4.profile-user= @glider.immatriculation
+        %p.profile-job= @glider.name
+      = widget_footer do
+        .row.no-space
+          .col-xs-6
+            %strong.profile-stat-count N/A
+            %span= t('pages.gliders.labels.flights', count: 1)
+          .col-xs-6
+            %strong.profile-stat-count N/A
+            %span= t('pages.gliders.labels.hours', count: 100)

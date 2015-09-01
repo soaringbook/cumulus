@@ -5,6 +5,20 @@
         = simple_form_for @glider, wrapper: :vertical_form do |f|
           = f.input :immatriculation, required: false, autofocus: true
           = f.input :name,            required: false
-          = checkbox_tag f, :double_seater
-          = checkbox_tag f, :self_launching
+          .row
+            .col-sm-6
+              = checkbox_tag f, :double_seater
+            .col-sm-6
+              = checkbox_tag f, :self_launching
+
+          %hr
+          .row
+            .col-sm-6
+              = f.input :avatar
+            - if @glider.avatar.file
+              .col-sm-6
+                = avatar_image_tag @glider.avatar, :thumb, class: 'lazy'
+                = checkbox_tag f, :remove_avatar
+
+          %hr
           = f.submit class: 'btn btn-primary'

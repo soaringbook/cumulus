@@ -9,3 +9,12 @@ en:
         new: 'Add a new glider'
         edit: 'Edit glider %{immatriculation}'
         general_information: 'General information'
+        image: 'Image'
+      labels:
+        empty: 'No gliders found'
+        flights:
+          one: 'Flight'
+          other: 'Flights'
+        hours:
+          one: 'Hour'
+          other: 'Hours'

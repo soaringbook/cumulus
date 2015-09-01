@@ -17,6 +17,10 @@
 //= require jquery_ujs
 // require turbolinks
 //= require retina_tag
+//= require jquery.lazyload
+//
+//= require foundation/foundation
+//= require foundation/foundation.interchange
 //
 //= require remark/vendor/bootstrap/bootstrap
 //= require remark/vendor/asscroll/jquery-asScroll
@@ -49,5 +53,9 @@
   var Site = window.Site;
   $(document).ready(function() {
     Site.run();
+  });
+
+  $("img.lazy").show().lazyload({ 
+    effect : "fadeIn"
   });
 })(document, window, jQuery);

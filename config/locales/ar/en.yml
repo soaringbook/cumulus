@@ -10,3 +10,5 @@ en:
         name: 'Type'
         self_launching: 'Self Launching'
         double_seater: 'Double Seater'
+        avatar: 'Image'
+        remove_avatar: 'Remove the image'

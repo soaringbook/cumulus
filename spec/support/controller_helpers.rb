@@ -19,9 +19,15 @@ module ControllerHelpers
     yield
     render_template template_name
   end
+
+  def press_enter
+    keypress = "var e = $.Event('keydown', { keyCode: 13 }); $('body').trigger(e);"
+    page.driver.execute_script(keypress)
+  end
 end
 
 RSpec.configure do |config|
   config.include Devise::TestHelpers, type: :controller
   config.include ControllerHelpers,   type: :controller
+  config.include ControllerHelpers,   type: :feature
 end

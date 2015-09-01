@@ -14,6 +14,7 @@
  *= require bootstrap
  *= require bootstrap-extend
  *= require site
+ *= require profile
  *
  *** Plugins
  *= require vendor/animsition
@@ -44,6 +45,16 @@
 
 .table .no-records-found {
   text-align: center;
+}
+
+.table .avatar,
+.table td .img-rounded {
+  margin-right: 0.5em;
+}
+
+.table .avatar,
+.table > tbody > tr > td {
+  vertical-align: middle;
 }
 
 /* Better description styling. */
