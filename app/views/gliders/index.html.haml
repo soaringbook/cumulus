@@ -1,14 +1,14 @@
 - content_for :title, t('pages.gliders.titles.index')
-- content_for :actions do
-  = link_to new_glider_path, class: 'btn btn-sm btn-default btn-outline btn-round' do
-    %i.icon.wb-plus{ aria: { hidden: 'true' } }
-    %span.hidden-xs= t 'global.links.new'
 
 .row
   .col-lg-12
     .panel
       %header.panel-heading
         %h3.panel-title= t 'global.titles.overview'
+        .panel-actions
+          = link_to new_glider_path, class: 'btn btn-sm btn-icon btn-flat btn-default', data: { toggle: 'tooltip', 'original-title' => t('global.links.new') } do
+            %i.icon.wb-plus{ aria: { hidden: 'true' } }
+
       .panel-body
         %table.table.table-responsive
           %thead
