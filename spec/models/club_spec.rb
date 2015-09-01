@@ -13,7 +13,7 @@ describe Club do
   end
 
   context 'Associations' do
-    it { should have_many(:pilots) }
-    it { should have_many(:gliders) }
+    it { should have_many(:pilots).dependent(:destroy) }
+    it { should have_many(:gliders).dependent(:destroy) }
   end
 end
