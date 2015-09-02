@@ -4,4 +4,12 @@ class ImportObject
   attribute :csv
 
   validates :csv, presence: true
+  validate :validate_file_format
+
+  def validate_file_format
+    return unless filename = csv.try(:original_filename)
+    unless filename =~ /\.(csv)\z/i
+      errors.add(:csv, I18n.t('pages.import.upload.errors.incorrect_format'))
+    end
+  end
 end

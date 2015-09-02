@@ -82,6 +82,10 @@ gem "active_attr", "~> 0.8.5"
 # [wicked](https://github.com/schneems/wicked)
 gem "wicked", "~> 1.2.1"
 
+# Unobtrusive nested forms handling, using jQuery. Use this and discover cocoo
+# [cocoon](http://github.com/nathanvda/cocoon)
+gem "cocoon", "~> 1.2.6"
+
 group :development, :test do
   # Faker, a port of Data::Faker from Perl, is used to easily generate fake data
   # [faker](https://github.com/stympy/faker)

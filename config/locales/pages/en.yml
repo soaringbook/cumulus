@@ -18,6 +18,8 @@ en:
         hours:
           one: 'Hour'
           other: 'Hours'
+      buttons:
+        import: 'Import gliders'
       filename:
         xls: '%{timestamp}-gliders-export'
 
@@ -26,10 +28,28 @@ en:
       steps:
         upload: 'Upload'
         review: 'Review'
-        result: 'Done'
+        result: 'Finish'
       upload:
         help:
           title: 'How to upload?'
           select_text: "Select a 'comma seperated value' file that contains a list of gliders. You can find more information on this format on %{link}"
           format_text: "For the glider batch import you need a <mark>CSV</mark> file in the following format:"
+        errors:
+          no_record: 'No valid records found'
+          incorrect_format: 'The file format should ne .csv'
+      review:
+        new: 'Add record'
+        edit: 'Update record'
+        ignore: 'Ignore record'
+        valid_title: 'Valid records'
+        valid_text: 'The records below are valid and will be added to the database on import.'
+        invalid_title: 'Invalid records'
+        invalid_text: 'The records below are invalid and will be ignored on import.'
+        import_text: 'Please review the records above and when everything is correct, you can import the valid records.'
+      result:
+        title: 'Import finished'
+        failed: 'Failed records'
+        text: 'The records below are correctly imported into Soaring Book.'
+        failed_text: 'These records were not imported due to some errors. Please try to import them manually.'
+        overview: 'Back to the overview'
 

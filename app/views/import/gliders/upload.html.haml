@@ -19,12 +19,12 @@
             %pre.well
               = preserve do
                 :escaped
-                  immatriculation, type, self_launching, double_seater
-                  OO-YDV, ASW-19 WL, ,
-                  OO-KDB, Janus CT, , X
-                  PH-1496, Arcus M, X , X
+                  immatriculation, name, self_launching, double_seater
+                  OO-YDV, ASW-19 WL, false, false
+                  OO-KDB, Janus CT, false, true
+                  PH-1496, Arcus M, true , true
 
           .col-sm-6
             = simple_form_for @import_object, url: wizard_path, method: :put, wrapper: :vertical_form do |f|
-              = f.input :csv, as: :file, required: false
+              = f.input :csv, as: :file, required: false, accept: "text/csv"
               = f.submit class: 'btn btn-primary'

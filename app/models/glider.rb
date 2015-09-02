@@ -1,5 +1,6 @@
 class Glider < ActiveRecord::Base
   include Searchable
+  include Importable
 
   extend FriendlyId
   friendly_id :immatriculation, use: :slugged
@@ -15,6 +16,10 @@ class Glider < ActiveRecord::Base
   default_scope { order('gliders.immatriculation') }
 
   def self.searchable_fields
-    [:name, :immatriculation]
+    %i(immatriculation name)
+  end
+
+  def self.importable_fields
+    %w(immatriculation name self_launching double_seater)
   end
 end

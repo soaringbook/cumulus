@@ -70,6 +70,7 @@ GEM
       carrierwave
       fog
       uuidtools
+    cocoon (1.2.6)
     codeclimate-test-reporter (0.4.7)
       simplecov (>= 0.7.1, < 1.0.0)
     coderay (1.1.0)
@@ -421,6 +422,7 @@ DEPENDENCIES
   capybara-email (~> 2.4.0)
   capybara-webkit (~> 1.7.0)
   carrierwave_direct (~> 0.0.15)
+  cocoon (~> 1.2.6)
   codeclimate-test-reporter (~> 0.4.7)
   coffee-rails (~> 4.1.0)
   database_cleaner (~> 1.4.1)
