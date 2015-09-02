@@ -6,9 +6,9 @@ class GlidersController < ApplicationController
 
     respond_to do |format|
       format.html { @gliders = @gliders.page(params[:page]) }
-      format.xls  {
-        render xls: t('pages.gliders.filename.xls', timestamp: l(Time.now,format: :export)) 
-      }
+      format.xls  do
+        render xls: t('pages.gliders.filename.xls', timestamp: l(Time.now, format: :export))
+      end
     end
   end
 

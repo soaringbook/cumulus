@@ -3,6 +3,10 @@ en:
     "yes": 'Yes'
     "no": 'No'
 
+    labels:
+      import_object:
+        csv: 'Select your CSV file'
+
     placeholders:
       pilot:
         email: 'Email'

@@ -1,4 +1,12 @@
 module TagHelper
+  def title_tag(title, icon)
+    content_tag :h4 do
+      content = content_tag :i, nil, class: "icon #{icon}"
+      content << title.upcase
+      content
+    end
+  end
+
   def avatar_image_tag(avatar, version, options = {})
     non_retina = "#{avatar.url(version, :non_retina)} 1x"
     retina = "#{avatar.url(version, :retina)} 2x"

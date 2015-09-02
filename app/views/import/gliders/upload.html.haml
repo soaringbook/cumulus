@@ -1,0 +1,30 @@
+- breadcrumb :import_gliders
+
+- content_for :title, t('pages.import.title')
+
+.row
+  .col-lg-12
+    = panel do
+      = panel_body do
+        = wizard_tag do
+          = wizard_pearl_tag t('pages.import.steps.upload'), 'wb-upload', true
+          = wizard_pearl_tag t('pages.import.steps.review'), 'wb-inbox'
+          = wizard_pearl_tag t('pages.import.steps.result'), 'wb-check'
+
+        .row
+          .col-sm-6
+            = title_tag t('pages.import.upload.help.title'), 'wb-help-circle'
+            %p= t('pages.import.upload.help.select_text', link: link_to('Wikipedia', 'https://en.wikipedia.org/wiki/Comma-separated_values')).html_safe
+            %p= t('pages.import.upload.help.format_text').html_safe
+            %pre.well
+              = preserve do
+                :escaped
+                  immatriculation, name, self_launching, double_seater
+                  OO-YDV, ASW-19 WL, false, false
+                  OO-KDB, Janus CT, false, true
+                  PH-1496, Arcus M, true , true
+
+          .col-sm-6
+            = simple_form_for @import_object, url: wizard_path, method: :put, wrapper: :vertical_form do |f|
+              = f.input :csv, as: :file, required: false, accept: "text/csv"
+              = f.submit class: 'btn btn-primary'

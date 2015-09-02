@@ -29,6 +29,12 @@ module LinkHelper
     end
   end
 
+  def import_link_to(path)
+    link_to path, class: 'btn btn-sm btn-icon btn-flat btn-default', data: { toggle: 'tooltip', 'original-title' => t('global.links.import') } do
+      content_tag :i, nil, class: 'icon wb-upload', aria: { hidden: 'true' }
+    end
+  end
+
   def export_tag(&_block)
     content_tag :div, class: 'dropdown' do
       content = link_to '#', class: 'dropdown-toggle btn btn-sm btn-icon btn-flat btn-default', data: { toggle: 'dropdown' } do

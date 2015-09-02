@@ -1,0 +1,54 @@
+- breadcrumb :import_gliders
+
+- content_for :title, t('pages.import.title')
+
+.row
+  .col-lg-12
+    = panel do
+      = panel_body do
+        = wizard_tag do
+          = wizard_pearl_tag t('pages.import.steps.upload'), 'wb-upload', true
+          = wizard_pearl_tag t('pages.import.steps.review'), 'wb-inbox',  true
+          = wizard_pearl_tag t('pages.import.steps.result'), 'wb-check',  true
+
+        .row
+          .col-sm-12
+            - if @gliders.count > 0
+              = title_tag t('pages.import.result.title'), 'wb-check'
+              %p= t('pages.import.result.text')
+              .table-responsive
+                %table.table
+                  %thead
+                    %tr
+                      %th= Glider.human_attribute_name('immatriculation')
+                      %th= Glider.human_attribute_name('name')
+                      %th= Glider.human_attribute_name('self_launching')
+                      %th= Glider.human_attribute_name('double_seater')
+                  %tbody
+                    - @gliders.each do |glider|
+                      %tr
+                        %td= glider.immatriculation
+                        %td= glider.name
+                        %td= boolean_tag glider.self_launching
+                        %td= boolean_tag glider.double_seater
+
+            - if @failed_gliders.count > 0
+              = title_tag t('pages.import.result.failed'), 'wb-close'
+              %p= t('pages.import.result.failed_text')
+              .table-responsive
+                %table.table
+                  %thead
+                    %tr
+                      %th= Glider.human_attribute_name('immatriculation')
+                      %th= Glider.human_attribute_name('name')
+                      %th= Glider.human_attribute_name('self_launching')
+                      %th= Glider.human_attribute_name('double_seater')
+                  %tbody
+                    - @failed_gliders.each do |glider|
+                      %tr
+                        %td= glider.immatriculation
+                        %td= glider.name
+                        %td= boolean_tag glider.self_launching
+                        %td= boolean_tag glider.double_seater
+
+            = link_to t('pages.import.result.overview'), gliders_path, class: 'btn btn-primary btn-outline pull-right'

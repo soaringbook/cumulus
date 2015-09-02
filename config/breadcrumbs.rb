@@ -26,3 +26,8 @@ crumb :glider do |glider, editable|
   end
   parent :gliders
 end
+
+crumb :import_gliders do
+  link I18n.t('global.links.import'), import_gliders_path
+  parent :gliders
+end

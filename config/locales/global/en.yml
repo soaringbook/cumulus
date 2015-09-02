@@ -29,6 +29,7 @@ en:
       edit: 'Edit'
       new: 'Add'
       delete: 'Delete'
+      import: 'Batch Import'
       export:
         pdf: 'Export PDF'
         xls: 'Export Excel'
