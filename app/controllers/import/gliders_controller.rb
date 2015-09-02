@@ -14,22 +14,28 @@ module Import
     def update
       case step
       when :upload
-        @import_object = ImportObject.new params[:import_object]
-        if @import_object.valid?
-          gliders = Glider.import_file(params[:import_object][:csv], current_club)
-          if gliders.count > 0
-            @valid_gliders = gliders.select(&:valid?)
-            @invalid_gliders = gliders.select(&:invalid?)
-            render(:review) && return
-          else
-            @import_object.errors.add(:csv, I18n.t('pages.import.upload.errors.no_record'))
-          end
-        end
+        handle_upload
       when :result
-        @gliders, @failed_gliders = Glider.import(params[:review][:records], current_club)
-        render(:result) && return
+        handle_result
       end
-      render_wizard
+    end
+
+    private
+
+    def handle_upload
+      service = ImportService.new(Glider, params[:import_object])
+      if service.validate_for current_club
+        @valid_gliders, @invalid_gliders = service.records
+        render(:review)
+      else
+        @import_object = service.object
+        render_wizard
+      end
+    end
+
+    def handle_result
+      @gliders, @failed_gliders = Glider.import(params[:review][:records], current_club)
+      render(:result)
     end
   end
 end
