@@ -20,3 +20,11 @@ en:
           other: 'Hours'
       filename:
         xls: '%{timestamp}-gliders-export'
+
+    import:
+      title: 'Import from CSV'
+      steps:
+        upload: 'Upload'
+        review: 'Review'
+        result: 'Done'
+

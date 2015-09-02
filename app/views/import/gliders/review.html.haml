@@ -1,0 +1,15 @@
+- breadcrumb :import_gliders
+
+- content_for :title, t('pages.import.title')
+
+.row
+  .col-lg-12
+    = panel do
+      = panel_body do
+        = wizard_tag do
+          = wizard_pearl_tag t('pages.import.steps.upload'), 'wb-upload', true
+          = wizard_pearl_tag t('pages.import.steps.review'), 'wb-inbox', true
+          = wizard_pearl_tag t('pages.import.steps.result'), 'wb-check'
+
+        = link_to 'skip', next_wizard_path
+

@@ -15,6 +15,9 @@ Rails.application.routes.draw do
     root 'dashboard#index', as: :authenticated_root
   end
 
+  namespace :import do
+    resources :gliders
+  end
   resources :gliders
 
   %w(404 422 500 503).each do |code|
