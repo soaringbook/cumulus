@@ -8,6 +8,12 @@ AllCops:
     - 'config/**/*'
     - 'scripts/profile.rb'
 
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/MethodLength:
+  Enabled: false
+
 Metrics/LineLength:
   Enabled: false
 
