@@ -23,7 +23,7 @@ module Import
     private
 
     def handle_upload
-      service = ImportService.new(Glider, params[:import_object])
+      service = ImportService.new(Glider, upload_params)
       if service.validate_for current_club
         @valid_gliders, @invalid_gliders = service.records
         render(:review)
@@ -36,6 +36,10 @@ module Import
     def handle_result
       @gliders, @failed_gliders = Glider.import(params[:review][:records], current_club)
       render(:result)
+    end
+
+    def upload_params
+      params.require(:import_object).permit(:csv)
     end
   end
 end
