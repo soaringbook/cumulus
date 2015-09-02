@@ -1,5 +1,5 @@
 module TagHelper
-  def title_tag title, icon
+  def title_tag(title, icon)
     content_tag :h4 do
       content = content_tag :i, nil, class: "icon #{icon}"
       content << title.upcase

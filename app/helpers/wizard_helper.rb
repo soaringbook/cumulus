@@ -1,11 +1,11 @@
 module WizardHelper
-  def wizard_tag &block
+  def wizard_tag(&_block)
     content_tag :div, class: 'pearls row' do
       yield
     end
   end
 
-  def wizard_pearl_tag title, icon, finished = false
+  def wizard_pearl_tag(title, icon, finished = false)
     done_class = finished ? ' done' : ''
     content_tag :div, class: "pearl col-xs-4 #{done_class}", aria: { expanded: 'false' } do
       content = content_tag :div, class: 'pearl-icon' do

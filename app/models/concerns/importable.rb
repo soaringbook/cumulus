@@ -8,15 +8,15 @@ module Importable
       gliders = []
       CSV.foreach(file.path, headers: true) do |row|
         # Lookup a glider with an existing immatriculation.
-        glider = where(immatriculation: row["immatriculation"]).first_or_initialize
+        glider = where(immatriculation: row['immatriculation']).first_or_initialize
 
         # Strip the key and value fields.
-        hash = row.to_hash.each_with_object({}) do |(key, value), hash|
+        row_hash = row.to_hash.each_with_object({}) do |(key, value), hash|
           hash[key.strip] = value.try :strip
         end
 
         # Update the attributes.
-        glider.attributes = hash.slice(*importable_fields)
+        glider.attributes = row_hash.slice(*importable_fields)
         glider.club = club
         gliders << glider
       end
@@ -46,7 +46,7 @@ module Importable
         end
       end
 
-      return gliders, failed_gliders
+      [gliders, failed_gliders]
     end
   end
 end
