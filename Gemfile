@@ -74,6 +74,10 @@ gem 'retina_tag', '~> 1.3.1'
 # [spreadsheet_on_rails](https://github.com/10to1/spreadsheet_on_rails)
 gem "spreadsheet_on_rails", "~> 1.0.0"
 
+# Create plain old ruby models without reinventing the wheel.
+# [active_attr](https://github.com/cgriego/active_attr)
+gem "active_attr", "~> 0.8.5"
+
 # Wicked is a Rails engine for producing easy wizard controllers
 # [wicked](https://github.com/schneems/wicked)
 gem "wicked", "~> 1.2.1"

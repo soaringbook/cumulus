@@ -21,6 +21,9 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.2)
+    active_attr (0.8.5)
+      activemodel (>= 3.0.2, < 5.0)
+      activesupport (>= 3.0.2, < 5.0)
     activejob (4.2.3)
       activesupport (= 4.2.3)
       globalid (>= 0.3.0)
@@ -412,6 +415,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_attr (~> 0.8.5)
   bullet (~> 4.14.7)
   capybara (~> 2.4.4)
   capybara-email (~> 2.4.0)

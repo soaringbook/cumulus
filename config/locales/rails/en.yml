@@ -143,6 +143,8 @@ en:
       create: Add %{model}
       submit: Save %{model}
       update: Update %{model}
+      import_object:
+        create: 'Upload'
   number:
     currency:
       format:
