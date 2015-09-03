@@ -5,31 +5,36 @@ describe ImportService do
 
   context 'Gliders' do
     it 'should not validate invalid file.' do
-      service = ImportService.new(Glider, { csv: nil })
+      service = ImportService.new(Glider, csv: nil)
       expect(service.validate_for(club)).to be_falsy
     end
 
     it 'should not validate file without records.' do
-      service = create_service_with 'immatriculation, name'
+      service = create_service_with 'gliders_empty'
       expect(service.validate_for(club)).to be_falsy
     end
 
     it 'should validate file with records.' do
-      service = create_service_with 'immatriculation, name\noo-kdb,janus\noo-ydv,asw19'
+      service = create_service_with 'gliders_all_valid'
       expect(service.validate_for(club)).to be_truthy
     end
 
     it 'should return records.' do
-      service = create_service_with 'immatriculation, name\noo-kdb,janus\noo-ydv,asw19\noo-bla,'
-      valid_records, invalid_records = service.validate_for(club)
-      expect(valid_records.count).to eq(2)
-      expect(valid_records.count).to eq(1)
+      service = create_service_with 'gliders_some_valid'
+      expect(service.validate_for(club)).to be_truthy
+      expect(service.valid_records.count).to eq(2)
+      expect(service.invalid_records.count).to eq(1)
     end
   end
 
-  def create_service_with content
-    file = instance_double(ActionDispatch::Http::UploadedFile, original_filename: 'blabla.csv', tempfile: StringIO.new(content))
-    ImportService.new(Glider, { csv: file })
+  private
+
+  def create_service_with(filename)
+    file = nil
+    if filename
+      path = File.dirname(__FILE__) + "/../fixtures/#{filename}.csv"
+      file = File.new(path, 'r')
+    end
+    ImportService.new(Glider, csv: file)
   end
 end
-
