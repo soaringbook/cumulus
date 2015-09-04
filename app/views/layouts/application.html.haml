@@ -27,6 +27,7 @@
     = render partial: 'layouts/grid_navigation'
 
     .page
+      = render partial: 'layouts/ribbon'
       .page-header
         %h1.page-title= yield(:title)
         = breadcrumbs style: :ol, class: 'breadcrumb', current_class: 'active'
