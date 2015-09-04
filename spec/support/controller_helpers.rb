@@ -20,14 +20,13 @@ module ControllerHelpers
     render_template template_name
   end
 
-  def press_enter
-    keypress = "var e = $.Event('keydown', { keyCode: 13 }); $('body').trigger(e);"
-    page.driver.execute_script(keypress)
+  def csv_upload(filename)
+    path = File.join(Rails.root, "spec/fixtures/#{filename}.csv")
+    fixture_file_upload(path)
   end
 end
 
 RSpec.configure do |config|
   config.include Devise::TestHelpers, type: :controller
   config.include ControllerHelpers,   type: :controller
-  config.include ControllerHelpers,   type: :feature
 end

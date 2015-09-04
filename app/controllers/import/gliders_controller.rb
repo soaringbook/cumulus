@@ -8,12 +8,12 @@ module Import
 
     def show
       @import_object = ImportObject.new
-      render_wizard
+      render(:upload)
     end
 
     def update
       case step
-      when :upload
+      when :review
         handle_upload
       when :result
         handle_result
@@ -23,13 +23,13 @@ module Import
     private
 
     def handle_upload
-      service = ImportService.new(Glider, params)
+      service = ImportService.new(Glider, params[:import_object])
       if service.validate_for current_club
         @valid_gliders, @invalid_gliders = service.records
         render(:review)
       else
         @import_object = service.object
-        render_wizard
+        render(:upload)
       end
     end
 

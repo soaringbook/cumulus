@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   end
 
   namespace :import do
-    resources :gliders
+    resources :gliders, only: [:index, :show, :update]
   end
   resources :gliders
 

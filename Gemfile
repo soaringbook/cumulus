@@ -115,6 +115,10 @@ group :test do
   # [rspec-rails](http://github.com/rspec/rspec-rails)
   gem 'rspec-rails', '~> 3.2.2'
 
+  # Launchy is helper class for launching cross-platform applications in a fire 
+  # [launchy](http://github.com/copiousfreetime/launchy)
+  gem "launchy", "~> 2.4.3"
+
   # Capybara is an integration testing tool for rack based web applications. It
   # [capybara](http://github.com/jnicklas/capybara)
   gem 'capybara', '~> 2.4.4'
