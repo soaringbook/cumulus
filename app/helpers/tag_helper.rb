@@ -8,7 +8,7 @@ module TagHelper
   end
 
   def avatar_image_tag(avatar, version, options = {})
-    non_retina = "#{avatar.url(version, :non_retina)} 1x"
+    non_retina = "#{avatar.url(version, :non_retina)}"
     retina = "#{avatar.url(version, :retina)} 2x"
     image_tag non_retina, options.merge(srcset: retina, class: 'img img-rounded')
   end
