@@ -12,3 +12,7 @@ en:
         double_seater: 'Double Seater'
         avatar: 'Image'
         remove_avatar: 'Remove the image'
+      pilot:
+        email: 'Email'
+        admin: 'Administrator'
+        glider_access: 'Gliders Access'

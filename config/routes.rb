@@ -10,19 +10,34 @@ Rails.application.routes.draw do
                             as: :pilot_registration
   end
 
+  ### Dashboard
+
   authenticated :pilot do
     # Make sure we don't get the authentication message when we didn't login.
     root 'dashboard#index', as: :authenticated_root
   end
+
+  ### Gliders
 
   namespace :import do
     resources :gliders, only: [:index, :show, :update]
   end
   resources :gliders
 
+  ### Pilots
+
+  resources :rights, only: :index
+  resources :pilots, only: [] do
+    resource :rights, only: [:edit, :update]
+  end
+
+  ### Errors
+
   %w(404 422 500 503).each do |code|
     get code, to: 'errors#show', code: code
   end
+
+  ### Root
 
   root to: redirect('/pilots/sign_in')
 end

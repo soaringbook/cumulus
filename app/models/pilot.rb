@@ -1,4 +1,6 @@
 class Pilot < ActiveRecord::Base
+  include Searchable
+
   belongs_to :club
 
   devise :database_authenticatable,
@@ -11,4 +13,14 @@ class Pilot < ActiveRecord::Base
   validates :club, presence: true
 
   accepts_nested_attributes_for :club
+
+  ### Access
+
+  enum glider_access: [:gliders_not_accessible, :gliders_readable, :gliders_writable]
+
+  ### Search
+
+  def self.searchable_fields
+    %i(email)
+  end
 end

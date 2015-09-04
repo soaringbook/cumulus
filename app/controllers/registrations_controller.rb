@@ -4,6 +4,7 @@ class RegistrationsController < Devise::RegistrationsController
   def build_resource(hash = nil)
     super
     resource.build_club unless resource.club
+    resource.admin = true
   end
 
   def sign_up_params

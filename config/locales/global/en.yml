@@ -17,6 +17,8 @@ en:
         dashboard: 'Dashboard'
         club: 'Club Area'
         gliders: 'Gliders'
+        admin: 'Admin Area'
+        rights: 'Access Rights'
         logout: 'Logout'
 
     titles:

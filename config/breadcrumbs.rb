@@ -6,6 +6,8 @@ crumb :dashboard do
   link I18n.t('pages.dashboard.title'), root_path
 end
 
+### Gliders
+
 crumb :gliders do
   link I18n.t('pages.gliders.titles.index'), gliders_path
 end
@@ -30,4 +32,18 @@ end
 crumb :import_gliders do
   link I18n.t('global.links.import'), import_gliders_path
   parent :gliders
+end
+
+### Rights
+
+crumb :rights do
+  link I18n.t('pages.rights.titles.index'), rights_path
+end
+
+crumb :pilot_rights do |pilot|
+  # TODO: Fix the pilot url when available.
+  link pilot.email, root_path
+  link I18n.t('global.links.edit'), edit_pilot_rights_path(pilot)
+
+  parent :rights
 end

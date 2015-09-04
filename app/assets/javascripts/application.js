@@ -58,4 +58,12 @@
   $("img.lazy").show().lazyload({ 
     effect : "fadeIn"
   });
+
+  $("#pilot_admin").on("change", function() {
+    if ($(this).prop("checked")) {
+      $('.section_access').slideUp();
+    } else {
+      $('.section_access').slideDown();
+    }
+  });
 })(document, window, jQuery);

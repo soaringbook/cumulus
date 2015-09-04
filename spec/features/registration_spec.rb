@@ -14,6 +14,7 @@ describe 'The registration flow', type: :feature do
     expect(Pilot.count).to eq(1)
     expect(Club.count).to eq(1)
     expect(Pilot.first.club.id).to eq(Club.first.id)
+    expect(Pilot.first.admin?).to be_truthy
   end
 
   it 'should fail to register a user' do
