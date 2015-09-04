@@ -39,3 +39,11 @@ end
 crumb :rights do
   link I18n.t('pages.rights.titles.index'), rights_path
 end
+
+crumb :pilot_rights do |pilot|
+  # TODO: Fix the pilot url when available.
+  link pilot.email, root_path
+  link I18n.t('global.links.edit'), edit_pilot_rights_path(pilot)
+
+  parent :rights
+end

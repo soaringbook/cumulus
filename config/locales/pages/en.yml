@@ -6,11 +6,18 @@ en:
     rights:
       titles:
         index: 'Rights'
+        edit: 'Edit rights for %{name}'
+      radio:
+        gliders_not_accessible: 'No access'
+        gliders_readable: 'Read access'
+        gliders_writable: 'Write access'
       labels:
         empty: 'No pilots found'
         readable: 'Read access'
         writable: 'Write access'
         no_access: 'No access'
+        admin_text: 'With administrator right the pilot will be able to access everything on Soaring Book.'
+        section_text: 'You can give seperate permission for each section.'
 
     gliders:
       titles:

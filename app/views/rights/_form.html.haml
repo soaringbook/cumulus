@@ -1,0 +1,25 @@
+.row
+  .col-sm-12
+    = panel do
+      = panel_body do
+        = simple_form_for @pilot, url: pilot_rights_path(@pilot), wrapper: :vertical_form do |f|
+          .row
+            .col-sm-12
+              %p= t('pages.rights.labels.admin_text')
+              = checkbox_tag f, :admin
+
+          %hr
+
+          .row
+            .col-sm-12
+              %p= t('pages.rights.labels.section_text')
+
+          .row
+            .col-sm-12
+              %h4= Pilot.human_attribute_name('glider_access').upcase
+              = radio_tag f, :glider_access, :gliders_not_accessible
+              = radio_tag f, :glider_access, :gliders_readable
+              = radio_tag f, :glider_access, :gliders_writable
+
+          %hr
+          = f.submit class: 'btn btn-primary'
