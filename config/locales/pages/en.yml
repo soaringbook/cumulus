@@ -3,6 +3,15 @@ en:
     dashboard:
       title: 'Your dashboard'
 
+    rights:
+      titles:
+        index: 'Rights'
+      labels:
+        empty: 'No pilots found'
+        readable: 'Read access'
+        writable: 'Write access'
+        no_access: 'No access'
+
     gliders:
       titles:
         index: 'Gliders'

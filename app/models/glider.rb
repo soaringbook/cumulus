@@ -15,9 +15,13 @@ class Glider < ActiveRecord::Base
 
   default_scope { order('gliders.immatriculation') }
 
+  ### Search
+
   def self.searchable_fields
     %i(immatriculation name)
   end
+
+  ### Import
 
   def self.importable_fields
     %w(immatriculation name self_launching double_seater)

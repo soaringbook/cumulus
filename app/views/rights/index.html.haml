@@ -1,0 +1,32 @@
+- breadcrumb :rights
+
+- content_for :title, t('pages.rights.titles.index')
+- content_for :actions do
+  = search_form_tag rights_path
+
+.row
+  .col-lg-12
+    = panel do
+      = panel_heading t('global.titles.overview')
+      = panel_body do
+        .table-responsive
+          %table.table
+            %thead
+              %tr
+                %th= Pilot.human_attribute_name('email')
+                %th= Pilot.human_attribute_name('admin')
+                %th= Pilot.human_attribute_name('gliders_access')
+                %th{ style: 'width: 8em' }
+            %tbody
+              - if @pilots.count == 0
+                %tr.no-records-found
+                  %td{ colspan: 4 }= t 'pages.rights.labels.empty'
+              - else
+                - @pilots.each do |pilot|
+                  %tr
+                    %td= pilot.email
+                    %td= boolean_tag pilot.admin?
+                    %td= rights_tag pilot.gliders_access, pilot.admin?
+                    %td
+                      = edit_link_to edit_pilot_rights_path(pilot)
+        = paginate @pilots
