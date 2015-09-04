@@ -8,18 +8,19 @@
               %p= t('pages.rights.labels.admin_text')
               = checkbox_tag f, :admin
 
-          %hr
+          .section_access{ style: "display: #{@pilot.admin? ? 'none' : 'block'}" }
+            %hr
 
-          .row
-            .col-sm-12
-              %p= t('pages.rights.labels.section_text')
+            .row
+              .col-sm-12
+                %p= t('pages.rights.labels.section_text')
 
-          .row
-            .col-sm-12
-              %h4= Pilot.human_attribute_name('glider_access').upcase
-              = radio_tag f, :glider_access, :gliders_not_accessible
-              = radio_tag f, :glider_access, :gliders_readable
-              = radio_tag f, :glider_access, :gliders_writable
+            .row
+              .col-sm-12
+                %h4= Pilot.human_attribute_name('glider_access').upcase
+                = radio_tag f, :glider_access, :gliders_not_accessible
+                = radio_tag f, :glider_access, :gliders_readable
+                = radio_tag f, :glider_access, :gliders_writable
 
           %hr
           = f.submit class: 'btn btn-primary'
