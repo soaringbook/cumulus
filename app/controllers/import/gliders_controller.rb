@@ -23,7 +23,7 @@ module Import
     private
 
     def handle_upload
-      service = ImportService.new(Glider, params)
+      service = ImportService.new(Glider, params[:import_object])
       if service.validate_for current_club
         @valid_gliders, @invalid_gliders = service.records
         render(:review)

@@ -18,17 +18,13 @@ describe Import::GlidersController do
 
         it do
           should render_template_name('review') {
-            path = File.dirname(__FILE__) + '/../../fixtures/gliders_all_valid.csv'
-            file = fixture_file_upload(path)
-            put :update, id: :review, import_object: { csv: file }
+            put :update, id: :review, import_object: { csv: csv_upload('gliders_all_valid') }
           }
         end
 
         it do
           should render_template_name('upload') {
-            path = File.dirname(__FILE__) + '/../../fixtures/gliders_empty.csv'
-            file = fixture_file_upload(path)
-            put :update, id: :review, import_object: { csv: file }
+            put :update, id: :review, import_object: { csv: csv_upload('gliders_empty') }
           }
         end
 
