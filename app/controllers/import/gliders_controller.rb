@@ -8,12 +8,12 @@ module Import
 
     def show
       @import_object = ImportObject.new
-      render_wizard
+      render(:upload)
     end
 
     def update
       case step
-      when :upload
+      when :review
         handle_upload
       when :result
         handle_result
@@ -29,7 +29,7 @@ module Import
         render(:review)
       else
         @import_object = service.object
-        render_wizard
+        render(:upload)
       end
     end
 
