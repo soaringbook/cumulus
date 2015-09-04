@@ -26,7 +26,7 @@ class GlidersController < ApplicationController
     @glider = current_club.gliders.new(glider_params)
 
     if @glider.save
-      redirect_to @glider, notice: 'Glider was successfully created.'
+      redirect_to @glider, notice: t('pages.gliders.labels.notices.create')
     else
       render :new
     end
@@ -34,7 +34,7 @@ class GlidersController < ApplicationController
 
   def update
     if @glider.update(glider_params)
-      redirect_to @glider, notice: 'Glider was successfully updated.'
+      redirect_to @glider, notice: t('pages.gliders.labels.notices.update')
     else
       render :edit
     end
@@ -42,7 +42,7 @@ class GlidersController < ApplicationController
 
   def destroy
     @glider.destroy
-    redirect_to gliders_url, notice: 'Glider was successfully destroyed.'
+    redirect_to gliders_url, notice: t('pages.gliders.labels.notices.destroy')
   end
 
   private

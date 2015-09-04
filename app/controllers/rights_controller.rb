@@ -10,7 +10,7 @@ class RightsController < ApplicationController
 
   def update
     if @pilot.update(pilot_params)
-      redirect_to rights_path, notice: 'Access rights are successfully updated.'
+      redirect_to rights_path, notice: t('pages.rights.labels.notices.update')
     else
       render :edit
     end

@@ -18,6 +18,8 @@ en:
         no_access: 'No access'
         admin_text: 'With administrator rights the pilot will be able to access everything on Soaring Book.'
         section_text: 'You can give seperate permission for each section.'
+        notices:
+          update: 'Access rights are successfully updated.'
 
     gliders:
       titles:
@@ -34,6 +36,10 @@ en:
         hours:
           one: 'Hour'
           other: 'Hours'
+        notices:
+          create: 'Glider was successfully created.'
+          update: 'Glider was successfully updated.'
+          destroy: 'Glider was successfully destroyed.'
       buttons:
         import: 'Import gliders'
       filename:
