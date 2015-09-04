@@ -15,13 +15,11 @@ describe RightsController do
 
       context 'Templates' do
         it { should render_template_name('index') { get :index } }
-        #         it { should render_template_name('edit') { get :edit, pilot_id: @pilot.id } }
-
-        #         it { should render_template_name('edit') { put :update, pilot_id: @pilot.id, pilot: { } } }
+        it { should render_template_name('edit') { get :edit, pilot_id: @pilot.id } }
       end
 
       context 'Redirects' do
-        #         it { should redirect_to_path(glider_path(glider.immatriculation)) { put :update, id: glider.id, glider: { name: Faker::Name.name } } }
+        it { should redirect_to_path(rights_path) { put :update, pilot_id: @pilot.id, pilot: { admin: true } } }
       end
 
       context 'Strong params' do
