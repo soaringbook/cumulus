@@ -10,7 +10,7 @@ class RightsController < ApplicationController
 
   def update
     if @pilots.update(pilot_params)
-      redirect_to @pilots, notice: 'Access rights was successfully updated.'
+      redirect_to rights_path, notice: 'Access rights was successfully updated.'
     else
       render :edit
     end
@@ -19,7 +19,7 @@ class RightsController < ApplicationController
   private
 
   def set_pilot
-    @pilots = current_club.pilots.find(params[:id])
+    @pilots = current_club.pilots.find(params[:pilot_id])
   end
 
   def pilot_params
