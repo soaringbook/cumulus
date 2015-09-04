@@ -16,7 +16,7 @@ en:
         readable: 'Read access'
         writable: 'Write access'
         no_access: 'No access'
-        admin_text: 'With administrator right the pilot will be able to access everything on Soaring Book.'
+        admin_text: 'With administrator rights the pilot will be able to access everything on Soaring Book.'
         section_text: 'You can give seperate permission for each section.'
 
     gliders:

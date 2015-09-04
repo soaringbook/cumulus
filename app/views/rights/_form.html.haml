@@ -5,6 +5,7 @@
         = simple_form_for @pilot, url: pilot_rights_path(@pilot), wrapper: :vertical_form do |f|
           .row
             .col-sm-12
+              %h4= Pilot.human_attribute_name('admin').upcase
               %p= t('pages.rights.labels.admin_text')
               = checkbox_tag f, :admin
 
