@@ -15,7 +15,7 @@
               %tr
                 %th= Pilot.human_attribute_name('email')
                 %th= Pilot.human_attribute_name('admin')
-                %th= Pilot.human_attribute_name('gliders_access')
+                %th= Pilot.human_attribute_name('glider_access')
                 %th{ style: 'width: 8em' }
             %tbody
               - if @pilots.count == 0
@@ -26,7 +26,7 @@
                   %tr
                     %td= pilot.email
                     %td= boolean_tag pilot.admin?
-                    %td= rights_tag pilot.gliders_access, pilot.admin?
+                    %td= rights_tag pilot.glider_access, pilot.admin?
                     %td
                       = edit_link_to edit_pilot_rights_path(pilot)
         = paginate @pilots

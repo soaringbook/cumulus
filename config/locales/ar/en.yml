@@ -15,4 +15,4 @@ en:
       pilot:
         email: 'Email'
         admin: 'Administrator'
-        gliders_access: 'Gliders Access'
+        glider_access: 'Gliders Access'

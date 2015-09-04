@@ -23,6 +23,6 @@ class RightsController < ApplicationController
   end
 
   def pilot_params
-    params.require(:pilot).permit(:admin, :gliders_access)
+    params.require(:pilot).permit(:admin, :glider_access)
   end
 end

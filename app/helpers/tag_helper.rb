@@ -21,7 +21,7 @@ module TagHelper
   def rights_tag(value, is_admin)
     value_class = 'lock red'
     original_title = t('pages.rights.labels.no_access')
-    if is_admin or value.to_s.end_with?('_writable')
+    if is_admin || value.to_s.end_with?('_writable')
       value_class = 'pencil teal'
       original_title = t('pages.rights.labels.writable')
     elsif value.to_s.end_with?('_readable')
