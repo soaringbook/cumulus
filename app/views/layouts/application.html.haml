@@ -32,7 +32,7 @@
         %h1.page-title= yield(:title)
         = breadcrumbs style: :ol, class: 'breadcrumb', current_class: 'active'
         - if header_actions = yield(:actions)
-          .page-header-actions= header_actions
+          .page-header-actions.hidden-xs= header_actions
       .page-content
         = flashes
         = yield
