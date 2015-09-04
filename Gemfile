@@ -86,6 +86,10 @@ gem "wicked", "~> 1.2.1"
 # [cocoon](http://github.com/nathanvda/cocoon)
 gem "cocoon", "~> 1.2.6"
 
+# Ruby Adapter for Raygun.io
+# [raygun4ruby](http://raygun.io)
+gem "raygun4ruby", "~> 1.1.6"
+
 group :development, :test do
   # Faker, a port of Data::Faker from Perl, is used to easily generate fake data
   # [faker](https://github.com/stympy/faker)
