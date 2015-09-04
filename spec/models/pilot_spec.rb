@@ -13,4 +13,11 @@ describe Pilot do
   context 'Associations' do
     it { should belong_to(:club) }
   end
+
+  context 'Roles' do
+    it 'should have no access to gliders on creation' do
+      pilot = create(:pilot)
+      expect(pilot.gliders_not_accessible?).to be_truthy
+    end
+  end
 end

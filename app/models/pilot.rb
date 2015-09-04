@@ -11,4 +11,6 @@ class Pilot < ActiveRecord::Base
   validates :club, presence: true
 
   accepts_nested_attributes_for :club
+
+  enum gliders_access: [:gliders_not_accessible, :gliders_readable, :gliders_writable]
 end
