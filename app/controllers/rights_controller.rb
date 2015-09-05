@@ -1,5 +1,6 @@
 class RightsController < ApplicationController
   before_action :set_pilot, only: [:edit, :update]
+  before_action :authorize_resource!
 
   def index
     @pilots = current_club.pilots.search(params[:search]).page params[:page]
@@ -9,7 +10,7 @@ class RightsController < ApplicationController
   end
 
   def update
-    if @pilot.update(pilot_params)
+    if @pilot.update(update_params)
       redirect_to rights_path, notice: t('pages.rights.labels.notices.update')
     else
       render :edit
@@ -18,11 +19,15 @@ class RightsController < ApplicationController
 
   private
 
+  def authorize_resource!
+    authorize! :update, current_club
+  end
+
   def set_pilot
     @pilot = current_club.pilots.find(params[:pilot_id])
   end
 
-  def pilot_params
+  def update_params
     params.require(:pilot).permit(:admin, :glider_access)
   end
 end

@@ -5,9 +5,18 @@ class Ability
     pilot ||= Pilot.new
 
     allow_resource_access! pilot, :gliders
+
+    allow_admin_access! pilot, :club
   end
 
   private
+
+  def allow_admin_access!(pilot, resource)
+    return unless pilot.admin?
+    can :manage, pilot.public_send(resource) do |_item|
+      true
+    end
+  end
 
   def allow_resource_access!(pilot, resources)
     if pilot.admin? || pilot.public_send("#{resources}_writable?")

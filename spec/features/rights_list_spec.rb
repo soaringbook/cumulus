@@ -2,7 +2,7 @@ require 'rails_helper.rb'
 
 describe 'The rights list flow', type: :feature do
   before do
-    @pilot = create(:pilot, email: 'brian@fousa.be')
+    @pilot = create(:pilot, email: 'brian@fousa.be', admin: true)
     login_as(@pilot, scope: :pilot)
   end
 

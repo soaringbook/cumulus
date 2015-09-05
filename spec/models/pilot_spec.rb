@@ -30,38 +30,59 @@ describe Pilot do
   context 'Abilities' do
     subject(:ability) { Ability.new(pilot) }
     let(:pilot) { nil }
-    before { create(:glider, club: pilot.club) }
 
-    context 'With admin rights' do
-      let(:pilot) { create(:pilot, admin: true) }
+    context 'Glider rights' do
+      before { create(:glider, club: pilot.club) }
 
-      it { should be_able_to(:manage, Glider) }
-      it { should be_able_to(:manage, pilot.club.gliders.first) }
+      context 'With admin rights' do
+        let(:pilot) { create(:pilot, admin: true) }
+
+        it { should be_able_to(:manage, Glider) }
+        it { should be_able_to(:manage, pilot.club.gliders.first) }
+      end
+
+      context 'With write rights' do
+        let(:pilot) { create(:pilot, glider_access: :gliders_writable) }
+
+        it { should be_able_to(:manage, Glider) }
+        it { should be_able_to(:manage, pilot.club.gliders.first) }
+      end
+
+      context 'With read rights' do
+        let(:pilot) { create(:pilot, glider_access: :gliders_readable) }
+
+        it { should_not be_able_to(:manage, Glider) }
+        it { should_not be_able_to(:manage, pilot.club.gliders.first) }
+        it { should be_able_to(:read, Glider) }
+        it { should be_able_to(:read, pilot.club.gliders.first) }
+      end
+
+      context 'With read rights' do
+        let(:pilot) { create(:pilot) }
+
+        it { should_not be_able_to(:manage, Glider) }
+        it { should_not be_able_to(:manage, pilot.club.gliders.first) }
+        it { should_not be_able_to(:read, Glider) }
+        it { should_not be_able_to(:read, pilot.club.gliders.first) }
+      end
     end
 
-    context 'With write rights' do
-      let(:pilot) { create(:pilot, glider_access: :gliders_writable) }
+    context 'Club rights' do
+      before { create(:glider, club: pilot.club) }
 
-      it { should be_able_to(:manage, Glider) }
-      it { should be_able_to(:manage, pilot.club.gliders.first) }
-    end
+      context 'With admin rights' do
+        let(:pilot) { create(:pilot, admin: true) }
 
-    context 'With read rights' do
-      let(:pilot) { create(:pilot, glider_access: :gliders_readable) }
+        it { should_not be_able_to(:manage, Club) }
+        it { should be_able_to(:manage, pilot.club) }
+      end
 
-      it { should_not be_able_to(:manage, Glider) }
-      it { should_not be_able_to(:manage, pilot.club.gliders.first) }
-      it { should be_able_to(:read, Glider) }
-      it { should be_able_to(:read, pilot.club.gliders.first) }
-    end
+      context 'With read rights' do
+        let(:pilot) { create(:pilot) }
 
-    context 'With read rights' do
-      let(:pilot) { create(:pilot) }
-
-      it { should_not be_able_to(:manage, Glider) }
-      it { should_not be_able_to(:manage, pilot.club.gliders.first) }
-      it { should_not be_able_to(:read, Glider) }
-      it { should_not be_able_to(:read, pilot.club.gliders.first) }
+        it { should_not be_able_to(:manage, Club) }
+        it { should_not be_able_to(:manage, pilot.club) }
+      end
     end
   end
 end

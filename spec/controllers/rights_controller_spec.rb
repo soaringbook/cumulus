@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 describe RightsController do
+  before { bypass_rescue }
+
   context 'Not authenticated' do
     let(:pilot) { create(:pilot) }
 
@@ -10,17 +12,14 @@ describe RightsController do
   end
 
   context 'Authenticated' do
+    shared_examples_for :writable do
+      it { should render_template_name('index') { get :index } }
+      it { should render_template_name('edit') { get :edit, pilot_id: @pilot.id } }
+      it { should redirect_to_path(rights_path) { put :update, pilot_id: @pilot.id, pilot: { admin: true } } }
+    end
+
     context 'Has pilots' do
-      before { sign_in create(:pilot) }
-
-      context 'Templates' do
-        it { should render_template_name('index') { get :index } }
-        it { should render_template_name('edit') { get :edit, pilot_id: @pilot.id } }
-      end
-
-      context 'Redirects' do
-        it { should redirect_to_path(rights_path) { put :update, pilot_id: @pilot.id, pilot: { admin: true } } }
-      end
+      before { sign_in create(:pilot, admin: true) }
 
       context 'Strong params' do
         it { should permit(:admin, :glider_access).for(:update, params: { pilot_id: @pilot.id }) }
@@ -28,11 +27,26 @@ describe RightsController do
     end
 
     context 'Has no pilots' do
-      before { sign_in create(:pilot) }
+      before { sign_in create(:pilot, admin: true) }
 
       context 'Templates' do
         it { expect { get :edit, pilot_id: 0 }.to raise_exception(ActiveRecord::RecordNotFound) }
         it { expect { get :update, pilot_id: 0, pilot: {} }.to raise_exception(ActiveRecord::RecordNotFound) }
+      end
+    end
+
+    context 'Authorizations' do
+      context 'With admin rights' do
+        before { sign_in create(:pilot, admin: true) }
+        it_behaves_like :writable
+      end
+
+      context 'Without access' do
+        before { sign_in create(:pilot) }
+
+        it { expect { get :index }.to raise_exception(CanCan::AccessDenied) }
+        it { expect { get :edit, pilot_id: @pilot.id }.to raise_exception(CanCan::AccessDenied) }
+        it { expect { put :update, pilot_id: @pilot.id, pilots: {} }.to raise_exception(CanCan::AccessDenied) }
       end
     end
   end
