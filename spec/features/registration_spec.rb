@@ -5,12 +5,15 @@ describe 'The registration flow', type: :feature do
 
   it 'should register a user' do
     fill_in 'Club abbreviation (ex. BZC)', with: 'ebbt'
+    fill_in 'First name',                  with: 'Jake'
+    fill_in 'Last name',                   with: 'The Snake'
     fill_in 'Email',                       with: 'jake@snake.be'
     fill_in 'Password',                    with: '123123123', match: :prefer_exact
     fill_in 'Confirm password',            with: '123123123', match: :prefer_exact
     click_button 'Create yours'
 
     expect(page).to have_content('Soaring Book')
+
     expect(Pilot.count).to eq(1)
     expect(Club.count).to eq(1)
     expect(Pilot.first.club.id).to eq(Club.first.id)

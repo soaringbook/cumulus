@@ -8,6 +8,6 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def sign_up_params
-    params.require(:pilot).permit(:email, :password, :password_confirmation, club_attributes: [:short_name])
+    params.require(:pilot).permit(:email, :first_name, :last_name, :password, :password_confirmation, club_attributes: [:short_name])
   end
 end
