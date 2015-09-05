@@ -2,6 +2,8 @@ module Import
   class GlidersController < ApplicationController
     include Wicked::Wizard
 
+    before_action :authorize_resource!
+
     steps :upload,
           :review,
           :result
@@ -21,6 +23,10 @@ module Import
     end
 
     private
+
+    def authorize_resource!
+      authorize! :create, Glider
+    end
 
     def handle_upload
       service = ImportService.new(Glider, params[:import_object])
