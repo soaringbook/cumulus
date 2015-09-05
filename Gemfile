@@ -66,6 +66,10 @@ gem 'therubyracer', '~> 0.12.2'
 # [devise](https://github.com/plataformatec/devise)
 gem 'devise', '~> 3.5.2'
 
+# Continuation of the simple authorization solution for Rails which is decoupl
+# [cancancan](https://github.com/CanCanCommunity/cancancan)
+gem "cancancan", "~> 1.12.0"
+
 # This gem overrides image_tag to support retina resolution images using asset
 # [retina_tag](http://github.com/davydotcom/retina_tag)
 gem 'retina_tag', '~> 1.3.1'
