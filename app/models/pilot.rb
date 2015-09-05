@@ -4,6 +4,8 @@ class Pilot < ActiveRecord::Base
   extend FriendlyId
   friendly_id :name, use: :slugged
 
+  mount_uploader :avatar, AvatarUploader
+
   belongs_to :club
 
   devise :database_authenticatable,
