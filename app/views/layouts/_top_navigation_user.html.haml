@@ -1,7 +1,7 @@
 %li.dropdown
   %a.navbar-avatar.dropdown-toggle{ "aria-expanded" => "false", "data-animation" => "scale-up", "data-toggle" => "dropdown", href: "#", role: "button" }
     %span.avatar.avatar-online
-      = image_tag 'Avatar.jpg'
+      = avatar_image_tag current_pilot.avatar, :thumb
 
   %ul.dropdown-menu{ role: "menu" }
     /%li.divider{ role: "presentation" }

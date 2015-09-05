@@ -24,7 +24,9 @@
               - else
                 - @pilots.each do |pilot|
                   %tr
-                    %td= pilot.name
+                    %td
+                      %span.avatar= avatar_image_tag pilot.avatar, :thumb, height: 40, class: 'img img-rounded lazy'
+                      = pilot.name
                     %td= boolean_tag pilot.admin?
                     %td= rights_tag pilot.glider_access, pilot.admin?
                     %td
