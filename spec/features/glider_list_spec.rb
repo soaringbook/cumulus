@@ -2,7 +2,7 @@ require 'rails_helper.rb'
 
 describe 'The glider list flow', type: :feature do
   before do
-    @pilot = create(:pilot)
+    @pilot = create(:pilot, admin: true)
     login_as(@pilot, scope: :pilot)
   end
 

@@ -1,4 +1,6 @@
 class GlidersController < ApplicationController
+  authorize_resource
+
   before_action :set_glider, only: [:show, :edit, :update, :destroy]
 
   def index
