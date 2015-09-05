@@ -6,8 +6,9 @@
           = menu_group_tag ''
           = menu_link_tag t('global.application.menu.dashboard'), 'fa-dashboard', root_path, controller_name == 'dashboard'
 
-          = menu_group_tag t('global.application.menu.club')
-          = menu_link_tag t('global.application.menu.gliders'), 'fa-plane', gliders_path, controller_name == 'gliders'
+          - if can? :read, Glider
+            = menu_group_tag t('global.application.menu.club')
+            = menu_link_tag t('global.application.menu.gliders'), 'fa-plane', gliders_path, controller_name == 'gliders'
 
           = menu_group_tag t('global.application.menu.admin')
           = menu_link_tag t('global.application.menu.rights'), 'fa-lock', rights_path, controller_name == 'rights'
