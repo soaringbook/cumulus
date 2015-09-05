@@ -8,8 +8,9 @@
   .col-lg-12
     = panel do
       = panel_heading t('global.titles.overview') do
-        = add_link_to new_glider_path
-        = import_link_to import_gliders_path
+        - if can? :create, Glider
+          = add_link_to new_glider_path
+          = import_link_to import_gliders_path
         = export_tag do
           = export_xls_to gliders_path(format: :xls)
       = panel_body do
@@ -36,6 +37,8 @@
                     %td= boolean_tag glider.self_launching
                     %td= boolean_tag glider.double_seater
                     %td
-                      = edit_link_to edit_glider_path(glider)
-                      = delete_link_to glider
+                      - if can? :update, glider
+                        = edit_link_to edit_glider_path(glider)
+                      - if can? :destroy, glider
+                        = delete_link_to glider
         = paginate @gliders

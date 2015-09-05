@@ -1,8 +1,9 @@
 - breadcrumb :glider, @glider, false
 
 - content_for :title, @glider.immatriculation
-- content_for :actions do
-  = edit_action_link_to edit_glider_path(@glider)
+- if can? :update, @glider
+  - content_for :actions do
+    = edit_action_link_to edit_glider_path(@glider)
 
 .row.page-profile
   .col-lg-3
