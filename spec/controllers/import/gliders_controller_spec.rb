@@ -10,63 +10,41 @@ describe Import::GlidersController do
   end
 
   context 'Authenticated' do
-    shared_examples_for 'writable' do
+    shared_examples_for :writable do
       it { should render_template_name('upload') { get :show, id: :upload } }
       it { should render_template_name('upload') { get :show, id: :review } }
       it { should render_template_name('upload') { get :show, id: :result } }
 
-      it do
-        should render_template_name('review') {
-          put :update, id: :review, import_object: { csv: csv_upload('gliders_all_valid') }
-        }
-      end
-
-      it do
-        should render_template_name('upload') {
-          put :update, id: :review, import_object: { csv: csv_upload('gliders_empty') }
-        }
-      end
-
-      it do
-        should render_template_name('result') {
-          put :update, id: :result, review: { records: {} }
-        }
-      end
+      it { should render_template_name('review') { put :update, id: :review, import_object: { csv: csv_upload('gliders_all_valid') } } }
+      it { should render_template_name('upload') { put :update, id: :review, import_object: { csv: csv_upload('gliders_empty') } } }
+      it { should render_template_name('result') { put :update, id: :result, review: { records: {} } } }
     end
 
-    shared_examples_for 'inaccessible' do
+    shared_examples_for :no_access do
       it { expect { get :show, id: :upload }.to raise_exception(CanCan::AccessDenied) }
       it { expect { get :show, id: :review }.to raise_exception(CanCan::AccessDenied) }
       it { expect { get :show, id: :result }.to raise_exception(CanCan::AccessDenied) }
     end
 
-    context 'Has gliders' do
-      before { sign_in create(:pilot, admin: true) }
-
-      context 'Templates' do
-        it_behaves_like 'writable'
-      end
-    end
-
     context 'Authorizations' do
       context 'With admin rights' do
         before { sign_in create(:pilot, admin: true) }
-        it_behaves_like 'writable'
+        it_behaves_like :writable
       end
 
       context 'With write access' do
         before { sign_in create(:pilot, glider_access: :gliders_writable) }
-        it_behaves_like 'writable'
+        it_behaves_like :writable
       end
 
       context 'With read access' do
         before { sign_in create(:pilot, glider_access: :gliders_readable) }
-        it_behaves_like 'inaccessible'
+        it_behaves_like :no_access
       end
 
       context 'Without access' do
         before { sign_in create(:pilot) }
-        it_behaves_like 'inaccessible'
+        it_behaves_like :no_access
       end
     end
   end
