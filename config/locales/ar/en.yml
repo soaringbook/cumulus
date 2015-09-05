@@ -14,5 +14,6 @@ en:
         remove_avatar: 'Remove the image'
       pilot:
         email: 'Email'
+        name: 'Name'
         admin: 'Administrator'
         glider_access: 'Gliders Access'

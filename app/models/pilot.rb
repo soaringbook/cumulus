@@ -1,6 +1,9 @@
 class Pilot < ActiveRecord::Base
   include Searchable
 
+  extend FriendlyId
+  friendly_id :name, use: :slugged
+
   belongs_to :club
 
   devise :database_authenticatable,
@@ -23,6 +26,10 @@ class Pilot < ActiveRecord::Base
   ### Search
 
   def self.searchable_fields
-    %i(email)
+    %i(email first_name last_name)
+  end
+
+  def name
+    [first_name, last_name].compact.join ' '
   end
 end
