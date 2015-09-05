@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150904233125) do
+ActiveRecord::Schema.define(version: 20150905103121) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,6 +66,8 @@ ActiveRecord::Schema.define(version: 20150904233125) do
     t.string   "locale",                 default: "en",  null: false
     t.integer  "glider_access",          default: 0,     null: false
     t.boolean  "admin",                  default: false, null: false
+    t.string   "first_name"
+    t.string   "last_name"
   end
 
   add_index "pilots", ["email"], name: "index_pilots_on_email", unique: true, using: :btree
