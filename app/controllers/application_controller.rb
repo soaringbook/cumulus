@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
     @current_ability ||= Ability.new(current_pilot)
   end
 
-  rescue_from CanCan::AccessDenied do |exception|
+  rescue_from CanCan::AccessDenied do |_exception|
     redirect_to error_403_path
   end
 end

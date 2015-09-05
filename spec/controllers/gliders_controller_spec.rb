@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 describe GlidersController do
+  before { bypass_rescue }
+
   context 'Not authenticated' do
     let(:glider) { create(:glider) }
 
