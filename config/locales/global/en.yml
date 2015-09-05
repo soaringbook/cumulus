@@ -40,6 +40,7 @@ en:
       labels:
         advise: 'YOU SEEM TO BE TRYING TO FIND HIS WAY HOME'
         '404': 'Not found'
+        '403': 'Not authorized'
         '422': 'Unprocessable Entity'
         '500': 'Internal Server Error'
         '503': 'Service Unavailable'

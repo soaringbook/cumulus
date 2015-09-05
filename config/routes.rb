@@ -33,8 +33,8 @@ Rails.application.routes.draw do
 
   ### Errors
 
-  %w(404 422 500 503).each do |code|
-    get code, to: 'errors#show', code: code
+  %w(404 403 422 500 503).each do |code|
+    get code, to: 'errors#show', code: code, as: "error_#{code}"
   end
 
   ### Root
