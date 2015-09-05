@@ -3,6 +3,13 @@ en:
     dashboard:
       title: 'Your dashboard'
 
+    profiles:
+      titles:
+        edit: 'Edit your profile'
+      labels:
+        notices:
+          update: 'Profile is successfully updated.'
+
     rights:
       titles:
         index: 'Rights'

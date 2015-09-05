@@ -47,3 +47,9 @@ crumb :pilot_rights do |pilot|
 
   parent :rights
 end
+
+### Profiles
+
+crumb :profile do
+  link I18n.t('pages.profiles.titles.edit'), edit_profile_path
+end

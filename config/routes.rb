@@ -31,6 +31,10 @@ Rails.application.routes.draw do
     resource :rights, only: [:edit, :update]
   end
 
+  ### Profile
+
+  resource :profile, only: [:edit, :update]
+
   ### Errors
 
   %w(404 403 422 500 503).each do |code|

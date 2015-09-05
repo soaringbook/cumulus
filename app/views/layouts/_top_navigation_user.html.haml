@@ -4,5 +4,6 @@
       = avatar_image_tag current_pilot.avatar, :thumb
 
   %ul.dropdown-menu{ role: "menu" }
-    /%li.divider{ role: "presentation" }
+    = menu_top_link_tag t('global.application.menu.profile'), 'wb-user', edit_profile_path
+    %li.divider{ role: "presentation" }
     = menu_top_link_tag t('global.application.menu.logout'), 'wb-power', destroy_pilot_session_path, method: :delete

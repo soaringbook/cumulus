@@ -15,5 +15,9 @@ en:
       pilot:
         email: 'Email'
         name: 'Name'
+        first_name: 'First name'
+        last_name: 'Last name'
+        password: 'Password'
+        password_confirmation: 'Password'
         admin: 'Administrator'
         glider_access: 'Gliders Access'
