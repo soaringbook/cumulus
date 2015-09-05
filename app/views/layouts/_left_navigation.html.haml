@@ -10,5 +10,6 @@
             = menu_group_tag t('global.application.menu.club')
             = menu_link_tag t('global.application.menu.gliders'), 'fa-plane', gliders_path, controller_name == 'gliders'
 
-          = menu_group_tag t('global.application.menu.admin')
-          = menu_link_tag t('global.application.menu.rights'), 'fa-lock', rights_path, controller_name == 'rights'
+          - if can? :update, current_pilot.club
+            = menu_group_tag t('global.application.menu.admin')
+            = menu_link_tag t('global.application.menu.rights'), 'fa-lock', rights_path, controller_name == 'rights'

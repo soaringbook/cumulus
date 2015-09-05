@@ -73,7 +73,7 @@ describe Pilot do
       context 'With admin rights' do
         let(:pilot) { create(:pilot, admin: true) }
 
-        it { should be_able_to(:manage, Club) }
+        it { should_not be_able_to(:manage, Club) }
         it { should be_able_to(:manage, pilot.club) }
       end
 
