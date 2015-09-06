@@ -1,4 +1,8 @@
 class ProfilesController < ApplicationController
+  def show
+    @pilot = current_pilot
+  end
+
   def edit
     @pilot = current_pilot
     params['tab'] = 'profile' unless params['tab']

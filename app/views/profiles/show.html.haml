@@ -1,0 +1,22 @@
+- breadcrumb :profile, false
+
+- content_for :title, @pilot.name
+- content_for :actions do
+  = edit_action_link_to edit_profile_path
+
+.row.page-profile
+  .col-lg-3
+    = widget do
+      = widget_header do
+        %span.avatar.avatar-lg
+          = avatar_image_tag @pilot.avatar, :thumb, class: 'lazy'
+        %h4.profile-user= @pilot.first_name
+        %p.profile-job= @pilot.last_name
+      = widget_footer do
+        .row.no-space
+          .col-xs-6
+            %strong.profile-stat-count N/A
+            %span= t('pages.gliders.labels.flights', count: 1)
+          .col-xs-6
+            %strong.profile-stat-count N/A
+            %span= t('pages.gliders.labels.hours', count: 100)

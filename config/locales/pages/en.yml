@@ -5,6 +5,7 @@ en:
 
     profiles:
       titles:
+        show: 'Your profile'
         edit: 'Edit your profile'
       labels:
         languages:

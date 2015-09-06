@@ -19,7 +19,7 @@ en:
         gliders: 'Gliders'
         admin: 'Admin Area'
         rights: 'Access Rights'
-        profile: 'Edit profile'
+        profile: 'Profile'
         logout: 'Logout'
 
     titles:

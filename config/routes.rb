@@ -33,7 +33,7 @@ Rails.application.routes.draw do
 
   ### Profile
 
-  resource :profile, only: [:edit, :update]
+  resource :profile, only: [:show, :edit, :update]
 
   ### Errors
 

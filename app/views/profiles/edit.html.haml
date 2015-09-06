@@ -1,5 +1,7 @@
-- breadcrumb :profile
+- breadcrumb :profile, true
 
 - content_for :title, t('pages.profiles.titles.edit')
+- content_for :actions do
+  = show_action_link_to profile_path
 
 = render 'form'

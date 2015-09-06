@@ -50,6 +50,10 @@ end
 
 ### Profiles
 
-crumb :profile do
-  link I18n.t('pages.profiles.titles.edit'), edit_profile_path
+crumb :profile do |editable|
+  if editable
+    link I18n.t('pages.profiles.titles.edit'), edit_profile_path
+  else
+    link I18n.t('pages.profiles.titles.show'), profile_path
+  end
 end
