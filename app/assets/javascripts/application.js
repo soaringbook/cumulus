@@ -19,6 +19,8 @@
 //= require retina_tag
 //= require jquery.lazyload
 //
+//= require url_handling
+//
 //= require foundation/foundation
 //= require foundation/foundation.interchange
 //
@@ -65,5 +67,9 @@
     } else {
       $('.section_access').slideDown();
     }
+  });
+
+  $('a[data-toggle=tab]').on('click', function() {
+    changeUrlParam('tab', $(this).data('url'));
   });
 })(document, window, jQuery);

@@ -10,7 +10,7 @@ module TabHelper
   def tab_link_to title, icon, content_id, active = false
     active_class = active ? 'active' : nil
     content_tag :li, role: 'presentation', class: active_class do
-      link_to "##{content_id}", data: { toggle: 'tab' }, aria: { controls: content_id, expanded: active } do
+      link_to "##{content_id}", data: { toggle: 'tab', url: content_id }, aria: { controls: content_id, expanded: active } do
         content = content_tag :i, nil, class: "icon wb-#{icon}"
         content << title
         content
