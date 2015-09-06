@@ -7,6 +7,9 @@ en:
       titles:
         edit: 'Edit your profile'
       labels:
+        tabs:
+          profile: 'Profile'
+          security: 'Security'
         notices:
           update: 'Profile is successfully updated.'
 
