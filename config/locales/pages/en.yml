@@ -3,6 +3,20 @@ en:
     dashboard:
       title: 'Your dashboard'
 
+    profiles:
+      titles:
+        show: 'Your profile'
+        edit: 'Edit your profile'
+      labels:
+        languages:
+          en: 'English'
+        tabs:
+          profile: 'Profile'
+          security: 'Security'
+          settings: 'Settings'
+        notices:
+          update: 'Profile is successfully updated.'
+
     rights:
       titles:
         index: 'Rights'

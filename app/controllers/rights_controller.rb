@@ -24,7 +24,7 @@ class RightsController < ApplicationController
   end
 
   def set_pilot
-    @pilot = current_club.pilots.find(params[:pilot_id])
+    @pilot = current_club.pilots.friendly.find(params[:pilot_id])
   end
 
   def update_params

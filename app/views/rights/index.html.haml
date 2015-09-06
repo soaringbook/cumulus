@@ -13,7 +13,7 @@
           %table.table
             %thead
               %tr
-                %th= Pilot.human_attribute_name('email')
+                %th= Pilot.human_attribute_name('name')
                 %th= Pilot.human_attribute_name('admin')
                 %th= Pilot.human_attribute_name('glider_access')
                 %th{ style: 'width: 8em' }
@@ -24,7 +24,9 @@
               - else
                 - @pilots.each do |pilot|
                   %tr
-                    %td= pilot.email
+                    %td
+                      %span.avatar= avatar_image_tag pilot.avatar, :thumb, height: 40, class: 'img img-rounded lazy'
+                      = pilot.name
                     %td= boolean_tag pilot.admin?
                     %td= rights_tag pilot.glider_access, pilot.admin?
                     %td

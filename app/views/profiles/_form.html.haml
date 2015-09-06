@@ -1,0 +1,45 @@
+.row
+  .col-sm-6
+    = panel do
+      = panel_body do
+        = tabs_tag do
+          = tab_link_to t('pages.profiles.labels.tabs.profile'), 'user', 'profile', params['tab'] == 'profile'
+          = tab_link_to t('pages.profiles.labels.tabs.security'), 'lock', 'security', params['tab'] == 'security'
+          = tab_link_to t('pages.profiles.labels.tabs.settings'), 'settings', 'settings', params['tab'] == 'settings'
+        = tab_content do
+          = tab_pane 'profile', params['tab'] == 'profile' do
+            = simple_form_for @pilot, url: profile_path, wrapper: :vertical_form do |f|
+              = hidden_field_tag 'tab', 'profile'
+              .row
+                .col-sm-12
+                  = f.input :email,      required: false, autofocus: true
+                  = f.input :first_name, required: false, autofocus: true
+                  = f.input :last_name,  required: false, autofocus: true
+              .row
+                .col-sm-6
+                  = f.input :avatar
+                - if @pilot.avatar.file
+                  .col-sm-6
+                    = avatar_image_tag @pilot.avatar, :thumb, class: 'lazy'
+                    = checkbox_tag f, :remove_avatar
+              %hr
+              = f.submit class: 'btn btn-primary'
+
+          = tab_pane 'security', params['tab'] == 'security' do
+            = simple_form_for @pilot, url: profile_path, wrapper: :vertical_form do |f|
+              = hidden_field_tag 'tab', 'security'
+              .row
+                .col-sm-12
+                  = f.input :password,              required: false, autofocus: true
+                  = f.input :password_confirmation, required: false, autofocus: true
+              %hr
+              = f.submit class: 'btn btn-primary'
+
+          = tab_pane 'settings', params['tab'] == 'settings' do
+            = simple_form_for @pilot, url: profile_path, wrapper: :vertical_form do |f|
+              = hidden_field_tag 'tab', 'settings'
+              .row
+                .col-sm-6
+                  = f.input :locale, required: false, autofocus: true, collection: Pilot.locales, include_blank: false, label_method: lambda { |owner| t("pages.profiles.labels.languages.#{owner}") }
+              %hr
+              = f.submit class: 'btn btn-primary'

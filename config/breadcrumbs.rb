@@ -42,8 +42,18 @@ end
 
 crumb :pilot_rights do |pilot|
   # TODO: Fix the pilot url when available.
-  link pilot.email, root_path
+  link pilot.name, root_path
   link I18n.t('global.links.edit'), edit_pilot_rights_path(pilot)
 
   parent :rights
+end
+
+### Profiles
+
+crumb :profile do |editable|
+  if editable
+    link I18n.t('pages.profiles.titles.edit'), edit_profile_path
+  else
+    link I18n.t('pages.profiles.titles.show'), profile_path
+  end
 end
