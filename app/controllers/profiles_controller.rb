@@ -17,6 +17,6 @@ class ProfilesController < ApplicationController
   private
 
   def update_params
-    params.require(:pilot).permit(:email, :first_name, :last_name, :password, :password_confirmation, :avatar, :remove_avatar)
+    params.require(:pilot).permit(:email, :first_name, :last_name, :password, :password_confirmation, :avatar, :remove_avatar, :locale)
   end
 end

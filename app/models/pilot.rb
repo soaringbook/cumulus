@@ -25,6 +25,12 @@ class Pilot < ActiveRecord::Base
 
   enum glider_access: [:gliders_not_accessible, :gliders_readable, :gliders_writable]
 
+  ### Locale
+
+  def self.locales
+    %w(en)
+  end
+
   ### Search
 
   def self.searchable_fields
