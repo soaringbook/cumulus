@@ -2,8 +2,8 @@
 
 `rubocop -R -a`
 
-return unless ARGV.include? '--commit'
-
-puts 'Commiting the Rubocop changes'
-`git add .`
-`git commit -m 'Rubocopyfy the code.'`
+if ARGV.include? '--commit'
+  puts 'Commiting the Rubocop changes'
+  `git add .`
+  `git commit -m 'Rubocopyfy the code.'`
+end
