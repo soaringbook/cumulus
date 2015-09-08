@@ -1,1 +1,9 @@
-rubocop -R -a
+#!/usr/bin/ruby
+
+`rubocop -R -a`
+
+return unless ARGV.include? '--commit'
+
+puts 'Commiting the Rubocop changes'
+`git add .`
+`git commit -m 'Rubocopyfy the code.'`
