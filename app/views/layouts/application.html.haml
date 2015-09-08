@@ -34,9 +34,27 @@
         - if header_actions = yield(:actions)
           .page-header-actions.hidden-xs= header_actions
       .page-content
-        = flashes
         = yield
 
     = render partial: 'layouts/footer'
 
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
+
+    - if flash[:notice]
+      :javascript
+        $(function() {
+          toastr.options.progressBar = true;
+          toastr.options.showMethod = 'slideDown';
+          toastr.options.closeButton = true;
+          toastr.options.timeOut = 5000;
+          toastr.success("#{flash[:notice]}");
+        })
+    - if flash[:alert]
+      :javascript
+        $(function() {
+          toastr.options.progressBar = true;
+          toastr.options.showMethod = 'slideDown';
+          toastr.options.closeButton = true;
+          toastr.options.timeOut = 5000;
+          toastr.error("#{flash[:alert]}");
+        })

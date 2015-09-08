@@ -33,7 +33,8 @@
 //= require remark/vendor/intro-js/intro
 //= require remark/vendor/screenfull/screenfull
 //= require remark/vendor/slidepanel/jquery-slidePanel
-
+//
+//= require remark/toastr
 //= require remark/core
 //= require remark/site
 //= require remark/sections/menu
