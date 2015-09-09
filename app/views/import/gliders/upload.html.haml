@@ -19,10 +19,10 @@
             %pre.well
               = preserve do
                 :escaped
-                  immatriculation, name, self_launching, double_seater
-                  OO-YDV, ASW-19 WL, false, false
-                  OO-KDB, Janus CT, false, true
-                  PH-1496, Arcus M, true , true
+                  immatriculation, name,   self_launching, double_seater
+                  OO-YDV,          ASW-19, false,          false
+                  OO-KDB,          Janus,  false,          true
+                  PH-1496,         Arcus,  true ,          true
 
           .col-sm-6
             = simple_form_for @import_object, url: wizard_path(:review), method: :put, wrapper: :vertical_form do |f|
