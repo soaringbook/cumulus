@@ -28,9 +28,7 @@ Rails.application.routes.draw do
 
   ### Stripe confirmation
 
-  scope '/club' do
-    resource :payments, only: [:show, :update]
-  end
+  resource :payments, only: [:show]
 
   ### Gliders
 
