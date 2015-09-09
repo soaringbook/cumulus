@@ -45,7 +45,6 @@
     - if flash[:notice]
       :javascript
         $(function() {
-          toastr.options.progressBar = true;
           toastr.options.showMethod = 'slideDown';
           toastr.options.closeButton = true;
           toastr.options.timeOut = 5000;
@@ -54,7 +53,6 @@
     - if flash[:alert]
       :javascript
         $(function() {
-          toastr.options.progressBar = true;
           toastr.options.showMethod = 'slideDown';
           toastr.options.closeButton = true;
           toastr.options.timeOut = 5000;

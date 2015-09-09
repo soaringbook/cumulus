@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   as :pilot do
-      patch '/pilot/confirmation' => 'confirmations#update', :via => :patch, :as => :update_pilot_confirmation
+      patch '/pilots/confirmation' => 'confirmations#update', :via => :patch, :as => :update_pilot_confirmation
   end
   devise_for :pilots, skip: 'registration', :controllers => { :confirmations => "confirmations" }
 

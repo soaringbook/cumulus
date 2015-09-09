@@ -44,10 +44,13 @@ class Pilot < ActiveRecord::Base
 
   ### Devise
 
-  def attempt_set_password(params)
+  def attempt_set_params(params)
     p = {}
+    p[:first_name] = params[:first_name]
+    p[:last_name] = params[:last_name]
     p[:password] = params[:password]
     p[:password_confirmation] = params[:password_confirmation]
+    p[:confirmation_token] = ""
     update_attributes(p)
   end
 

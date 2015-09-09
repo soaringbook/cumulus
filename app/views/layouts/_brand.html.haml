@@ -8,5 +8,5 @@
     = image_tag 'Logo.png', title: t('global.title').upcase, class: 'navbar-brand-logo'
     - if current_pilot
       %span.navbar-brand-text= current_pilot.club.short_name.upcase
-    - else
-      %span.navbar-brand-text= t 'global.title'
+    - elsif self.resource.try(:club)
+      %span.navbar-brand-text= self.resource.club.short_name.upcase
