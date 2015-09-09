@@ -4,7 +4,7 @@
       = avatar_image_tag current_pilot.avatar, :thumb
 
   %ul.dropdown-menu{ role: "menu" }
-    - unless force_payments_wizard?
+    - if current_pilot && payment_completed?
       = menu_top_link_tag t('global.application.menu.profile'), 'wb-user', profile_path
       %li.divider{ role: "presentation" }
     = menu_top_link_tag t('global.application.menu.logout'), 'wb-power', destroy_pilot_session_path, method: :delete

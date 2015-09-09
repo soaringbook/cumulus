@@ -6,8 +6,8 @@
     %i.icon.wb-more-horizontal{ "aria-hidden" => "true" }
   .navbar-brand.navbar-brand-center.site-gridmenu-toggle{ "data-toggle" => "gridmenu" }
     = image_tag 'Logo.png', title: t('global.title').upcase, class: 'navbar-brand-logo'
-    - if force_payments_wizard?
+    - if current_pilot && payment_completed?
+      %span.navbar-brand-text= current_pilot.club.short_name.upcase
+    - else
       - club = current_pilot.try(:club) || self.resource.try(:club)
       %span.navbar-brand-text= club.short_name.upcase
-    - else
-      %span.navbar-brand-text= current_pilot.club.short_name.upcase

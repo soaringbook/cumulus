@@ -7,6 +7,8 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
   before_action :redirect_to_payments_if_needed
 
+  helper_method :payment_completed?, :current_club
+
   ## Locale
 
   def set_locale
@@ -20,11 +22,11 @@ class ApplicationController < ActionController::Base
   end
 
   def redirect_to_payments_if_needed
-    redirect_to payments_path if force_payments_wizard?
+    redirect_to payments_path unless payment_completed?
   end
 
-  def force_payments_wizard?
-    true
+  def payment_completed?
+    false
   end
 
   ## Authorization

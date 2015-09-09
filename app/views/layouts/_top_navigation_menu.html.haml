@@ -1,5 +1,5 @@
 %ul.nav.navbar-toolbar
-  - unless force_payments_wizard?
+  - if current_pilot && payment_completed?
     %li#toggleMenubar.hidden-float
       %a{ "data-toggle" => "menubar", :href => "#", :role => "button" }
         %i.icon.hamburger.hamburger-arrow-left
