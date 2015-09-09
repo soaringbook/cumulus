@@ -50,7 +50,7 @@ class Pilot < ActiveRecord::Base
     p[:last_name] = params[:last_name]
     p[:password] = params[:password]
     p[:password_confirmation] = params[:password_confirmation]
-    p[:confirmation_token] = ""
+    p[:confirmation_token] = nil
     update_attributes(p)
   end
 
