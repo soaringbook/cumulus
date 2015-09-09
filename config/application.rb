@@ -55,6 +55,7 @@ module Cumulus
 
     config.to_prepare do
       Devise::Mailer.layout "mailer"
+      Devise::ConfirmationsController.layout "application"
     end
   end
 end

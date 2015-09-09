@@ -2,6 +2,10 @@ crumb :root do
   link I18n.t('global.title'), root_path
 end
 
+crumb :confirmation do
+  link I18n.t('global.confirmation.title'), root_path
+end
+
 crumb :dashboard do
   link I18n.t('pages.dashboard.title'), root_path
 end

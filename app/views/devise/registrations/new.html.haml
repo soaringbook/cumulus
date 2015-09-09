@@ -12,11 +12,7 @@
     = f.simple_fields_for :club do |c|
       = c.input :short_name, label: false, required: true, autofocus: true
   .form-inputs
-    = f.input :first_name,            label: false, required: true
-    = f.input :last_name,             label: false, required: true
     = f.input :email,                 label: false, required: true
-    = f.input :password,              label: false, required: true
-    = f.input :password_confirmation, label: false, required: true
 
   .form-actions
     = f.button :submit, t('global.sign_up.buttons.submit'), class: 'btn btn-primary btn-block'

@@ -59,6 +59,15 @@ en:
         sign_up: 'Create yours now!'
         forgot_password: 'Forgot password?'
 
+    confirmation:
+      title: 'Activate your club'
+      steps:
+        account: 'Your account'
+      labels:
+        security: 'Your credentials'
+        you: 'Who are you?'
+        continue: 'Continue'
+
     sign_up:
       title: 'Create your club'
       subtitle: 'Sign up to Soaring Book Cumulus and create your club.'
