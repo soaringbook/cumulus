@@ -94,14 +94,6 @@ gem "cocoon", "~> 1.2.6"
 # [raygun4ruby](http://raygun.io)
 gem "raygun4ruby", "~> 1.1.6"
 
-# Nokogiri (鋸) is an HTML, XML, SAX, and Reader parser.  Among Nokogiri's
-# [nokogiri](http://nokogiri.org)
-gem "nokogiri", "~> 1.6.6.2"
-
-# This gem brings you the power of the premailer gem to Rails
-# [premailer-rails](https://github.com/fphilipe/premailer-rails)
-gem "premailer-rails", "~> 1.8.2"
-
 group :development, :test do
   # Faker, a port of Data::Faker from Perl, is used to easily generate fake data
   # [faker](https://github.com/stympy/faker)
@@ -114,6 +106,16 @@ group :development, :test do
   # help to kill N+1 queries and unused eager loading.
   # [bullet](http://github.com/flyerhzm/bullet)
   gem 'bullet', '~> 4.14.7'
+end
+
+group :development, :production do
+  # Nokogiri (鋸) is an HTML, XML, SAX, and Reader parser.  Among Nokogiri's
+  # [nokogiri](http://nokogiri.org)
+  gem "nokogiri", "~> 1.6.6.2"
+
+  # This gem brings you the power of the premailer gem to Rails
+  # [premailer-rails](https://github.com/fphilipe/premailer-rails)
+  gem "premailer-rails", "~> 1.8.2"
 end
 
 group :production do
