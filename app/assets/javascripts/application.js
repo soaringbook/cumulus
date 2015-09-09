@@ -14,8 +14,8 @@
 //= require remark/vendor/breakpoints/breakpoints
 //
 //= require jquery
+//= require payola
 //= require jquery_ujs
-// require turbolinks
 //= require retina_tag
 //= require jquery.lazyload
 //

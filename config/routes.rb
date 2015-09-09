@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  ### Payola
+  #
+  mount Payola::Engine => '/payola', as: :payola
+
+  ### Devise
+
   as :pilot do
     patch '/pilots/confirmation' => 'confirmations#update', as: :update_pilot_confirmation, via: :patch
   end
@@ -21,7 +27,7 @@ Rails.application.routes.draw do
   end
 
   ### Stripe confirmation
-  
+
   scope '/club' do
     resource :payments, only: [:show, :update]
   end

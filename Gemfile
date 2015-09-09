@@ -94,6 +94,10 @@ gem "cocoon", "~> 1.2.6"
 # [raygun4ruby](http://raygun.io)
 gem "raygun4ruby", "~> 1.1.6"
 
+# One-off and subscription payments for your Rails application
+# [payola-payments](https://www.payola.io)
+gem "payola-payments", "~> 1.3.2"
+
 group :development, :test do
   # Faker, a port of Data::Faker from Perl, is used to easily generate fake data
   # [faker](https://github.com/stympy/faker)
