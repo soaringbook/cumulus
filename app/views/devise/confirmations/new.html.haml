@@ -8,6 +8,7 @@
       = panel_body do
         = wizard_tag do
           = wizard_pearl_tag t('global.confirmation.steps.account'), 'wb-user', true
+          = wizard_pearl_tag t('global.confirmation.steps.payments'), 'wb-payment'
 
         = simple_form_for resource, as: resource_name, url: update_pilot_confirmation_path, html: { method: 'patch' }, id: 'activation-form' do |f|
           = hidden_field_tag :confirmation_token, @confirmation_token

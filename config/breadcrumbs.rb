@@ -6,6 +6,10 @@ crumb :confirmation do
   link I18n.t('global.confirmation.title'), root_path
 end
 
+crumb :payments do
+  link I18n.t('global.confirmation.labels.payment'), payments_path
+end
+
 crumb :dashboard do
   link I18n.t('pages.dashboard.title'), root_path
 end

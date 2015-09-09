@@ -1,0 +1,11 @@
+- breadcrumb :payments
+
+- content_for :title, t('global.confirmation.labels.payment')
+
+.row
+  .col-lg-8
+    = panel do
+      = panel_body do
+        = wizard_tag do
+          = wizard_pearl_tag t('global.confirmation.steps.account'), 'wb-user'
+          = wizard_pearl_tag t('global.confirmation.steps.payments'), 'wb-payment', true

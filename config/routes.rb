@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   as :pilot do
-      patch '/pilots/confirmation' => 'confirmations#update', :via => :patch, :as => :update_pilot_confirmation
+    patch '/pilots/confirmation' => 'confirmations#update', as: :update_pilot_confirmation, via: :patch
   end
   devise_for :pilots, skip: 'registration', :controllers => { :confirmations => "confirmations" }
 
@@ -18,6 +18,12 @@ Rails.application.routes.draw do
   authenticated :pilot do
     # Make sure we don't get the authentication message when we didn't login.
     root 'dashboard#index', as: :authenticated_root
+  end
+
+  ### Stripe confirmation
+  
+  scope '/club' do
+    resource :payments, only: [:show, :update]
   end
 
   ### Gliders

@@ -63,10 +63,12 @@ en:
       title: 'Activate your club'
       steps:
         account: 'Your account'
+        payments: 'Payment details'
       labels:
         security: 'Your credentials'
         you: 'Who are you?'
         continue: 'Continue'
+        payment: 'Setup payment'
 
     sign_up:
       title: 'Create your club'
