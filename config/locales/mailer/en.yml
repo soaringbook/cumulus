@@ -2,6 +2,11 @@ en:
   mail:
     main:
       title: 'Soaring Book'
+    confirmation:
+      labels:
+        welcome: 'Welcome!'
+        text: 'You can confirm you club account by clicking on the link below. This way you can complete your profile.'
+        confirm: 'Confirm'
     password_reset:
       labels:
         hello: 'Hello %{name}!'

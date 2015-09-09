@@ -1,0 +1,5 @@
+.widget-body
+  %h4= t 'mail.confirmation.labels.welcome'
+  %p= t 'mail.confirmation.labels.text'
+  %p= link_to t('mail.confirmation.labels.confirm'), confirmation_url(@resource, confirmation_token: @token), class: 'btn btn-primary widget-readMore'
+
