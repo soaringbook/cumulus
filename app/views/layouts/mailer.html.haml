@@ -1,0 +1,12 @@
+!!!
+%html
+  %head
+    = stylesheet_link_tag 'email'
+  %body
+    .page-content
+      .panel
+        .panel-body.container-fluid
+          .email-title
+            = image_tag 'LogoBlue', height: '36px'
+            %h4.blue-grey-400.font-weight-400= t 'mail.main.title'
+          .widget.widget-article=yield

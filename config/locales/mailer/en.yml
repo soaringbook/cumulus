@@ -1,0 +1,11 @@
+en:
+  mail:
+    main:
+      title: 'Soaring Book'
+    password_reset:
+      labels:
+        hello: 'Hello %{name}!'
+        link_text: 'Someone has requested a link to change your password. You can do this through the link below.'
+        not_requested: "If you didn't request this, please ignore this email."
+        unchanged_text: "Your password won't change until you access the link above and create a new one."
+        change_password: 'Change my password'

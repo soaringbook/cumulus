@@ -37,7 +37,24 @@ module Cumulus
     end
 
     config.action_mailer.default_url_options = { host: ENV['CUMULUS_DEFAULT_URL_HOST'] }
+    config.action_mailer.asset_host = ENV['CUMULUS_DEFAULT_URL_HOST']
+    config.action_controller.asset_host = ENV['CUMULUS_DEFAULT_URL_HOST']
 
     config.exceptions_app = routes
+
+    # Mailer
+    ActionMailer::Base.smtp_settings = {
+      address:               'smtp.sendgrid.net',
+      port:                  '587',
+      authentication:        :plain,
+      user_name:             ENV['SENDGRID_USERNAME'],
+      password:              ENV['SENDGRID_PASSWORD'],
+      domain:                'heroku.com',
+      enable_starttls_auto:  true
+    }
+
+    config.to_prepare do
+      Devise::Mailer.layout "mailer"
+    end
   end
 end
