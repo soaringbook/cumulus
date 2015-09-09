@@ -16,7 +16,8 @@ class ConfirmationsController < Devise::ConfirmationsController
       end
     end
 
-    render 'devise/confirmations/new' if @confirmable.errors.empty?
+    return if @confirmable.errors.empty?
+    render 'devise/confirmations/new'
   end
 
   # GET /resource/confirmation?confirmation_token=abcdef
@@ -55,7 +56,7 @@ class ConfirmationsController < Devise::ConfirmationsController
   end
 
   def do_confirm
-    @confirmable.confirm!
+    @confirmable.confirm
     set_flash_message :notice, :confirmed
     sign_in_and_redirect(resource_name, @confirmable)
   end
