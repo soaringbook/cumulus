@@ -58,6 +58,7 @@ module Cumulus
       Devise::ConfirmationsController.layout "application"
 
       Devise::SessionsController.skip_before_filter :redirect_to_payments_if_needed
+      Payola::ApplicationController.skip_before_filter :redirect_to_payments_if_needed
     end
   end
 end

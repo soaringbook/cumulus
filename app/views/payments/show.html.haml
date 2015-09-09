@@ -1,6 +1,8 @@
 - breadcrumb :payments
 
 - content_for :title, t('global.confirmation.labels.payment')
+- content_for :head do
+  = render 'payola/transactions/stripe_header'
 
 .row
   .col-lg-8
@@ -9,3 +11,29 @@
         = wizard_tag do
           = wizard_pearl_tag t('global.confirmation.steps.account'), 'wb-user'
           = wizard_pearl_tag t('global.confirmation.steps.payments'), 'wb-payment', true
+
+        .authform
+          = simple_form_for current_pilot.club, url: payments_path, html: { method: 'patch', id: 'activation-form', class: 'payola-onestep-subscription-form', 'data-payola-base-path' => payola_path, 'data-payola-plan-type' => @pack.plan_class, 'data-payola-plan-id' => @pack.id } do |f|
+            .row
+              .col-sm-6
+                %h4= t 'global.confirmation.labels.security'
+
+                = f.input :pack_id, collection: Pack.all, include_blank: false
+
+                %div
+                  %span#error_explanation.payola-payment-error
+
+                .form-group
+                  = label_tag :card_number, 'Credit Card Number'
+                  = text_field_tag :card_number, nil, name: nil, class: 'form-control', data: { stripe: 'number' }
+
+                .form-group
+                  = label_tag :card_code, 'Card Security Code'
+                  = text_field_tag :card_code, nil, name: nil, class: 'form-control', data: { stripe: 'cvc' }
+
+                .form-group
+                  = label_tag :card_month, 'Card Expiry'
+                  = select_month nil, { use_two_digit_numbers: true}, { name: nil, data: { stripe: 'exp-month' } }
+                  = select_year nil, {start_year: Date.today.year, end_year: Date.today.year+10}, { name: nil, data: { stripe: 'exp-year' } }
+
+                = f.submit t('global.confirmation.labels.continue'), class: 'btn btn-primary'

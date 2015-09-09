@@ -3,7 +3,7 @@ class Pack < ActiveRecord::Base
 
   has_many :clubs
 
-  validates :stripe_id, inclusion: { in: Plan.pluck('DISTINCT stripe_id'), message: "not a valid subscription plan" }
+  validates :stripe_id, inclusion: { in: Pack.pluck('DISTINCT stripe_id'), message: "not a valid subscription plan" }
 
   def redirect_path(subscription)
     '/'

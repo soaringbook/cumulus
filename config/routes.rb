@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   ### Payola
-  #
+
   mount Payola::Engine => '/payola', as: :payola
 
   ### Devise
