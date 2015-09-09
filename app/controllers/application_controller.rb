@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
 
   before_action :authenticate_pilot!
   before_action :set_locale
+  before_action :redirect_to_payments_if_needed
 
   ## Locale
 
@@ -16,6 +17,14 @@ class ApplicationController < ActionController::Base
 
   def current_club
     current_pilot.try :club
+  end
+
+  def redirect_to_payments_if_needed
+    redirect_to payments_path if force_payments_wizard?
+  end
+
+  def force_payments_wizard?
+    true
   end
 
   ## Authorization
