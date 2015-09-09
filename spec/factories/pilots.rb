@@ -9,5 +9,7 @@ FactoryGirl.define do
     password_confirmation some_password
 
     club
+
+    confirmed_at Time.now
   end
 end
