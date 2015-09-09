@@ -22,3 +22,6 @@ Metrics/ClassLength:
 
 Style/Documentation:
   Enabled: false
+
+Style/RaiseArgs:
+  EnforcedStyle: compact

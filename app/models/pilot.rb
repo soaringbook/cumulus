@@ -9,12 +9,12 @@ class Pilot < ActiveRecord::Base
   belongs_to :club
 
   devise :database_authenticatable,
-    :registerable,
-    :recoverable,
-    :rememberable,
-    :trackable,
-    :validatable,
-    :confirmable
+         :registerable,
+         :recoverable,
+         :rememberable,
+         :trackable,
+         :validatable,
+         :confirmable
 
   validates :club,       presence: true
   validates :first_name, presence: true, on: :update
@@ -55,17 +55,17 @@ class Pilot < ActiveRecord::Base
   end
 
   # new function to return whether a password has been set
-  def has_no_password?
-    self.encrypted_password.blank?
+  def no_password?
+    encrypted_password.blank?
   end
 
   def only_if_unconfirmed
-    pending_any_confirmation {yield}
+    pending_any_confirmation { yield }
   end
 
   def password_required?
     # Password is required if it is being set, but not for new records
-    if !persisted? 
+    if !persisted?
       false
     else
       !password.nil? || !password_confirmation.nil?
