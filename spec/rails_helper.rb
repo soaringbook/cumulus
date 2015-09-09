@@ -15,3 +15,4 @@ RSpec.configure do |config|
 end
 
 Capybara.javascript_driver = :webkit
+Capybara::Webkit.configure(&:allow_unknown_urls)
