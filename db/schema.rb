@@ -11,16 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150909130359) do
+ActiveRecord::Schema.define(version: 20150910154617) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "clubs", force: :cascade do |t|
     t.string   "short_name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
     t.integer  "pack_id"
+    t.integer  "subscription_type", default: 0, null: false
   end
 
   add_index "clubs", ["pack_id"], name: "index_clubs_on_pack_id", using: :btree

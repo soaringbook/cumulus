@@ -132,6 +132,20 @@ group :production do
   gem 'puma', '~> 2.13.4'
 end
 
+group :development do
+  # Quiet Assets turns off Rails asset pipeline log.
+  # [quiet_assets](http://github.com/evrone/quiet_assets)
+  gem "quiet_assets", "~> 1.1.0"
+
+  # Provides a better error page for Rails and other Rack apps. Includes source 
+  # [better_errors](https://github.com/charliesome/better_errors)
+  gem "better_errors", "~> 2.1.1"
+
+  # Use Pry as your rails console
+  # [pry-rails](https://github.com/rweng/pry-rails)
+  gem "pry-rails", "~> 0.3.4"
+end
+
 group :test do
   # RSpec for Rails
   # [rspec-rails](http://github.com/rspec/rspec-rails)

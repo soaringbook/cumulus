@@ -25,4 +25,9 @@
                   - (0..1).each do |index|
                     %li= t("global.confirmation.packs.#{pack.stripe_id}.#{index}").upcase
                 .pricing-footer
-                  = render 'payola/subscriptions/checkout', plan: pack, button_class: 'btn btn-primary btn-outline', button_text: t('global.confirmation.labels.subscribe')
+                  = render 'payola/subscriptions/checkout', plan: pack, 
+                                                            button_class: 'btn btn-primary btn-outline', 
+                                                            button_text: t('global.confirmation.labels.subscribe'),
+                                                            description: "Subscripe to this pack for #{number_to_currency(pack.decimal_amount)}. You can cancel your subscription at any time your want.",
+                                                            plan_image_path: image_path('LogoBlue@2x'),
+                                                            email: current_pilot.email

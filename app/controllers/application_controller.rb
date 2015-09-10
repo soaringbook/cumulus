@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
   end
 
   def payment_completed?
-    false
+    !current_club.no_subscription?
   end
 
   ## Authorization
