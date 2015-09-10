@@ -6,7 +6,8 @@ class Pack < ActiveRecord::Base
   validates :stripe_id, inclusion: { in: Pack.pluck('DISTINCT stripe_id'), message: "not a valid subscription plan" }
 
   def redirect_path(subscription)
-    '/'
+    routes = Rails.application.routes.url_helpers
+    routes.root_path
   end
 
   ### Amounts
