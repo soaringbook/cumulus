@@ -15,4 +15,19 @@ class Pack < ActiveRecord::Base
   def decimal_amount
     BigDecimal.new(amount) / 100.0
   end
+
+
+  ### Types
+
+  def basic_pack?
+    stripe_id == 'basic_pack'
+  end
+
+  def extended_pack?
+    stripe_id == 'extended_pack'
+  end
+
+  def full_pack?
+    stripe_id == 'full_pack'
+  end
 end

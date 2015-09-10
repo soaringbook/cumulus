@@ -7,7 +7,9 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
   before_action :redirect_to_payments_if_needed
 
-  helper_method :payment_completed?, :current_club
+  helper_method :payment_completed?, 
+                :current_club, 
+                :current_pack
 
   ## Locale
 
@@ -27,6 +29,10 @@ class ApplicationController < ActionController::Base
 
   def payment_completed?
     !current_club.no_subscription?
+  end
+
+  def current_pack
+    current_club.try :pack
   end
 
   ## Authorization
