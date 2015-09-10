@@ -6,7 +6,9 @@ Payola.configure do |config|
     pilot = Pilot.find_by(email: subscription.email)
 
     if club =  pilot.try(:club)
-      club.trial_subscription!
+      club.subscription_type = :trial_subscription
+      club.pack_id = subscription.plan_id
+      club.save
 
       subscription.owner = club
       subscription.save!
