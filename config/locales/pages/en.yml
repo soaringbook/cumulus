@@ -3,6 +3,14 @@ en:
     dashboard:
       title: 'Your dashboard'
 
+    accounts:
+      title: 'Edit club account'
+      labels:
+        club: "Edit %{name}'s account"
+        change_subscription: 'Change subscription'
+        tabs:
+          payment: 'Payments'
+
     profiles:
       titles:
         show: 'Your profile'

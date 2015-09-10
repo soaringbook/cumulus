@@ -12,4 +12,5 @@
 
           - if can? :update, current_pilot.club
             = menu_group_tag t('global.application.menu.admin')
+            = menu_link_tag t('global.application.menu.account'), 'fa-gear', edit_account_path, controller_name == 'accounts'
             = menu_link_tag t('global.application.menu.rights'), 'fa-lock', rights_path, controller_name == 'rights'

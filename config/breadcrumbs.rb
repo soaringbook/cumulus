@@ -65,3 +65,9 @@ crumb :profile do |editable|
     link I18n.t('pages.profiles.titles.show'), profile_path
   end
 end
+
+### Accounts
+
+crumb :account do
+  link I18n.t('pages.accounts.title'), edit_account_path
+end

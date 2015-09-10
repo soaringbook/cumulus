@@ -48,6 +48,10 @@ Rails.application.routes.draw do
 
   resource :profile, only: [:show, :edit, :update]
 
+  ### Profile
+
+  resource :account, only: [:show, :edit, :update]
+
   ### Errors
 
   %w(404 403 422 500 503).each do |code|

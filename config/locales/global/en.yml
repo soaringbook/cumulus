@@ -19,6 +19,7 @@ en:
         gliders: 'Gliders'
         admin: 'Admin Area'
         rights: 'Access Rights'
+        account: 'Account'
         profile: 'Profile'
         logout: 'Logout'
 
