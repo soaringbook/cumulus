@@ -8,4 +8,10 @@ class Pack < ActiveRecord::Base
   def redirect_path(subscription)
     '/'
   end
+
+  ### Amounts
+
+  def decimal_amount
+    BigDecimal.new(amount) / 100.0
+  end
 end

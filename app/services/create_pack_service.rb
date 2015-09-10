@@ -15,7 +15,7 @@ class CreatePackService
     extended_pack.save!(validate: false)
 
     full_pack = Pack.where(name: 'Full Pack').first_or_initialize do |p|
-      p.amount = 30000
+      p.amount = 40000
       p.interval = 'year'
       p.stripe_id = 'full_pack'
     end

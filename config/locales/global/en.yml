@@ -9,7 +9,7 @@ en:
       languages:
         en: 'English'
         nl: 'Dutch'
-      navigation: 
+      navigation:
         toggle: 'Toggle navigation'
       menu:
         fullscreen: 'Toggle fullscreen'
@@ -69,6 +69,18 @@ en:
         you: 'Who are you?'
         continue: 'Continue'
         payment: 'Setup payment'
+        month: 'mo'
+        subscribe: 'Subscribe'
+      packs:
+        basic_pack:
+          '0': ''
+          '1': ''
+        extended_pack:
+          '0': 'Everything from the basic pack.'
+          '1': ''
+        full_pack:
+          '0': 'Everything from the extended pack.'
+          '1': ''
 
     sign_up:
       title: 'Create your club'
