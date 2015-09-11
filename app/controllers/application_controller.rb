@@ -10,7 +10,8 @@ class ApplicationController < ActionController::Base
   helper_method :payment_completed?,
                 :current_club,
                 :current_plan,
-                :current_subscription
+                :current_subscription,
+                :subscription_valid?
 
   ## Locale
 
@@ -38,6 +39,13 @@ class ApplicationController < ActionController::Base
 
   def current_subscription
     current_club.subscription
+  end
+
+  def subscription_valid?
+    current_subscription &&
+      (current_subscription.state != 'canceled' &&
+       current_subscription.state != 'unpaid' &&
+       current_subscription.stripe_status != 'canceled')
   end
 
   ## Authorization

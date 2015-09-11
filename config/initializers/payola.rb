@@ -11,6 +11,15 @@ Payola.configure do |config|
     subscription.sync_with!(object)
   end
 
+  config.subscribe 'customer.subscription.deleted' do |event|
+    object = event.data.object
+    subscription = Payola::Subscription.find_by!(stripe_id: object.id)
+    if plan = Plan.where(stripe_id: object.plan.id).try(:first)
+      subscription.plan_id = plan.id
+    end
+    subscription.sync_with!(object)
+  end
+
   config.subscribe('payola.subscription.active') do |subscription|
     pilot = Pilot.find_by(email: subscription.email)
     if club =  pilot.try(:club)
