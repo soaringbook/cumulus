@@ -13,21 +13,21 @@
           = wizard_pearl_tag t('global.confirmation.steps.payments'), 'wb-payment', true
 
         .row
-          - Pack.all.each do |pack|
+          - Plan.all.each do |plan|
             .col-sm-6.col-lg-4
               .pricing-list
                 .pricing-header
-                  .pricing-title= pack.name
+                  .pricing-title= plan.name
                   .pricing-price
-                    %span.pricing-amount= number_to_currency pack.decimal_amount
+                    %span.pricing-amount= number_to_currency plan.decimal_amount
                     %span.pricing-period= "/ #{t('global.confirmation.labels.month')}"
                 %ul.pricing-features
                   - (0..1).each do |index|
-                    %li= t("global.confirmation.packs.#{pack.stripe_id}.#{index}").upcase
+                    %li= t("global.confirmation.packs.#{plan.stripe_id}.#{index}").upcase
                 .pricing-footer
-                  = render 'payola/subscriptions/checkout', plan: pack, 
+                  = render 'payola/subscriptions/checkout', plan: plan, 
                                                             button_class: 'btn btn-primary btn-outline', 
                                                             button_text: t('global.confirmation.labels.subscribe'),
-                                                            description: "Subscripe to this pack for #{number_to_currency(pack.decimal_amount)}. You can cancel your subscription at any time your want.",
+                                                            description: "Subscripe to this pack for #{number_to_currency(plan.decimal_amount)}. You can cancel your subscription at any time your want.",
                                                             plan_image_path: image_path('LogoBlue@2x'),
                                                             email: current_pilot.email

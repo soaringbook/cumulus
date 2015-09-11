@@ -6,7 +6,6 @@ class AccountsController < ApplicationController
   end
 
   def edit
-    @subscription = Payola::Subscription.find_by!(owner_id: current_club.id, state: 'active')
     params['tab'] = 'payment' unless params['tab']
   end
 

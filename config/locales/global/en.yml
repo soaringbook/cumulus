@@ -73,13 +73,13 @@ en:
         month: 'mo'
         subscribe: 'Subscribe'
       packs:
-        basic_pack:
+        basic:
           '0': 'Pilot, glider and flight management'
           '1': 'Sync with the iPad application'
-        extended_pack:
+        extended:
           '0': 'Everything from the basic pack'
           '1': "Track glider maintenance"
-        full_pack:
+        full:
           '0': 'Everything from the extended pack'
           '1': 'Send monthly flight invoices'
 

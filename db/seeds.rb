@@ -1,2 +1,2 @@
-CreatePackService.new.call
-puts '-- Created packs'
+CreatePlanService.new.call
+puts '-- Created plans'
