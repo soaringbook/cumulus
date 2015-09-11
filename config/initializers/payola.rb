@@ -15,7 +15,6 @@ Payola.configure do |config|
     pilot = Pilot.find_by(email: subscription.email)
     if club =  pilot.try(:club)
       club.subscription = subscription
-      club.plan_id = subscription.plan_id
       club.save
 
       subscription.owner = club

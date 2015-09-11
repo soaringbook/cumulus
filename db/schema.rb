@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150911152847) do
+ActiveRecord::Schema.define(version: 20150911182115) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,12 +20,10 @@ ActiveRecord::Schema.define(version: 20150911152847) do
     t.string   "short_name"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
-    t.integer  "plan_id"
     t.integer  "payola_subscription_id"
   end
 
   add_index "clubs", ["payola_subscription_id"], name: "index_clubs_on_payola_subscription_id", using: :btree
-  add_index "clubs", ["plan_id"], name: "index_clubs_on_plan_id", using: :btree
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -193,5 +191,4 @@ ActiveRecord::Schema.define(version: 20150911152847) do
   end
 
   add_foreign_key "clubs", "payola_subscriptions"
-  add_foreign_key "clubs", "plans"
 end
