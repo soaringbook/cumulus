@@ -9,7 +9,8 @@ en:
         club: "Edit %{name}'s account"
         change_subscription: 'Change subscription'
         tabs:
-          payment: 'Payments'
+          payment: 'Payment'
+        cancel_text: 'You can cancel your subscription at any time. When cancelling your subscription your data will remain visible. You will not be able to perform any updates to the data though.'
 
     profiles:
       titles:

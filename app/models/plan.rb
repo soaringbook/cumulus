@@ -16,4 +16,14 @@ class Plan < ActiveRecord::Base
   def decimal_amount
     BigDecimal.new(amount) / 100.0
   end
+
+  ### Plans
+
+  def self.cumulus
+    Plan.where(stripe_id: 'cumulus').first
+  end
+
+  def self.cumulus_no_trial
+    Plan.where(stripe_id: 'cumulus_no_trial').first
+  end
 end

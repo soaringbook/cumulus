@@ -72,6 +72,7 @@ en:
         payment: 'Setup payment'
         month: 'mo'
         subscribe: 'Subscribe'
+        subscription_text: 'Subscribe to this pack for %{amount}. You can cancel your subscription at any time your want.'
       pack:
         '0': 'Pilot, glider and flight management'
         '1': 'Sync with the iPad application'

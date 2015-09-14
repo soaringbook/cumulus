@@ -1,10 +1,15 @@
 class CreatePlanService
   def call
-    pack = Plan.where(name: 'Cumulus').first_or_initialize do |p|
+    Plan.where(name: 'Cumulus').first_or_initialize do |p|
       p.amount = 3000
       p.interval = 'month'
       p.stripe_id = 'cumulus'
-    end
-    pack.save!(validate: false)
+    end.save!(validate: false)
+
+    Plan.where(name: 'Cumulus no trial').first_or_initialize do |p|
+      p.amount = 3000
+      p.interval = 'month'
+      p.stripe_id = 'cumulus_no_trial'
+    end.save!(validate: false)
   end
 end
