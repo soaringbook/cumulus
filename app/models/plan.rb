@@ -16,19 +16,4 @@ class Plan < ActiveRecord::Base
   def decimal_amount
     BigDecimal.new(amount) / 100.0
   end
-
-
-  ### Types
-
-  def basic?
-    stripe_id == 'basic'
-  end
-
-  def extended?
-    stripe_id == 'extended'
-  end
-
-  def full?
-    stripe_id == 'full'
-  end
 end

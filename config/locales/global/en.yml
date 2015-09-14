@@ -72,16 +72,12 @@ en:
         payment: 'Setup payment'
         month: 'mo'
         subscribe: 'Subscribe'
-      packs:
-        basic:
-          '0': 'Pilot, glider and flight management'
-          '1': 'Sync with the iPad application'
-        extended:
-          '0': 'Everything from the basic pack'
-          '1': "Track glider maintenance"
-        full:
-          '0': 'Everything from the extended pack'
-          '1': 'Send monthly flight invoices'
+      pack:
+        '0': 'Pilot, glider and flight management'
+        '1': 'Sync with the iPad application'
+        '2': '15 day trial period and cancel any time'
+        '3': 'SOON: Send flight invoices to members'
+        '4': 'SOON: Manage technical glider data'
 
     sign_up:
       title: 'Create your club'

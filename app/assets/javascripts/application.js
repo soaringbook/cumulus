@@ -73,4 +73,11 @@
   $('a[data-toggle=tab]').on('click', function() {
     changeUrlParam('tab', $(this).data('url'));
   });
+
+  $(document).on('click', '.payola-subscription-checkout-button', function(e) {
+    $(".payola-subscription-checkout-button").prop("disabled", true)
+    
+  });
+
+
 })(document, window, jQuery);

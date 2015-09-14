@@ -21,4 +21,3 @@
           = tab_pane 'payment', params['tab'] == 'payment' do
             .row
               = render 'payola/subscriptions/cancel', subscription: current_subscription
-              = render partial: 'layouts/stripe/plans', locals: { plans: Plan.all }
