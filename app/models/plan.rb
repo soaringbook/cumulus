@@ -8,7 +8,7 @@ class Plan < ActiveRecord::Base
 
   def redirect_path(subscription)
     routes = Rails.application.routes.url_helpers
-    routes.root_path
+    routes.edit_account_path
   end
 
   ### Amounts
