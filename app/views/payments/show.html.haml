@@ -23,4 +23,4 @@
                 - (0..4).each do |index|
                   %li= t("global.confirmation.pack.#{index}").upcase
               .pricing-footer
-                = render 'payola/subscriptions/checkout', plan: Plan.cumulus, button_class: 'btn btn-primary btn-outline', button_text: t('global.confirmation.labels.subscribe'), description: t('global.confirmation.subscription_text', amount: number_to_currency(Plan.cumulus.decimal_amount)), plan_image_path: image_path('LogoBlue@2x'), email: current_pilot.email
+                = render 'payola/subscriptions/checkout', plan: Plan.cumulus, button_class: 'btn btn-primary btn-outline', button_text: t('global.confirmation.labels.subscribe'), description: t('global.confirmation.labels.subscription_text', amount: number_to_currency(Plan.cumulus.decimal_amount)), plan_image_path: image_path('LogoBlue@2x'), email: current_pilot.email

@@ -4,14 +4,6 @@
 - content_for :head do
   = render 'payola/transactions/stripe_header'
 
-= current_plan.name
-%br
-= current_subscription.try(:state)
-%br
-= current_subscription.try(:stripe_status)
-%br
-= current_subscription.try(:trial_end)
-
 .row
   .col-lg-10
     = panel do
@@ -22,10 +14,25 @@
         = tab_content do
           = tab_pane 'payment', params['tab'] == 'payment' do
             .row
+              .col-sm-6
+                %ul.list-group.list-group-full
+                  %li.list-group-item
+                    = t('pages.accounts.labels.subscription_status')
+                    - if subscription_valid?
+                      %span.badge.badge-success= t("pages.accounts.labels.statuses.#{current_subscription.state}")
+                    - else
+                      %span.badge.badge-danger= t("pages.accounts.labels.statuses.#{current_subscription.state}")
+                  - if subscription_valid? && current_subscription.trial_end
+                    %li.list-group-item
+                      = t('pages.accounts.labels.trial_status')
+                      %span.badge.badge-success= l current_subscription.trial_end, format: :long
+                %hr
+
+            .row
               .col-sm-12
                 - if current_subscription.active?
                   %p= t 'pages.accounts.labels.cancel_text'
                   = render 'payola/subscriptions/cancel', subscription: current_subscription, button_class: 'btn btn-danger btn-outline'
                 - else
                   %p= t 'pages.accounts.labels.cancel_text'
-                  = render 'payola/subscriptions/checkout', plan: Plan.cumulus_no_trial, button_class: 'btn btn-primary btn-outline', button_text: t('global.confirmation.labels.subscribe'), description: t('global.confirmation.subscription_text', amount: number_to_currency(Plan.cumulus.decimal_amount)), plan_image_path: image_path('LogoBlue@2x'), email: current_pilot.email
+                  = render 'payola/subscriptions/checkout', plan: Plan.cumulus_no_trial, button_class: 'btn btn-primary btn-outline', button_text: t('global.confirmation.labels.subscribe'), description: t('global.confirmation.labels.subscription_text', amount: number_to_currency(Plan.cumulus.decimal_amount)), plan_image_path: image_path('LogoBlue@2x'), email: current_pilot.email
