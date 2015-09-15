@@ -29,8 +29,11 @@ def describe(header)
 end
 
 describe('Installing qt')
-run 'brew install qt5'
-run 'brew link --force qt5'
+run 'brew install qt'
+run 'brew link --force qt'
+
+describe('Installing imagemagick')
+run 'brew install imagemagick'
 
 describe('Installing bundle')
 run 'bundle install'
