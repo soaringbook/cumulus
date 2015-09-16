@@ -18,6 +18,6 @@ class Plan < ActiveRecord::Base
   ### Plans
 
   def self.cumulus
-    Plan.where(stripe_id: 'cumulus').first
+    Plan.find_by(stripe_id: 'cumulus')
   end
 end
