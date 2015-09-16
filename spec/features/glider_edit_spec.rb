@@ -1,10 +1,7 @@
 require 'rails_helper.rb'
 
 describe 'The glider edit flow', type: :feature do
-  before do
-    @pilot = create(:pilot, admin: true)
-    login_as(@pilot, scope: :pilot)
-  end
+  before { login_as_pilot }
 
   it 'should create a new glider' do
     visit new_glider_path

@@ -2,7 +2,7 @@ require 'rails_helper.rb'
 
 describe 'The logout flow', type: :feature do
   before do
-    login_as create(:pilot)
+    login_as_pilot
     visit root_path
   end
 

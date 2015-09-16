@@ -8,6 +8,12 @@ module FeatureHelpers
     path = File.join(Rails.root, "spec/fixtures/#{filename}.csv")
     attach_file title, path
   end
+
+  def login_as_pilot(pilot = nil)
+    ApplicationController.any_instance.stub(:payment_completed?).and_return true
+    @pilot = pilot || create(:pilot, admin: true)
+    login_as(@pilot, scope: :pilot)
+  end
 end
 
 RSpec.configure do |config|

@@ -2,6 +2,7 @@ require 'rails_helper.rb'
 
 describe 'The confirmation flow', type: :feature do
   before do
+    build(:plan).save(validate: false)
     clear_emails
     create_club
     open_email('jake@snake.be')
@@ -11,13 +12,13 @@ describe 'The confirmation flow', type: :feature do
     current_email.click_link 'Confirm'
     expect(page).to have_content('Activate your club')
 
-    fill_in 'First name',                       with: 'Jake'
-    fill_in 'Last name', with: 'Snake'
-    fill_in 'Password',                    with: '123123123', match: :prefer_exact
-    fill_in 'Confirm password',            with: '123123123', match: :prefer_exact
+    fill_in 'First name',            with: 'Jake'
+    fill_in 'Last name',             with: 'Snake'
+    fill_in 'Password',              with: '123123123', match: :prefer_exact
+    fill_in 'Password confirmation', with: '123123123', match: :prefer_exact
     click_button 'Continue'
 
-    expect(page).to have_content('Dashboard')
+    expect(page).to have_content('Setup payment')
     expect(Pilot.first.confirmed_at).to_not be_nil
   end
 

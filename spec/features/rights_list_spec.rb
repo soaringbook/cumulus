@@ -1,10 +1,7 @@
 require 'rails_helper.rb'
 
 describe 'The rights list flow', type: :feature do
-  before do
-    @pilot = create(:pilot, email: 'brian@fousa.be', admin: true)
-    login_as(@pilot, scope: :pilot)
-  end
+  before { login_as_pilot }
 
   it 'should see an empty placeholder', js: true do
     visit rights_path

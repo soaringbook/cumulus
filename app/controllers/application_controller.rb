@@ -38,7 +38,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_subscription
-    current_club.subscription
+    current_club.try(:subscription)
   end
 
   def subscription_valid?

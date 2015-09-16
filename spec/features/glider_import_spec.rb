@@ -1,10 +1,7 @@
 require 'rails_helper.rb'
 
 describe 'The glider import flow', type: :feature do
-  before do
-    @pilot = create(:pilot, admin: true)
-    login_as(@pilot, scope: :pilot)
-  end
+  before { login_as_pilot }
 
   it 'should not import when no file selected' do
     visit import_gliders_path

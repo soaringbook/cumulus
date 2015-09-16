@@ -1,10 +1,7 @@
 require 'rails_helper.rb'
 
 describe 'The rights edit flow', type: :feature do
-  before do
-    @pilot = create(:pilot, admin: true)
-    login_as(@pilot, scope: :pilot)
-  end
+  before { login_as_pilot }
 
   it 'should edit a pilot\'s rights' do
     visit edit_pilot_rights_path(@pilot)

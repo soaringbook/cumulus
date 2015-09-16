@@ -1,10 +1,7 @@
 require 'rails_helper.rb'
 
 describe 'The profile flow', type: :feature do
-  before do
-    @pilot = create(:pilot)
-    login_as(@pilot, scope: :pilot)
-  end
+  before { login_as_pilot }
 
   it 'should show the profile' do
     visit profile_path
