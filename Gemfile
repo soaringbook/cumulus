@@ -175,9 +175,9 @@ group :test do
   # [capybara-email](https://github.com/dockyard/capybara-email)
   gem 'capybara-email', '~> 2.4.0'
 
-  # Headless Webkit driver for Capybara
-  # [capybara-webkit](http://github.com/thoughtbot/capybara-webkit)
-  gem "capybara-webkit", "~> 1.7.0"
+  # Poltergeist is a driver for Capybara that allows you to run your tests on a 
+  # [poltergeist](http://github.com/teampoltergeist/poltergeist)
+  gem "poltergeist", "~> 1.6.0"
 
   # factory_girl_rails provides integration between
   # [factory_girl_rails](http://github.com/thoughtbot/factory_girl_rails)
