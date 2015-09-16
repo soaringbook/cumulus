@@ -38,7 +38,7 @@ class Plan < ActiveRecord::Base
         plan.interval = 'month'
         plan.name = 'Cumulus no trial'
       end
-      cumlus.save!(validate: false)
+      cumulus.save!(validate: false)
       cumulus
     end
   end
