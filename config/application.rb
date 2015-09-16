@@ -60,6 +60,7 @@ module Cumulus
       Devise::SessionsController.skip_before_filter :redirect_to_payments_if_needed
       Devise::RegistrationsController.skip_before_filter :redirect_to_payments_if_needed
       Devise::ConfirmationsController.skip_before_filter :redirect_to_payments_if_needed
+      Devise::PasswordsController.skip_before_filter :redirect_to_payments_if_needed
       Payola::ApplicationController.skip_before_filter :redirect_to_payments_if_needed
     end
   end
