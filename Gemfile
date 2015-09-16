@@ -140,6 +140,10 @@ group :development do
   # Use Pry as your rails console
   # [pry-rails](https://github.com/rweng/pry-rails)
   gem "pry-rails", "~> 0.3.4"
+
+  # Profiling toolkit for Rack applications with Rails integration. Client Side 
+  # [rack-mini-profiler](http://miniprofiler.com)
+  gem "rack-mini-profiler", "~> 0.9.7", require: false
 end
 
 group :test do
