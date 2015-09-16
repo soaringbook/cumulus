@@ -3,7 +3,7 @@ module ControllerHelpers
     @pilot = pilot
     allow(request.env['warden']).to receive(:authenticate!) { pilot }
     allow(controller).to receive(:current_pilot) { pilot }
-    allow(controller).to receive(:current_subscription) { build(:subscription) }
+    allow(controller).to receive(:payment_completed?) { true }
   end
 
   def redirect_for_login(&_block)
