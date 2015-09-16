@@ -1,7 +1,7 @@
 module FeatureHelpers
-  def press_enter
-    keypress = "var e = $.Event('keydown', { keyCode: 13 }); $('body').trigger(e);"
-    page.driver.execute_script(keypress)
+  def press_enter selector
+    element = find(selector)
+    element.native.send_key(:Enter)
   end
 
   def attach_csv(title, filename)

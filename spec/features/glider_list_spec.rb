@@ -31,7 +31,7 @@ describe 'The glider list flow', type: :feature do
     visit gliders_path
 
     fill_in 'Search', with: 'NA'
-    press_enter
+    press_enter '#search'
 
     expect(page).to have_css('tbody tr', count: 1)
   end
@@ -44,7 +44,7 @@ describe 'The glider list flow', type: :feature do
     visit gliders_path
 
     fill_in 'Search', with: 'NA'
-    press_enter
+    press_enter '#search'
 
     expect(page).to have_css('tbody tr', count: 1)
   end

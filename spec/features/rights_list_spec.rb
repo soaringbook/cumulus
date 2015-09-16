@@ -7,7 +7,7 @@ describe 'The rights list flow', type: :feature do
     visit rights_path
 
     fill_in 'Search', with: 'ak'
-    press_enter
+    press_enter '#search'
 
     expect(page).to have_content('No pilots found')
   end
@@ -34,7 +34,7 @@ describe 'The rights list flow', type: :feature do
     visit rights_path
 
     fill_in 'Search', with: 'ak'
-    press_enter
+    press_enter '#search'
 
     expect(page).to have_css('tbody tr', count: 1)
   end
@@ -47,7 +47,8 @@ describe 'The rights list flow', type: :feature do
     visit rights_path
 
     fill_in 'Search', with: 'ak'
-    press_enter
+    press_enter '#search'
+
     expect(page).to have_css('tbody tr', count: 1)
   end
 end
