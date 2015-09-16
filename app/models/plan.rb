@@ -20,10 +20,26 @@ class Plan < ActiveRecord::Base
   ### Plans
 
   def self.cumulus
-    Plan.find_by(stripe_id: 'cumulus')
+    @cumulus || begin
+      cumulus = Plan.where(stripe_id: 'cumulus').first_or_initialize do |plan|
+        plan.amount = 3000
+        plan.interval = 'month'
+        plan.name = 'Cumulus'
+      end
+      cumulus.save!(validate: false)
+      cumulus
+    end
   end
 
   def self.cumulus_no_trial
-    Plan.find_by(stripe_id: 'cumulus_no_trial')
+    @cumulus_no_trial || begin
+      cumulus = Plan.where(stripe_id: 'cumulus_no_trial').first_or_initialize do |plan|
+        plan.amount = 3000
+        plan.interval = 'month'
+        plan.name = 'Cumulus no trial'
+      end
+      cumlus.save!(validate: false)
+      cumulus
+    end
   end
 end
