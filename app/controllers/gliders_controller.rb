@@ -36,7 +36,7 @@ class GlidersController < ApplicationController
 
   def update
     if @glider.update(glider_params)
-      redirect_to @glider, notice: t('pages.gliders.labels.notices.update')
+      redirect_to glider_path(@glider), notice: t('pages.gliders.labels.notices.update')
     else
       render :edit
     end

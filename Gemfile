@@ -144,6 +144,10 @@ group :development do
   # Profiling toolkit for Rack applications with Rails integration. Client Side 
   # [rack-mini-profiler](http://miniprofiler.com)
   gem "rack-mini-profiler", "~> 0.9.7", require: false
+
+  # Brakeman detects security vulnerabilities in Ruby on Rails applications via 
+  # [brakeman](http://brakemanscanner.org)
+  gem "brakeman", "~> 3.1.0", require: false
 end
 
 group :test do
