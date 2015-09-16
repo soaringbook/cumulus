@@ -23,7 +23,7 @@ Rails.application.routes.draw do
 
   authenticated :pilot do
     # Make sure we don't get the authentication message when we didn't login.
-    root 'dashboard#index', as: :authenticated_root
+    root 'dashboard#show', as: :authenticated_root
   end
 
   ### Stripe confirmation
