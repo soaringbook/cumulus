@@ -106,10 +106,6 @@ group :development, :test do
   # Rails application preloader
   # [spring](http://github.com/rails/spring)
   gem 'spring', '~> 1.3.6'
-
-  # help to kill N+1 queries and unused eager loading.
-  # [bullet](http://github.com/flyerhzm/bullet)
-  gem 'bullet', '~> 4.14.7'
 end
 
 group :development, :production do
@@ -147,6 +143,10 @@ group :development do
 end
 
 group :test do
+  # help to kill N+1 queries and unused eager loading.
+  # [bullet](http://github.com/flyerhzm/bullet)
+  gem 'bullet', '~> 4.14.7'
+
   # RSpec for Rails
   # [rspec-rails](http://github.com/rspec/rspec-rails)
   gem 'rspec-rails', '~> 3.2.2'
