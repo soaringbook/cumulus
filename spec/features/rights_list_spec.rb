@@ -48,7 +48,6 @@ describe 'The rights list flow', type: :feature do
 
     fill_in 'Search', with: 'ak'
     press_enter
-
     expect(page).to have_css('tbody tr', count: 1)
   end
 end
