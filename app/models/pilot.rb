@@ -22,6 +22,8 @@ class Pilot < ActiveRecord::Base
 
   accepts_nested_attributes_for :club
 
+  default_scope { includes(:club) }
+
   ### Access
 
   enum glider_access: [:gliders_not_accessible, :gliders_readable, :gliders_writable]
