@@ -133,7 +133,7 @@ group :development do
   # [quiet_assets](http://github.com/evrone/quiet_assets)
   gem "quiet_assets", "~> 1.1.0"
 
-  # Provides a better error page for Rails and other Rack apps. Includes source 
+  # Provides a better error page for Rails and other Rack apps. Includes source
   # [better_errors](https://github.com/charliesome/better_errors)
   gem "better_errors", "~> 2.1.1"
 
@@ -141,11 +141,11 @@ group :development do
   # [pry-rails](https://github.com/rweng/pry-rails)
   gem "pry-rails", "~> 0.3.4"
 
-  # Profiling toolkit for Rack applications with Rails integration. Client Side 
+  # Profiling toolkit for Rack applications with Rails integration. Client Side
   # [rack-mini-profiler](http://miniprofiler.com)
   gem "rack-mini-profiler", "~> 0.9.7", require: false
 
-  # Brakeman detects security vulnerabilities in Ruby on Rails applications via 
+  # Brakeman detects security vulnerabilities in Ruby on Rails applications via
   # [brakeman](http://brakemanscanner.org)
   gem "brakeman", "~> 3.1.0", require: false
 end
@@ -159,7 +159,7 @@ group :test do
   # [rspec-rails](http://github.com/rspec/rspec-rails)
   gem 'rspec-rails', '~> 3.2.2'
 
-  # Launchy is helper class for launching cross-platform applications in a fire 
+  # Launchy is helper class for launching cross-platform applications in a fire
   # [launchy](http://github.com/copiousfreetime/launchy)
   gem "launchy", "~> 2.4.3"
 

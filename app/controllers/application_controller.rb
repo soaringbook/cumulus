@@ -9,7 +9,6 @@ class ApplicationController < ActionController::Base
 
   helper_method :payment_completed?,
                 :current_club,
-                :current_plan,
                 :current_subscription,
                 :subscription_valid?
 
@@ -33,10 +32,6 @@ class ApplicationController < ActionController::Base
     current_subscription
   end
 
-  def current_plan
-    current_subscription.plan
-  end
-
   def current_subscription
     current_club.try(:subscription)
   end
@@ -49,10 +44,6 @@ class ApplicationController < ActionController::Base
   end
 
   ## Authorization
-
-  def current_ability
-    @current_ability ||= Ability.new(current_pilot)
-  end
 
   rescue_from CanCan::AccessDenied do |_exception|
     redirect_to error_403_path

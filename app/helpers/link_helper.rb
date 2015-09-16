@@ -48,16 +48,6 @@ module LinkHelper
     end
   end
 
-  def export_pdf_to(path)
-    content_tag :li do
-      link_to path do
-        content = content_tag :i, nil, class: 'icon wb-file'
-        content << t('global.links.export.pdf')
-        content
-      end
-    end
-  end
-
   def export_xls_to(path)
     content_tag :li do
       link_to path do
