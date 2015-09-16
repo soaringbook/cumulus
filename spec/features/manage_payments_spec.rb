@@ -1,7 +1,10 @@
 require 'rails_helper.rb'
 
 describe 'The manage payments flow', type: :feature do
-  before { login_as_pilot }
+  before do
+    setup_plan
+    login_as_pilot
+  end
 
   it 'should show the payments cancel page' do
     allow_any_instance_of(ApplicationController).to receive(:subscription_valid?).and_return(true)

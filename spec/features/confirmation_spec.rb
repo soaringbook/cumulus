@@ -2,6 +2,7 @@ require 'rails_helper.rb'
 
 describe 'The confirmation flow', type: :feature do
   before do
+    setup_plan
     clear_emails
     create_club
     open_email('jake@snake.be')
