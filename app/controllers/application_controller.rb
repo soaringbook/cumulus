@@ -45,6 +45,10 @@ class ApplicationController < ActionController::Base
 
   ## Authorization
 
+  def current_ability
+    @current_ability ||= Ability.new(current_pilot)
+  end
+
   rescue_from CanCan::AccessDenied do |_exception|
     redirect_to error_403_path
   end
