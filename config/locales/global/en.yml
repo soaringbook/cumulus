@@ -50,7 +50,6 @@ en:
         dashboard: 'GO TO DASHBOARD'
 
     sign_in:
-      title: 'Sign in'
       subtitle: 'Sign in to Soaring Book Cumulus.'
       labels:
         no_club: 'Your club not available?'
@@ -112,6 +111,5 @@ en:
         sign_in: 'Sign in'
 
     footer:
-      crafted_by: 'Crafted by %{name}'
+      crafted_by: 'Crafted by %{name} 2013-%{year}'
       rights_reserved: '%{year} Some Rights Reserved'
-      crafter_with: 'Crafted with %{icon} by %{name}'
