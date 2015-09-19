@@ -35,4 +35,4 @@
                   = render 'payola/subscriptions/cancel', subscription: current_subscription, button_class: 'btn btn-danger btn-outline'
                 - else
                   %p= t 'pages.accounts.labels.cancel_text'
-                  = render 'payola/subscriptions/checkout', plan: Plan.cumulus, button_class: 'btn btn-primary btn-outline', button_text: t('global.confirmation.labels.subscribe'), description: t('global.confirmation.labels.subscription_text', amount: number_to_currency(Plan.cumulus.decimal_amount)), plan_image_path: image_path('LogoBlue@2x'), email: current_pilot.email
+                  = render 'payola/subscriptions/checkout', plan: Plan.cumulus, button_class: 'btn btn-primary btn-outline', button_text: t('global.confirmation.labels.subscribe'), description: t('global.confirmation.labels.subscription_text', amount: number_to_currency(Plan.cumulus.decimal_amount)), plan_image_path: image_path('Logo'), email: current_pilot.email

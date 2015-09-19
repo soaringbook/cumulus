@@ -1,8 +1,3 @@
-.brand.visible-xs
-  = image_tag 'LogoBlue.png', class: 'brand-img', height: '36px'
-  %h3.brand-text.font-size-40= t 'global.application.title'
-
-%h3.font-size-24= t 'global.change_password.title'
 %p= t 'global.change_password.subtitle'
 
 = render partial: 'layouts/devise/alerts'
@@ -11,15 +6,12 @@
   = f.input :reset_password_token, as: :hidden
   = f.full_error :reset_password_token
 
-  .form-inputs
-    = f.input :password,              label: false, required: true, autofocus: true
+  .form-group
+    = f.input :password, label: false, required: true, autofocus: true
+  .form-group
     = f.input :password_confirmation, label: false, required: true
+  = f.button :submit, t('global.change_password.buttons.submit'), class: 'btn btn-primary block full-width m-b'
 
-  .form-actions
-    = f.button :submit, t('global.change_password.buttons.submit'), class: 'btn btn-primary btn-block'
-
-%p
-  = t 'global.change_password.labels.already_a_club'
-  = link_to t('global.change_password.links.sign_in'), new_session_path(resource_name), data: { no_turbolink: true }
-
-
+  %p.text-muted.text-center
+    %small= t 'global.change_password.labels.already_a_club'
+  = link_to t('global.change_password.links.sign_in'), new_session_path(resource_name), class: 'btn btn-sm btn-white btn-block'
