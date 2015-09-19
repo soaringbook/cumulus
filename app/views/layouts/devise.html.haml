@@ -16,7 +16,17 @@
     = csrf_meta_tags
 
   %body.gray-bg
-    = yield
+
+    .middle-box.text-center.loginscreen.animated.fadeInDown
+      %div
+        %div
+          %h1.logo-name= image_tag('Logo.png', height: 170)
+        %h3= t 'global.application.title'
+
+        = yield
+
+        %p.m-t
+          %small= t('global.footer.crafted_by', name: 'Jelle Vandebeeck', year: Time.zone.now.year)
 
     = javascript_include_tag 'devise'
     = yield :javascript
