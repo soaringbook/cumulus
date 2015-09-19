@@ -10,6 +10,18 @@ gem 'dotenv-rails', '~> 2.0.2', require: 'dotenv/rails-now', groups: [:developme
 # [rails](http://www.rubyonrails.org)
 gem 'rails', '~> 4.2.3'
 
+# Twitter's Bootstrap, converted to Sass and ready to drop into Rails or Compa
+# [bootstrap-sass](https://github.com/twbs/bootstrap-sass)
+gem "bootstrap-sass", "~> 3.3.5.1"
+
+# I like font-awesome. I like the asset pipeline. I like semantic versioning. 
+# [font-awesome-rails](https://github.com/bokmann/font-awesome-rails)
+gem "font-awesome-rails", "~> 4.4.0.0"
+
+# Sass adapter for the Rails asset pipeline.
+# [sass-rails](https://github.com/rails/sass-rails)
+gem "sass-rails", "~> 5.0.4"
+
 # Pg is the Ruby interface to the {PostgreSQL RDBMS}[http://www.postgresql.org
 # [pg](https://bitbucket.org/ged/ruby-pg)
 gem 'pg', '~> 0.18.2'
