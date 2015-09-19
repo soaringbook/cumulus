@@ -1,6 +1,5 @@
-%header
-  %h1.animation-slide-top= @status_code
-  %p= t "global.errors.labels.#{@status_code.to_i}"
-%p.error-advise= t 'global.errors.labels.advise'
-= link_to t('global.errors.links.dashboard'), root_path, class: 'btn btn-primary btn-round'
-
+%h1= @status_code
+%h3.font-bold= t "global.errors.labels.#{@status_code.to_i}"
+.error-desc
+  = t 'global.errors.labels.advise'
+  = link_to t('global.errors.links.dashboard'), root_path, class: 'btn btn-primary m-t'
