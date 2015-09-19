@@ -1,20 +1,12 @@
-.brand.visible-xs
-  = image_tag 'LogoBlue.png', class: 'brand-img', height: '36px'
-  %h3.brand-text.font-size-40= t 'global.application.title'
-
-%h3.font-size-24= t 'global.password_forget.title'
 %p= t 'global.password_forget.subtitle'
 
 = render partial: 'layouts/devise/alerts'
 
 = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
-  .form-inputs
-    = f.input :email, label: false, required: true, autofocus: true
+  .form-group
+    = f.input :email, required: false, label: false, autofocus: true, class: 'form-control'
+  = f.button :submit, t('global.password_forget.buttons.submit'), class: 'btn btn-primary block full-width m-b'
 
-  .form-actions
-    = f.button :submit, t('global.password_forget.buttons.submit'), class: 'btn btn-primary btn-block'
-
-%p
-  = t 'global.password_forget.labels.already_a_club'
-  = link_to t('global.password_forget.links.sign_in'), new_session_path(resource_name), data: { no_turbolink: true }
-
+  %p.text-muted.text-center
+    %small= t 'global.password_forget.labels.already_a_club'
+  = link_to t('global.password_forget.links.sign_in'), new_session_path(resource_name), class: 'btn btn-sm btn-white btn-block'
