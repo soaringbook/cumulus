@@ -80,11 +80,9 @@ en:
         '4': 'SOON: Manage technical glider data'
 
     sign_up:
-      title: 'Create your club'
       subtitle: 'Sign up to Soaring Book Cumulus and create your club.'
       labels:
         already_a_club: 'Already registered to a club?'
-        short_label_hint: 'This is the abbreviated name for your club.'
       links:
         sign_in: 'Sign in'
       buttons:
