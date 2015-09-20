@@ -3,7 +3,7 @@ en:
     title: 'Soaring Book'
 
     application:
-      title: 'CUMULUS'
+      title: 'SOARING BOOK'
       welcome: 'Welcome!'
       description: 'This is Cumulus, an administrative Soaring Book application. We keep track of everything that happens inside your gliding club without you having to worry about it.'
       languages:
@@ -50,7 +50,7 @@ en:
         dashboard: 'GO TO DASHBOARD'
 
     sign_in:
-      subtitle: 'Sign in to Soaring Book Cumulus.'
+      subtitle: "Sign in to your club's Soaring Book application."
       labels:
         no_club: 'Your club not available?'
       buttons:
