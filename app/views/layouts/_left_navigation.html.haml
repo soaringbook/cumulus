@@ -17,7 +17,7 @@
               = menu_top_link_tag t('global.application.menu.profile'), profile_path
               %li.divider
             = menu_top_link_tag t('global.application.menu.logout'), destroy_pilot_session_path, method: :delete
-        .logo-element SB
+        .logo-element= avatar_image_tag current_pilot.avatar, :thumb, class: 'img-circle', height: '48'
       = menu_link_tag t('global.application.menu.dashboard'), 'dashboard', root_path, controller_name == 'dashboard'
       - if can? :read, Glider
         = menu_link_tag t('global.application.menu.gliders'), 'plane', gliders_path, controller_name == 'gliders'
