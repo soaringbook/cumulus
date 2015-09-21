@@ -5,6 +5,8 @@
       - if current_club && payment_completed?
         %a.navbar-minimalize.minimalize-styl-2.btn.btn-primary{ href: "#" }
           %i.fa.fa-bars
+      - if yield(:search)
+        = yield(:search)
     %ul.nav.navbar-top-links.navbar-right
       - if current_club
         %li

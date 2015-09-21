@@ -67,3 +67,8 @@ ol.breadcrumb li.active {
 .payola-subscription-checkout-button-text {
   min-height: 0 !important;
 }
+
+/* Don't make the dropdown button take full screen width. */
+.dropdown {
+  display: inline-block !important;
+}

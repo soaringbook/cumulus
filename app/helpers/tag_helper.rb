@@ -14,8 +14,8 @@ module TagHelper
   end
 
   def boolean_tag(value)
-    value_class = value ? 'check teal' : 'close red'
-    content_tag :i, nil, class: "icon wb-#{value_class}-600"
+    value_class = value ? 'check text-navy' : 'close text-danger'
+    content_tag :i, nil, class: "fa fa-#{value_class}"
   end
 
   def rights_tag(value, is_admin)
@@ -31,12 +31,10 @@ module TagHelper
     content_tag :i, nil, class: "icon wb-#{value_class}-600", data: { toggle: 'tooltip', 'original-title' => original_title }
   end
 
-  def search_form_tag(path)
-    form_tag path, method: :get do
-      content_tag :div, nil, class: 'input-search input-search-dark' do
-        content = content_tag(:i, nil, class: 'input-search-icon wb-search', aria: { hidden: 'true' })
-        content << text_field_tag(:search, params[:search], placeholder: 'Search', class: 'form-control')
-        content
+  def search_form_tag(path, placeholder)
+    form_tag path, method: :get, class: 'navbar-form-custom' do
+      content_tag :div, nil, class: 'form-group' do
+        text_field_tag(:search, params[:search], placeholder: placeholder, class: 'form-control', autofocus: true)
       end
     end
   end

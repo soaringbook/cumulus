@@ -24,15 +24,18 @@ en:
 
     labels:
       delete_confirmation: 'Are you sure you want to delete this line?'
+      search: 
+        gliders: 'Search for gliders...'
 
     links:
       edit: 'Edit'
       new: 'Add'
       delete: 'Delete'
       import: 'Batch Import'
+      export_dropdown: 'Export to...'
       export:
-        pdf: 'Export PDF'
-        xls: 'Export Excel'
+        pdf: 'PDF'
+        xls: 'Excel'
 
     errors:
       labels:

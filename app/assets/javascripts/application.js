@@ -25,4 +25,7 @@ $(function() {
   $('a[data-toggle=tab]').on('click', function() {
     changeUrlParam('tab', $(this).data('url'));
   });
+
+  // Set the button tooltip.
+  $('.btn-tooltip').tooltip({ container: "body" });
 });
