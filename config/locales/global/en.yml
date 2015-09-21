@@ -5,17 +5,13 @@ en:
     application:
       title: 'SOARING BOOK'
       welcome: 'Welcome!'
+      welcome_navigation: 'Welcome to Soaring Book!'
       description: 'This is Cumulus, an administrative Soaring Book application. We keep track of everything that happens inside your gliding club without you having to worry about it.'
       languages:
         en: 'English'
         nl: 'Dutch'
-      navigation:
-        toggle: 'Toggle navigation'
       menu:
-        fullscreen: 'Toggle fullscreen'
-        toggle: 'Toggle menu bar'
         dashboard: 'Dashboard'
-        club: 'Club Area'
         gliders: 'Gliders'
         admin: 'Admin Area'
         rights: 'Access Rights'

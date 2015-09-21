@@ -18,6 +18,8 @@
   %body
     #wrapper
       = render partial: 'layouts/left_navigation'
+      #page-wrapper.gray-bg
+        = render partial: 'layouts/top_navigation'
 
     = yield :javascript
 

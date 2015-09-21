@@ -1,0 +1,12 @@
+.row.border-bottom
+  %nav.navbar.navbar-static-top{ role: "navigation", style: "margin-bottom: 0"}
+    .navbar-header
+      %a.navbar-minimalize.minimalize-styl-2.btn.btn-primary{ href: "#" }
+        %i.fa.fa-bars
+    %ul.nav.navbar-top-links.navbar-right
+      %li
+        %span.m-r-sm.text-muted.welcome-message= t('global.application.welcome_navigation')
+      %li
+        = link_to destroy_pilot_session_path, method: :delete do
+          %i.fa.fa-sign-out
+          = t('global.application.menu.logout')
