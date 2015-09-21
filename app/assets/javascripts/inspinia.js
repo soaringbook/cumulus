@@ -91,8 +91,9 @@ $(document).ready(function () {
     // Minimalize menu
     $('.navbar-minimalize').click(function () {
         $("body").toggleClass("mini-navbar");
+        // CUSTOM: Saved to cookie.
+        $.cookie('mini_navbar', $("body").hasClass('mini-navbar'));
         SmoothlyMenu();
-
     });
 
     // Tooltips demo

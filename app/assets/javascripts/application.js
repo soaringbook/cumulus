@@ -12,5 +12,6 @@
 //= require pace/pace.min.js
 //= require peity/jquery.peity.min.js
 //= require slimscroll/jquery.slimscroll.min.js
+//= require jquery-cookie/jquery.cookie.js
 //= require inspinia.js
 //= require retina_tag

@@ -15,7 +15,7 @@
 
     = csrf_meta_tags
 
-  %body
+  %body{ class: cookies[:mini_navbar] == 'true' ? 'mini-navbar' : nil }
     #wrapper
       = render partial: 'layouts/left_navigation'
       #page-wrapper.gray-bg
