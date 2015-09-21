@@ -1,8 +1,5 @@
 en:
   pages:
-    dashboard:
-      title: 'Your dashboard'
-
     accounts:
       title: 'Edit club account'
       labels:
