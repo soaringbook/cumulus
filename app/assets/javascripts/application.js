@@ -13,5 +13,6 @@
 //= require peity/jquery.peity.min.js
 //= require slimscroll/jquery.slimscroll.min.js
 //= require jquery-cookie/jquery.cookie.js
+//= require select2/select2.full.min.js
 //= require inspinia.js
 //= require retina_tag
