@@ -19,16 +19,16 @@ module TagHelper
   end
 
   def rights_tag(value, is_admin)
-    value_class = 'lock red'
+    value_class = 'lock text-danger'
     original_title = t('pages.rights.labels.no_access')
     if is_admin || value.to_s.end_with?('_writable')
-      value_class = 'pencil teal'
+      value_class = 'pencil text-navy'
       original_title = t('pages.rights.labels.writable')
     elsif value.to_s.end_with?('_readable')
-      value_class = 'eye orange'
+      value_class = 'eye text-warning'
       original_title = t('pages.rights.labels.readable')
     end
-    content_tag :i, nil, class: "icon wb-#{value_class}-600", data: { toggle: 'tooltip', 'original-title' => original_title }
+    content_tag :i, nil, class: "fa fa-#{value_class} btn-tooltip", data: { toggle: 'tooltip', 'original-title' => original_title }
   end
 
   def search_form_tag(path, placeholder)

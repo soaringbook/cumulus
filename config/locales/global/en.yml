@@ -24,8 +24,9 @@ en:
 
     labels:
       delete_confirmation: 'Are you sure you want to delete this line?'
-      search: 
+      search:
         gliders: 'Search for gliders...'
+        rights: 'Search for pilots...'
 
     links:
       edit: 'Edit'
