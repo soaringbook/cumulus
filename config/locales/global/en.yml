@@ -57,6 +57,7 @@ en:
 
     confirmation:
       title: 'Activate your club'
+      wizard_title: 'Activation progress'
       steps:
         account: 'Your account'
         payments: 'Payment details'

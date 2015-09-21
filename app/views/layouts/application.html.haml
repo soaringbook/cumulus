@@ -15,9 +15,10 @@
 
     = csrf_meta_tags
 
-  %body{ class: cookies[:mini_navbar] == 'true' ? 'mini-navbar' : nil }
+  %body{ class: !payment_completed? || cookies[:mini_navbar] == 'true' ? 'mini-navbar' : nil }
     #wrapper
-      = render partial: 'layouts/left_navigation'
+      - if current_pilot
+        = render partial: 'layouts/left_navigation'
       #page-wrapper.gray-bg
         = render partial: 'layouts/top_navigation'
         = render partial: 'layouts/content'

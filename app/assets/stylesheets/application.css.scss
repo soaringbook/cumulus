@@ -37,6 +37,11 @@ ol.breadcrumb li.active {
   color: #ed5565 !important;
 }
 
+.has-error .form-control:focus {
+  border-color: #ed5565 !important;
+}
+
+
 /* Remove file border. */
 .file {
   border: 0px !important;
