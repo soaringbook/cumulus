@@ -16,7 +16,7 @@
           .row
             .col-sm-6
               %h4= t 'global.confirmation.labels.security'
-              = f.input :password, required: false
+              = f.input :password, required: false, autofocus: true
               = f.input :password_confirmation, required: false
             .col-sm-6
               %h4= t 'global.confirmation.labels.you'

@@ -54,10 +54,16 @@ ol.breadcrumb li.active {
 
 /* Show correct price size. */
 .label-lg {
-  font-size: 2em !important;
-  line-height: 2em !important;
+  font-size: 1.1em !important;
+  line-height: 1.1em !important;
+  margin-bottom: 3em !important;
 }
 
 .pricing li {
   line-height: 2em;
+}
+
+/* Resize the subscribe button. */
+.payola-subscription-checkout-button-text {
+  min-height: 0 !important;
 }
