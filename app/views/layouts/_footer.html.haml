@@ -1,2 +1,3 @@
-%footer.site-footer
-  .site-footer-right= t('global.footer.crafted_by', name: 'Jelle Vandebeeck', year: '2005').html_safe
+.footer
+  .pull-right= t('global.footer.timespan', year: Time.zone.now.year).html_safe
+  %div= t('global.footer.crafted_by_me', name: 'Jelle Vandebeeck', year: Time.zone.now.year).html_safe
