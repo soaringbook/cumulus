@@ -18,8 +18,8 @@ module LinkHelper
   end
 
   def edit_action_link_to(path)
-    link_to path, class: 'btn btn-sm btn-icon btn-inverse btn-round', data: { toggle: 'tooltip', 'original-title' => t('global.links.edit') } do
-      content_tag :i, nil, class: 'icon wb-wrench', aria: { hidden: 'true' }
+    link_to path, class: 'btn btn-primary vertical-align btn-circle' do
+      content_tag :i, nil, class: 'fa fa-pencil'
     end
   end
 
