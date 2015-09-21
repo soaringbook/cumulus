@@ -7,5 +7,5 @@
 
 %tr
   %td.content-block.aligncenter
-    = link_to t('mail.confirmation.labels.confirm'), confirmation_url(@resource, reset_password_token: @token), class: 'btn-primary'
+    = link_to t('mail.confirmation.labels.confirm'), confirmation_url(@resource, confirmation_token: @token), class: 'btn-primary'
 
