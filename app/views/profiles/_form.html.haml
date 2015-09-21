@@ -23,7 +23,7 @@
                 .col-sm-6
                   = avatar_image_tag @pilot.avatar, :thumb, class: 'lazy img-circle'
             %hr
-            = f.submit class: 'btn btn-primary'
+            = f.submit t('pages.profiles.buttons.submit_profile'), class: 'btn btn-primary'
 
         = tab_pane 'security', params['tab'] == 'security' do
           = simple_form_for @pilot, url: profile_path, wrapper: :vertical_form do |f|
@@ -33,7 +33,7 @@
                 = f.input :password,              required: false, autofocus: true
                 = f.input :password_confirmation, required: false, autofocus: true
             %hr
-            = f.submit class: 'btn btn-primary'
+            = f.submit t('pages.profiles.buttons.submit_security'), class: 'btn btn-primary'
 
         = tab_pane 'settings', params['tab'] == 'settings' do
           = simple_form_for @pilot, url: profile_path, wrapper: :vertical_form do |f|
@@ -42,7 +42,7 @@
               .col-sm-6
                 = f.input :locale, required: false, autofocus: true, collection: Pilot.locales, include_blank: false, label_method: lambda { |owner| t("pages.profiles.labels.languages.#{owner}") }
             %hr
-            = f.submit class: 'btn btn-primary'
+            = f.submit t('pages.profiles.buttons.submit_settings'), class: 'btn btn-primary'
 
 :javascript
   $('select').select2({
