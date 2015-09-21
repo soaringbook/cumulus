@@ -6,7 +6,7 @@
         %i.fa.fa-bars
     %ul.nav.navbar-top-links.navbar-right
       %li
-        %span.m-r-sm.text-muted.welcome-message= t('global.application.welcome_navigation')
+        %span.m-r-sm.text-muted.welcome-message= t('global.application.welcome_navigation', club: current_club.short_name).html_safe
       %li
         = link_to destroy_pilot_session_path, method: :delete do
           %i.fa.fa-sign-out
