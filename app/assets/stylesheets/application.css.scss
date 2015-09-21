@@ -52,3 +52,12 @@ ol.breadcrumb li.active {
   padding-left: 0.4em !important;
 }
 
+/* Show correct price size. */
+.label-lg {
+  font-size: 2em !important;
+  line-height: 2em !important;
+}
+
+.pricing li {
+  line-height: 2em;
+}
