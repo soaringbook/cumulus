@@ -43,7 +43,7 @@ module TagHelper
 
   def checkbox_tag(form, field)
     content_tag :div, class: 'form-group' do
-      content_tag :div, class: 'checkbox-custom checkbox-primary' do
+      content_tag :div, class: 'checkbox' do
         content = form.check_box field
         content << form.label(field)
         content

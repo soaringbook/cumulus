@@ -10,6 +10,7 @@
  *
  *= require_self
  *= require animate/animate.css
+ *= require awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css
  *= require select2/select2.min.css
  *= require style
  *= require font-awesome
@@ -34,3 +35,14 @@ ol.breadcrumb li.active {
 .has-error .help-block {
   color: #ed5565 !important;
 }
+
+/* Remove file border. */
+.file {
+  border: 0px !important;
+}
+
+/* Better checkbox/radio label padding. */
+.radio label, .checkbox label {
+  padding-left: 0.4em !important;
+}
+
