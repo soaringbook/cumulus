@@ -17,8 +17,8 @@ class Pilot < ActiveRecord::Base
          :confirmable
 
   validates :club,       presence: true
-  validates :first_name, presence: true, on: :update, unless: :resetting_password?
-  validates :last_name,  presence: true, on: :update, unless: :resetting_password?
+  validates :first_name, presence: true, on: :update
+  validates :last_name,  presence: true, on: :update
 
   accepts_nested_attributes_for :club
 
@@ -59,10 +59,6 @@ class Pilot < ActiveRecord::Base
   # new function to return whether a password has been set
   def no_password?
     encrypted_password.blank?
-  end
-
-  def resetting_password?
-    !reset_password_token.nil?
   end
 
   def only_if_unconfirmed
