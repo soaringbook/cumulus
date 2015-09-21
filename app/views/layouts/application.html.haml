@@ -25,3 +25,9 @@
 
     = yield :javascript
 
+    - if flash[:notice]
+      :javascript
+        toastr.success("#{flash[:notice]}")
+    - if flash[:alert]
+      :javascript
+        toastr.success("#{flash[:alert]}")

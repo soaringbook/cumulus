@@ -1,7 +1,5 @@
 %p= t 'global.password_forget.subtitle'
 
-= render partial: 'layouts/devise/alerts'
-
 = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
   .form-group
     = f.input :email, required: false, label: false, autofocus: true, class: 'form-control'

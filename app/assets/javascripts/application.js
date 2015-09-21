@@ -14,6 +14,7 @@
 //= require slimscroll/jquery.slimscroll.min.js
 //= require jquery-cookie/jquery.cookie.js
 //= require select2/select2.full.min.js
+//= require toastr/toastr.min.js
 //= require inspinia.js
 //= require url_handling
 //= require retina_tag

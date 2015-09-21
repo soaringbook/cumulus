@@ -1,7 +1,5 @@
 %p= t 'global.sign_up.subtitle'
 
-= render partial: 'layouts/devise/alerts'
-
 = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
   .form-group
     = f.simple_fields_for :club do |c|

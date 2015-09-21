@@ -30,3 +30,10 @@
 
     = javascript_include_tag 'devise'
     = yield :javascript
+
+    - if flash[:notice]
+      :javascript
+        toastr.success("#{flash[:notice]}")
+    - if flash[:alert]
+      :javascript
+        toastr.error("#{flash[:alert]}")
