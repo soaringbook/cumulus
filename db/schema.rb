@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150916123806) do
+ActiveRecord::Schema.define(version: 20150922120120) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,10 +48,16 @@ ActiveRecord::Schema.define(version: 20150916123806) do
     t.integer  "club_id"
     t.string   "slug"
     t.string   "avatar"
+    t.boolean  "external",        default: false
   end
 
   add_index "gliders", ["club_id"], name: "index_gliders_on_club_id", using: :btree
   add_index "gliders", ["slug"], name: "index_gliders_on_slug", unique: true, using: :btree
+
+  create_table "gliders_pilots", force: :cascade do |t|
+    t.integer "pilot_id"
+    t.integer "glider_id"
+  end
 
   create_table "payola_affiliates", force: :cascade do |t|
     t.string   "code"

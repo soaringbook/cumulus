@@ -61,6 +61,8 @@ en:
         image: 'Image'
       labels:
         empty: 'No gliders found'
+        no_pilots: 'No pilots found'
+        owners_placeholder: 'Select owners...'
         flights:
           one: 'Flight'
           other: 'Flights'

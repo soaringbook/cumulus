@@ -25,11 +25,8 @@ describe GlidersController do
       it { should render_template_name('new') { post :create, glider: { name: nil } } }
       it { should render_template_name('edit') { put :update, id: glider.id, glider: { name: nil } } }
 
-      it do
-        immatriculation = Faker::Name.name
-        should redirect_to_path(glider_path(immatriculation.parameterize)) { post :create, glider: { immatriculation: immatriculation, name: Faker::Name.name } }
-      end
-      it { should redirect_to_path(glider_path(glider.immatriculation)) { put :update, id: glider.id, glider: { name: Faker::Name.name } } }
+      it { should redirect_to_path(new_glider_path) { post :create, glider: { immatriculation: Faker::Name.name, name: Faker::Name.name } } }
+      it { should redirect_to_path(edit_glider_path(glider.immatriculation)) { put :update, id: glider.id, glider: { name: Faker::Name.name } } }
       it { should redirect_to_path(gliders_path) { delete :destroy, id: glider.id } }
     end
 
@@ -38,8 +35,8 @@ describe GlidersController do
       let(:glider) { create(:glider, club: @pilot.club) }
 
       context 'Strong params' do
-        it { should permit(:immatriculation, :name, :self_launching, :double_seater, :avatar, :remove_avatar).for(:create) }
-        it { should permit(:immatriculation, :name, :self_launching, :double_seater, :avatar, :remove_avatar).for(:update, params: { id: glider.id }) }
+        it { should permit(:immatriculation, :name, :self_launching, :double_seater, :avatar, :remove_avatar, :external).for(:create) }
+        it { should permit(:immatriculation, :name, :self_launching, :double_seater, :avatar, :remove_avatar, :external).for(:update, params: { id: glider.id }) }
       end
     end
 

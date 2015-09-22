@@ -9,6 +9,8 @@ class Glider < ActiveRecord::Base
 
   belongs_to :club
 
+  has_and_belongs_to_many :pilots
+
   validates :immatriculation, presence: true, uniqueness: true
   validates :name,            presence: true
   validates :club,            presence: true

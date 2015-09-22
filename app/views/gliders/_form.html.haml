@@ -21,4 +21,16 @@
                 = checkbox_tag f, :remove_avatar
 
           %hr
+          .row
+            .col-sm-6
+              = f.input :pilot_ids, required: false, collection: Pilot.all, include_blank: true, label_method: lambda { |owner| owner.name }, input_html: { 'data-placeholder' => t('pages.gliders.labels.owners_placeholder'), class: 'chosen-select', multiple: true }
+            .col-sm-6
+              = checkbox_tag f, :external
+
+          %hr
           = f.submit class: 'btn btn-primary'
+
+:javascript
+  $('.chosen-select').chosen({
+    no_results_text: "#{t('pages.gliders.labels.no_pilots')}"
+  });

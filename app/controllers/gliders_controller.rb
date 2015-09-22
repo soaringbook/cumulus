@@ -28,7 +28,7 @@ class GlidersController < ApplicationController
     @glider = current_club.gliders.new(glider_params)
 
     if @glider.save
-      redirect_to @glider, notice: t('pages.gliders.labels.notices.create')
+      redirect_to new_glider_path, notice: t('pages.gliders.labels.notices.create')
     else
       render :new
     end
@@ -36,7 +36,7 @@ class GlidersController < ApplicationController
 
   def update
     if @glider.update(glider_params)
-      redirect_to glider_path(@glider), notice: t('pages.gliders.labels.notices.update')
+      redirect_to edit_glider_path(@glider), notice: t('pages.gliders.labels.notices.update')
     else
       render :edit
     end
@@ -54,6 +54,6 @@ class GlidersController < ApplicationController
   end
 
   def glider_params
-    params.require(:glider).permit(:immatriculation, :name, :double_seater, :self_launching, :avatar, :remove_avatar)
+    params.require(:glider).permit(:immatriculation, :name, :double_seater, :self_launching, :avatar, :remove_avatar, :external, pilot_ids: [])
   end
 end
