@@ -11,6 +11,14 @@
       - if current_club
         %li
           %span.m-r-sm.text-muted.welcome-message= t('global.application.welcome_navigation', club: current_club.short_name).html_safe
+
+      - if Rails.env.development?
+        %li
+          %span.label.label-danger= Rails.env.upcase
+      - elsif ENV['CUMULUS_IS_STAGING'] == '1'
+        %li
+          %span.label.label-warning STAGING
+
       %li
         = link_to destroy_pilot_session_path, method: :delete do
           %i.fa.fa-sign-out
