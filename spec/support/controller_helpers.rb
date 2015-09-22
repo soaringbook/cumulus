@@ -1,9 +1,9 @@
 module ControllerHelpers
-  def sign_in(pilot = double(:pilot))
+  def sign_in(pilot = double(:pilot), payment_completed = true)
     @pilot = pilot
     allow(request.env['warden']).to receive(:authenticate!) { pilot }
     allow(controller).to receive(:current_pilot) { pilot }
-    allow(controller).to receive(:payment_completed?) { true }
+    allow(controller).to receive(:payment_completed?) { payment_completed }
   end
 
   def redirect_for_login(&_block)
