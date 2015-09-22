@@ -1,6 +1,6 @@
 module LinkHelper
   def add_link_to(path)
-    link_to path, class: 'btn btn-primary' do
+    link_to path, class: 'btn btn-white btn-sm' do
       content = content_tag :i, nil, class: 'fa fa-plus'
       content << " #{t('global.links.new')}"
       content
@@ -32,7 +32,7 @@ module LinkHelper
   end
 
   def import_link_to(path)
-    link_to path, class: 'btn btn-primary' do
+    link_to path, class: 'btn btn-white btn-sm' do
       content = content_tag :i, nil, class: 'fa fa-upload'
       content << " #{t('global.links.import')}"
       content
@@ -41,13 +41,13 @@ module LinkHelper
 
   def export_tag(&_block)
     content_tag :div, class: 'dropdown' do
-      content = link_to '#', class: 'dropdown-toggle btn btn-success', data: { toggle: 'dropdown' } do
+      content = link_to '#', class: 'dropdown-toggle btn btn-white btn-sm', data: { toggle: 'dropdown' } do
         inner_content = content_tag :i, nil, class: 'fa fa-download'
         inner_content << " #{t('global.links.export_dropdown')} "
         inner_content << content_tag(:span, nil, class: 'caret')
         inner_content
       end
-      list = content_tag :ul, class: 'dropdown-menu pull-right' do
+      list = content_tag :ul, class: 'dropdown-menu' do
         yield
       end
       content << list
