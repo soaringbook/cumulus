@@ -19,13 +19,6 @@ Rails.application.routes.draw do
                             as: :pilot_registration
   end
 
-  ### Dashboard
-
-  authenticated :pilot do
-    # Make sure we don't get the authentication message when we didn't login.
-    root 'dashboard#show', as: :authenticated_root
-  end
-
   ### Stripe confirmation
 
   resource :payments, only: [:show]
@@ -60,5 +53,5 @@ Rails.application.routes.draw do
 
   ### Root
 
-  root to: redirect('/pilots/sign_in')
+  root to: 'dashboard#show'
 end
