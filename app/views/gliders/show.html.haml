@@ -1,23 +1,16 @@
 - breadcrumb :glider, @glider, false
 
-- content_for :title, @glider.immatriculation
+- content_for :title, @glider.immatriculation.upcase
 - if can? :update, @glider
   - content_for :actions do
     = edit_action_link_to edit_glider_path(@glider)
 
-.row.page-profile
-  .col-lg-3
-    = widget do
-      = widget_header do
-        %span.avatar.avatar-lg
-          = avatar_image_tag @glider.avatar, :thumb, class: 'lazy'
-        %h4.profile-user= @glider.immatriculation
-        %p.profile-job= @glider.name
-      = widget_footer do
-        .row.no-space
-          .col-xs-6
-            %strong.profile-stat-count N/A
-            %span= t('pages.gliders.labels.flights', count: 1)
-          .col-xs-6
-            %strong.profile-stat-count N/A
-            %span= t('pages.gliders.labels.hours', count: 100)
+.row.m-b-lg.m-t-lg
+  .col-md-6
+    .profile-image
+      = avatar_image_tag @glider.avatar, :thumb, class: 'img-circle circle-border m-b-md'
+    .profile-info
+      %div
+        %div
+          %h2.no-margins= @glider.immatriculation.upcase
+          %h4= @glider.name
