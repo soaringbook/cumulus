@@ -5,7 +5,7 @@
   = render 'payola/transactions/stripe_header'
 
 .row
-  .col-lg-10
+  .col-lg-5
     = tab_container do
       = tabs_tag do
         = tab_link_to t('pages.accounts.labels.tabs.payment'), 'payment', 'payment', params['tab'] == 'payment'
@@ -13,7 +13,7 @@
       = tab_content do
         = tab_pane 'payment', params['tab'] == 'payment' do
           .row
-            .col-sm-6
+            .col-sm-12
               %ul.list-group.list-group-full
                 %li.list-group-item
                   = t('pages.accounts.labels.subscription_status')
