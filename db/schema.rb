@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 20150916123806) do
     t.string   "avatar"
   end
 
+  add_index "gliders", ["club_id"], name: "index_gliders_on_club_id", using: :btree
   add_index "gliders", ["slug"], name: "index_gliders_on_slug", unique: true, using: :btree
 
   create_table "payola_affiliates", force: :cascade do |t|
@@ -176,6 +177,7 @@ ActiveRecord::Schema.define(version: 20150916123806) do
     t.datetime "confirmation_sent_at"
   end
 
+  add_index "pilots", ["club_id"], name: "index_pilots_on_club_id", using: :btree
   add_index "pilots", ["confirmation_token"], name: "index_pilots_on_confirmation_token", unique: true, using: :btree
   add_index "pilots", ["email"], name: "index_pilots_on_email", unique: true, using: :btree
   add_index "pilots", ["reset_password_token"], name: "index_pilots_on_reset_password_token", unique: true, using: :btree

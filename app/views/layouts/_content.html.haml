@@ -1,0 +1,11 @@
+- if yield(:title).present?
+  .row.wrapper.border-bottom.white-bg.page-heading
+    .col-lg-12
+      - if yield(:actions)
+        .pull-right.vertical-align-container
+          = yield(:actions)
+      %h2= yield(:title)
+      = breadcrumbs style: :ol, class: 'breadcrumb', current_class: 'active'
+
+.wrapper.wrapper-content.animated.fadeInRight
+  = yield

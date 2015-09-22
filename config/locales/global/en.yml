@@ -3,19 +3,15 @@ en:
     title: 'Soaring Book'
 
     application:
-      title: 'CUMULUS'
+      title: 'SOARING BOOK'
       welcome: 'Welcome!'
+      welcome_navigation: "Welcome to <strong>Soaring Book %{club}</strong>"
       description: 'This is Cumulus, an administrative Soaring Book application. We keep track of everything that happens inside your gliding club without you having to worry about it.'
       languages:
         en: 'English'
         nl: 'Dutch'
-      navigation:
-        toggle: 'Toggle navigation'
       menu:
-        fullscreen: 'Toggle fullscreen'
-        toggle: 'Toggle menu bar'
         dashboard: 'Dashboard'
-        club: 'Club Area'
         gliders: 'Gliders'
         admin: 'Admin Area'
         rights: 'Access Rights'
@@ -28,15 +24,19 @@ en:
 
     labels:
       delete_confirmation: 'Are you sure you want to delete this line?'
+      search:
+        gliders: 'Search for gliders...'
+        rights: 'Search for pilots...'
 
     links:
       edit: 'Edit'
       new: 'Add'
       delete: 'Delete'
       import: 'Batch Import'
+      export_dropdown: 'Export to...'
       export:
-        pdf: 'Export PDF'
-        xls: 'Export Excel'
+        pdf: 'PDF'
+        xls: 'Excel'
 
     errors:
       labels:
@@ -50,8 +50,7 @@ en:
         dashboard: 'GO TO DASHBOARD'
 
     sign_in:
-      title: 'Sign in'
-      subtitle: 'Sign in to Soaring Book Cumulus.'
+      subtitle: "Sign in to your club's Soaring Book application."
       labels:
         no_club: 'Your club not available?'
       buttons:
@@ -62,6 +61,7 @@ en:
 
     confirmation:
       title: 'Activate your club'
+      wizard_title: 'Activation progress'
       steps:
         account: 'Your account'
         payments: 'Payment details'
@@ -70,9 +70,10 @@ en:
         you: 'Who are you?'
         continue: 'Continue'
         payment: 'Setup payment'
-        month: 'mo'
+        month: 'month'
         subscribe: 'Subscribe'
-        subscription_text: 'Subscribe to this pack for %{amount}. You can cancel your subscription at any time your want.'
+        subscribe_button: 'Subscribe now'
+        subscription_text: 'Start with a free trial of 15 days. You can cancel your subscription at any time.'
       pack:
         '0': 'Pilot, glider and flight management'
         '1': 'Sync with the iPad application'
@@ -81,11 +82,9 @@ en:
         '4': 'SOON: Manage technical glider data'
 
     sign_up:
-      title: 'Create your club'
       subtitle: 'Sign up to Soaring Book Cumulus and create your club.'
       labels:
         already_a_club: 'Already registered to a club?'
-        short_label_hint: 'This is the abbreviated name for your club.'
       links:
         sign_in: 'Sign in'
       buttons:
@@ -112,6 +111,7 @@ en:
         sign_in: 'Sign in'
 
     footer:
-      crafted_by: 'Crafted by %{name}'
+      crafted_by: 'Crafted by %{name} 2013-%{year}'
+      crafted_by_me: "<i class='fa fa-paper-plane-o'></i> Crafted by <strong>%{name}</strong>"
+      timespan: "2013 • %{year}"
       rights_reserved: '%{year} Some Rights Reserved'
-      crafter_with: 'Crafted with %{icon} by %{name}'

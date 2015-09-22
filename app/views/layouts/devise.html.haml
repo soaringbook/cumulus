@@ -1,26 +1,39 @@
 !!!
 %html
   %head
-    %title= t 'global.title'
+    %meta{ charset: 'utf-8' }
+    %meta{ content: 'width=device-width, initial-scale=1.0', name: 'viewport' }
 
-    %meta{ content: 'text/html; charset=UTF-8',                                           'http-equiv' => 'Content-Type' }
-    %meta{ content: 'IE=edge',                                                            'http-equiv' => 'X-UA-Compatible' }
-    %meta{ content: 'width=device-width, initial-scale=1.0, user-scalable=0', name: 'viewport' }
+    %title= t 'global.title'
 
     %link{ rel: "apple-touch-icon", href: asset_path('apple-touch-icon.png') }
     %link{ rel: "shortcut icon", href: asset_path('favicon.ico') }
 
-    = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic', 'data-turbolinks-track' => true, media: 'all'
-    = stylesheet_link_tag 'devise', 'data-turbolinks-track' => true, media: 'all'
+    = stylesheet_link_tag 'application', media: 'all'
+
+    = javascript_include_tag 'application'
 
     = csrf_meta_tags
 
-  %body.page-login-v2.layout-full.page-dark
-    .page
-      .page-content
-        = render partial: 'layouts/devise/brand'
-        .page-login-main
-          = yield
-          = render partial: 'layouts/devise/footer'
+  %body.gray-bg
 
-    = javascript_include_tag 'devise', 'data-turbolinks-track' => true
+    .middle-box.text-center.loginscreen.animated.fadeInDown
+      %div
+        %div
+          %h1.logo-name= image_tag('Logo.png', height: 170)
+        %h3= t 'global.application.title'
+
+        = yield
+
+        %p.m-t
+          %small= t('global.footer.crafted_by', name: 'Jelle Vandebeeck', year: Time.zone.now.year)
+
+    = javascript_include_tag 'devise'
+    = yield :javascript
+
+    - if flash[:notice]
+      :javascript
+        toastr.success("#{flash[:notice]}")
+    - if flash[:alert]
+      :javascript
+        toastr.error("#{flash[:alert]}")

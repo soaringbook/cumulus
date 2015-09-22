@@ -1,23 +1,22 @@
 !!!
 %html
   %head
-    %title= t 'global.title'
+    %meta{ charset: 'utf-8' }
+    %meta{ content: 'width=device-width, initial-scale=1.0', name: 'viewport' }
 
-    %meta{ content: 'text/html; charset=UTF-8',                                           'http-equiv' => 'Content-Type' }
-    %meta{ content: 'IE=edge',                                                            'http-equiv' => 'X-UA-Compatible' }
-    %meta{ content: 'width=device-width, initial-scale=1.0, user-scalable=0', name: 'viewport' }
+    %title= t 'global.title'
 
     %link{ rel: "apple-touch-icon", href: asset_path('apple-touch-icon.png') }
     %link{ rel: "shortcut icon", href: asset_path('favicon.ico') }
 
-    = stylesheet_link_tag    'errors', 'data-turbolinks-track' => true, media: 'all'
+    = stylesheet_link_tag 'application', media: 'all'
+
+    = javascript_include_tag 'application'
 
     = csrf_meta_tags
 
-  %body.page-error.page-error.layout-full
-    .page.vertical-align.text-center
-      .page-content.vertical-align-middle
-        = yield
-        = render partial: 'layouts/devise/footer'
+  %body.gray-bg
+    .middle-box.text-center.animated.fadeInDown= yield
 
-    = javascript_include_tag 'devise', 'data-turbolinks-track' => true
+    = javascript_include_tag 'devise'
+    = yield :javascript

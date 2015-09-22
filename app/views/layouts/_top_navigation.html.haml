@@ -1,0 +1,25 @@
+- top_class = yield(:title).present? ? nil : 'white-bg'
+.row.border-bottom{ class: top_class }
+  %nav.navbar.navbar-static-top{ role: "navigation", style: "margin-bottom: 0"}
+    .navbar-header
+      - if current_club && payment_completed?
+        %a.navbar-minimalize.minimalize-styl-2.btn.btn-primary{ href: "#" }
+          %i.fa.fa-bars
+      - if yield(:search)
+        = yield(:search)
+    %ul.nav.navbar-top-links.navbar-right
+      - if current_club
+        %li
+          %span.m-r-sm.text-muted.welcome-message= t('global.application.welcome_navigation', club: current_club.short_name).html_safe
+
+      - if Rails.env.development?
+        %li
+          %span.label.label-danger= Rails.env.upcase
+      - elsif ENV['CUMULUS_IS_STAGING'] == '1'
+        %li
+          %span.label.label-warning STAGING
+
+      %li
+        = link_to destroy_pilot_session_path, method: :delete do
+          %i.fa.fa-sign-out
+          = t('global.application.menu.logout')

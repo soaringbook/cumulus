@@ -1,18 +1,19 @@
 - breadcrumb :gliders
 
 - content_for :title, t('pages.gliders.titles.index')
-- content_for :actions do
-  = search_form_tag gliders_path
+- content_for :search do
+  = search_form_tag gliders_path, t('global.labels.search.gliders')
 
 .row
   .col-lg-12
     = panel do
-      = panel_heading t('global.titles.overview') do
-        - if can? :create, Glider
-          = add_link_to new_glider_path
-          = import_link_to import_gliders_path
+      = panel_heading do
         = export_tag do
           = export_xls_to gliders_path(format: :xls)
+        .pull-right
+          - if can? :create, Glider
+            = add_link_to new_glider_path
+            = import_link_to import_gliders_path
       = panel_body do
         .table-responsive
           %table.table
@@ -22,7 +23,7 @@
                 %th= Glider.human_attribute_name('name')
                 %th= Glider.human_attribute_name('self_launching')
                 %th= Glider.human_attribute_name('double_seater')
-                %th{ style: 'width: 8em' }
+                %th{ style: 'width: 9em' }
             %tbody
               - if @gliders.count == 0
                 %tr.no-records-found
@@ -31,8 +32,8 @@
                 - @gliders.each do |glider|
                   %tr
                     %td
-                      %span.avatar= avatar_image_tag glider.avatar, :thumb, height: 40, class: 'img img-rounded lazy'
-                      = link_to glider.immatriculation, glider
+                      %span.avatar= avatar_image_tag glider.avatar, :thumb, height: 35, class: 'img img-circle lazy'
+                      = link_to glider.immatriculation.upcase, glider
                     %td= glider.name
                     %td= boolean_tag glider.self_launching
                     %td= boolean_tag glider.double_seater
@@ -41,4 +42,6 @@
                         = edit_link_to edit_glider_path(glider)
                       - if can? :destroy, glider
                         = delete_link_to glider
-        = paginate @gliders
+            %tfoot
+              %tr
+                %td.footable-visible{ colspan: '5' }= paginate @gliders

@@ -1,8 +1,5 @@
 en:
   pages:
-    dashboard:
-      title: 'Your dashboard'
-
     accounts:
       title: 'Edit club account'
       labels:
@@ -23,6 +20,10 @@ en:
       titles:
         show: 'Your profile'
         edit: 'Edit your profile'
+      buttons:
+        submit_profile: 'Update profile'
+        submit_security: 'Update password'
+        submit_settings: 'Update settings'
       labels:
         languages:
           en: 'English'

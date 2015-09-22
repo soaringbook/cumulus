@@ -12,7 +12,7 @@ sheet.row(0).set_format(3, format)
 
 format = Spreadsheet::Format.new size: 10
 @gliders.each_with_index do |glider, index|
-  sheet.row(index+1).push glider.immatriculation
+  sheet.row(index+1).push glider.immatriculation.upcase
   sheet.row(index+1).push glider.name
   sheet.row(index+1).push glider.self_launching ? 'X' : ''
   sheet.row(index+1).push glider.double_seater ? 'X' : ''

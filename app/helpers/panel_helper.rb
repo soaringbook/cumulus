@@ -5,16 +5,11 @@ module PanelHelper
     end
   end
 
-  def panel_heading(title, &_block)
+  def panel_heading(&_block)
     content_tag :header, class: 'panel-heading' do
-      content = content_tag(:h3, title, class: 'panel-title')
-      if block_given?
-        actions = content_tag :div, class: 'panel-actions' do
-          yield
-        end
-        content << actions
+      actions = content_tag :div, class: 'panel-actions' do
+        yield
       end
-      content
     end
   end
 

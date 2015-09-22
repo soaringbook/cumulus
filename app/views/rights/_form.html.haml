@@ -25,3 +25,12 @@
 
           %hr
           = f.submit class: 'btn btn-primary'
+
+:javascript
+  $("#pilot_admin").on("change", function() {
+    if ($(this).prop("checked")) {
+      $('.section_access').slideUp();
+    } else {
+      $('.section_access').slideDown();
+    }
+  });

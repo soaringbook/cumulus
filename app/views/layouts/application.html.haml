@@ -1,61 +1,36 @@
 !!!
-%html.css-menubar
+%html
   %head
-    %title= t 'global.title'
+    %meta{ charset: 'utf-8' }
+    %meta{ content: 'width=device-width, initial-scale=1.0', name: 'viewport' }
 
-    %meta{ content: 'text/html; charset=UTF-8',                                           'http-equiv' => 'Content-Type' }
-    %meta{ content: 'IE=edge',                                                            'http-equiv' => 'X-UA-Compatible' }
-    %meta{ content: 'width=device-width, initial-scale=1.0, user-scalable=0', name: 'viewport' }
+    %title= t 'global.title'
 
     %link{ rel: "apple-touch-icon", href: asset_path('apple-touch-icon.png') }
     %link{ rel: "shortcut icon", href: asset_path('favicon.ico') }
 
-    = stylesheet_link_tag    'application', 'data-turbolinks-track' => true, media: 'all'
+    = stylesheet_link_tag 'application', media: 'all'
+
+    = javascript_include_tag 'application'
 
     = csrf_meta_tags
-    = yield(:head)
 
-  %body
-    %nav.site-navbar.navbar.navbar-default.navbar-fixed-top.navbar-mega{ role: 'navigation' }
-      = render partial: 'layouts/brand'
-      .navbar-container.container-fluid
-        #site-navbar-collapse.collapse.navbar-collapse.navbar-collapse-toolbar
-          = render partial: 'layouts/top_navigation_menu'
-          - if current_pilot
-            %ul.nav.navbar-toolbar.navbar-right.navbar-toolbar-right
-              = render partial: 'layouts/top_navigation_user'
+    = render 'payola/transactions/stripe_header'
 
-    - if current_pilot && payment_completed?
-      = render partial: 'layouts/left_navigation'
-      = render partial: 'layouts/grid_navigation'
+  %body{ class: !payment_completed? || cookies[:mini_navbar] == 'true' ? 'mini-navbar' : nil }
+    #wrapper
+      - if current_pilot && payment_completed?
+        = render partial: 'layouts/left_navigation'
+      #page-wrapper.gray-bg
+        = render partial: 'layouts/top_navigation'
+        = render partial: 'layouts/content'
+        = render partial: 'layouts/footer'
 
-    .page
-      = render partial: 'layouts/ribbon'
-      .page-header
-        %h1.page-title= yield(:title)
-        = breadcrumbs style: :ol, class: 'breadcrumb', current_class: 'active'
-        - if header_actions = yield(:actions)
-          .page-header-actions.hidden-xs= header_actions
-      .page-content
-        = yield
-
-    = render partial: 'layouts/footer'
-
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = yield :javascript
 
     - if flash[:notice]
       :javascript
-        $(function() {
-          toastr.options.showMethod = 'slideDown';
-          toastr.options.closeButton = true;
-          toastr.options.timeOut = 5000;
-          toastr.success("#{flash[:notice]}");
-        })
+        toastr.success("#{flash[:notice]}")
     - if flash[:alert]
       :javascript
-        $(function() {
-          toastr.options.showMethod = 'slideDown';
-          toastr.options.closeButton = true;
-          toastr.options.timeOut = 5000;
-          toastr.error("#{flash[:alert]}");
-        })
+        toastr.success("#{flash[:alert]}")

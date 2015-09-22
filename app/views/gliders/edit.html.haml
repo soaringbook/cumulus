@@ -1,6 +1,6 @@
 - breadcrumb :glider, @glider, true
 
-- content_for :title, t('pages.gliders.titles.edit', immatriculation: @glider.immatriculation)
+- content_for :title, t('pages.gliders.titles.edit', immatriculation: @glider.immatriculation.upcase)
 - content_for :actions do
   = show_action_link_to @glider
 

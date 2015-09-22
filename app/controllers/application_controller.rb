@@ -25,7 +25,7 @@ class ApplicationController < ActionController::Base
   end
 
   def redirect_to_payments_if_needed
-    redirect_to payments_path unless payment_completed?
+     redirect_to payments_path unless payment_completed?
   end
 
   def payment_completed?

@@ -1,13 +1,12 @@
 - breadcrumb :rights
 
 - content_for :title, t('pages.rights.titles.index')
-- content_for :actions do
-  = search_form_tag rights_path
+- content_for :search do
+  = search_form_tag rights_path, t('global.labels.search.rights')
 
 .row
   .col-lg-12
     = panel do
-      = panel_heading t('global.titles.overview')
       = panel_body do
         .table-responsive
           %table.table
@@ -25,10 +24,12 @@
                 - @pilots.each do |pilot|
                   %tr
                     %td
-                      %span.avatar= avatar_image_tag pilot.avatar, :thumb, height: 40, class: 'img img-rounded lazy'
+                      %span.avatar= avatar_image_tag pilot.avatar, :thumb, height: 35, class: 'img img-circle lazy'
                       = pilot.name
                     %td= boolean_tag pilot.admin?
                     %td= rights_tag pilot.glider_access, pilot.admin?
                     %td
                       = edit_link_to edit_pilot_rights_path(pilot)
-        = paginate @pilots
+            %tfoot
+              %tr
+                %td.footable-visible{ colspan: '4' }= paginate @pilots

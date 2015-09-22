@@ -1,16 +1,27 @@
-.site-menubar
-  .site-menubar-body
-    %div
-      %div
-        %ul.site-menu
-          = menu_group_tag ''
-          = menu_link_tag t('global.application.menu.dashboard'), 'fa-dashboard', root_path, controller_name == 'dashboard'
-
-          - if can? :read, Glider
-            = menu_group_tag t('global.application.menu.club')
-            = menu_link_tag t('global.application.menu.gliders'), 'fa-plane', gliders_path, controller_name == 'gliders'
-
-          - if can? :update, current_pilot.club
-            = menu_group_tag t('global.application.menu.admin')
-            = menu_link_tag t('global.application.menu.account'), 'fa-gear', edit_account_path, controller_name == 'accounts'
-            = menu_link_tag t('global.application.menu.rights'), 'fa-lock', rights_path, controller_name == 'rights'
+%nav.navbar-default.navbar-static-side{ role: "navigation" }
+  .sidebar-collapse
+    %ul#side-menu.nav.metismenu
+      %li.nav-header
+        .dropdown.profile-element
+          %span
+            = avatar_image_tag current_pilot.avatar, :thumb, class: 'img-circle', height: '48'
+          %a.dropdown-toggle{ data: { toggle: "dropdown" }, href: "#" }
+            %span.clear
+              %span.block.m-t-xs
+                %strong.font-bold= current_pilot.name
+              %span.text-muted.text-xs.block
+                = current_pilot.email
+                %b.caret
+          %ul.dropdown-menu.animated.fadeInRight.m-t-xs
+            - if current_pilot && payment_completed?
+              = menu_top_link_tag t('global.application.menu.profile'), profile_path
+              %li.divider
+            = menu_top_link_tag t('global.application.menu.logout'), destroy_pilot_session_path, method: :delete
+        .logo-element SB
+      = menu_link_tag t('global.application.menu.dashboard'), 'dashboard', root_path, controller_name == 'dashboard'
+      - if can? :read, Glider
+        = menu_link_tag t('global.application.menu.gliders'), 'plane', gliders_path, controller_name == 'gliders'
+      - if can? :update, current_pilot.club
+        = menu_group_tag t('global.application.menu.admin'), 'gear', %w(accounts rights).include?(controller_name) do
+          = menu_link_tag t('global.application.menu.account'), nil, edit_account_path, controller_name == 'accounts'
+          = menu_link_tag t('global.application.menu.rights'), nil, rights_path, controller_name == 'rights'

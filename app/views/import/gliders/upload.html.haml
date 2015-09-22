@@ -6,10 +6,9 @@
   .col-lg-12
     = panel do
       = panel_body do
-        = wizard_tag do
-          = wizard_pearl_tag t('pages.import.steps.upload'), 'wb-upload', true
-          = wizard_pearl_tag t('pages.import.steps.review'), 'wb-inbox'
-          = wizard_pearl_tag t('pages.import.steps.result'), 'wb-check'
+        %h2= t('pages.import.steps.upload')
+        .progress
+          .progress-bar.progress-bar-primary{ role: "progressbar", style: "width: 33%" }
 
         .row
           .col-sm-6
