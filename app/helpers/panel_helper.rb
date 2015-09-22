@@ -7,7 +7,7 @@ module PanelHelper
 
   def panel_heading(&_block)
     content_tag :header, class: 'panel-heading' do
-      actions = content_tag :div, class: 'panel-actions' do
+      content_tag :div, class: 'panel-actions' do
         yield
       end
     end
