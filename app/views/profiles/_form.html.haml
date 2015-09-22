@@ -12,8 +12,8 @@
             .row
               .col-sm-12
                 = f.input :email,      required: false, autofocus: true
-                = f.input :first_name, required: false, autofocus: true
-                = f.input :last_name,  required: false, autofocus: true
+                = f.input :first_name, required: false
+                = f.input :last_name,  required: false
             .row
               .col-sm-6
                 = f.input :avatar
@@ -31,7 +31,7 @@
             .row
               .col-sm-12
                 = f.input :password,              required: false, autofocus: true
-                = f.input :password_confirmation, required: false, autofocus: true
+                = f.input :password_confirmation, required: false
             %hr
             = f.submit t('pages.profiles.buttons.submit_security'), class: 'btn btn-primary'
 
