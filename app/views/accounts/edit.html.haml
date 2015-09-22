@@ -6,33 +6,39 @@
 
 .row
   .col-lg-10
-    = panel do
-      = panel_body do
-        = tabs_tag do
-          = tab_link_to t('pages.accounts.labels.tabs.payment'), 'payment', 'payment', params['tab'] == 'payment'
+    = tab_container do
+      = tabs_tag do
+        = tab_link_to t('pages.accounts.labels.tabs.payment'), 'payment', 'payment', params['tab'] == 'payment'
 
-        = tab_content do
-          = tab_pane 'payment', params['tab'] == 'payment' do
-            .row
-              .col-sm-6
-                %ul.list-group.list-group-full
+      = tab_content do
+        = tab_pane 'payment', params['tab'] == 'payment' do
+          .row
+            .col-sm-6
+              %ul.list-group.list-group-full
+                %li.list-group-item
+                  = t('pages.accounts.labels.subscription_status')
+                  - if subscription_valid?
+                    %span.badge.badge-success= t("pages.accounts.labels.statuses.#{current_subscription.state}")
+                  - else
+                    %span.badge.badge-danger= t("pages.accounts.labels.statuses.#{current_subscription.state}")
+                - if subscription_valid? && current_subscription.trial_end
                   %li.list-group-item
-                    = t('pages.accounts.labels.subscription_status')
-                    - if subscription_valid?
-                      %span.badge.badge-success= t("pages.accounts.labels.statuses.#{current_subscription.state}")
-                    - else
-                      %span.badge.badge-danger= t("pages.accounts.labels.statuses.#{current_subscription.state}")
-                  - if subscription_valid? && current_subscription.trial_end
-                    %li.list-group-item
-                      = t('pages.accounts.labels.trial_status')
-                      %span.badge.badge-success= l current_subscription.trial_end, format: :long
-                %hr
+                    = t('pages.accounts.labels.trial_status')
+                    %span.badge.badge-success= l current_subscription.trial_end, format: :long
 
-            .row
-              .col-sm-12
-                - if current_subscription.active?
-                  %p= t 'pages.accounts.labels.cancel_text'
-                  = render 'payola/subscriptions/cancel', subscription: current_subscription, button_class: 'btn btn-danger btn-outline'
-                - else
-                  %p= t 'pages.accounts.labels.cancel_text'
-                  = render 'payola/subscriptions/checkout', plan: Plan.cumulus, button_class: 'btn btn-primary btn-outline', button_text: t('global.confirmation.labels.subscribe'), description: t('global.confirmation.labels.subscription_text', amount: number_to_currency(Plan.cumulus.decimal_amount)), plan_image_path: image_path('Logo'), email: current_pilot.email
+          .row
+            .col-sm-12
+              - if current_subscription.active?
+                %p= t 'pages.accounts.labels.cancel_text'
+                = render 'payola/subscriptions/cancel',
+                              subscription: current_subscription,
+                              button_class: 'btn btn-danger'
+              - else
+                %p= t 'pages.accounts.labels.cancel_text'
+                = render 'payola/subscriptions/checkout',
+                              plan: Plan.cumulus,
+                              button_class: 'btn btn-primary',
+                              button_text: t('global.confirmation.labels.subscribe_button'),
+                              amount: number_to_currency(Plan.cumulus.decimal_amount),
+                              plan_image_path: image_path('LogoDark@2x'),
+                              email: current_pilot.email
