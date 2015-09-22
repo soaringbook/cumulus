@@ -41,7 +41,6 @@ ol.breadcrumb li.active {
   border-color: #ed5565 !important;
 }
 
-
 /* Remove file border. */
 .file {
   border: 0px !important;
@@ -73,8 +72,11 @@ ol.breadcrumb li.active {
   display: inline-block !important;
 }
 
-
 /* Better table styling. */
+.table .img-circle {
+  margin-right: 0.5em;
+}
+
 table td {
   vertical-align: middle !important;
 }
