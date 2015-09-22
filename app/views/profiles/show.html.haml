@@ -10,5 +10,8 @@
     .profile-info
       %div
         %div
-          %h2.no-margins= @pilot.first_name
-          %h4= @pilot.last_name
+          - if @pilot.name.empty?
+            %h2.no-margins= @pilot.first_name
+            %h4= @pilot.last_name
+          - else
+            %h2.no-margins= @pilot.email

@@ -17,8 +17,6 @@ class Pilot < ActiveRecord::Base
          :confirmable
 
   validates :club,       presence: true
-  validates :first_name, presence: true, on: :update
-  validates :last_name,  presence: true, on: :update
 
   accepts_nested_attributes_for :club
 
@@ -41,7 +39,9 @@ class Pilot < ActiveRecord::Base
   end
 
   def name
-    [first_name, last_name].compact.join ' '
+    name = [first_name, last_name].compact.join ' '
+    name = email if name.empty?
+    name
   end
 
   ### Devise
