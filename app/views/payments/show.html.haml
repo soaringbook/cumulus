@@ -29,7 +29,7 @@
             .panel.panel-default
               .panel-heading= t('global.confirmation.labels.subscribe')
               .panel-body
-                %p= t('global.confirmation.labels.subscription_text')
+                %p= t('global.confirmation.labels.subscription_text').html_safe
                 = render 'payola/subscriptions/checkout',
                               plan: Plan.cumulus,
                               amount: number_to_currency(Plan.cumulus.decimal_amount),

@@ -73,7 +73,7 @@ en:
         month: 'month'
         subscribe: 'Subscribe'
         subscribe_button: 'Subscribe now'
-        subscription_text: 'Start with a free trial of 15 days. You can cancel your subscription at any time.'
+        subscription_text: 'Start with a free trial of <strong>15 days</strong>. No charges will be invoiced during this period. Cancel your subscription at any time.'
       pack:
         '0': 'Pilot, glider and flight management'
         '1': 'Sync with the iPad application'
