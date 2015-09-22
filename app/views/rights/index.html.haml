@@ -24,10 +24,12 @@
                 - @pilots.each do |pilot|
                   %tr
                     %td
-                      %span.avatar= avatar_image_tag pilot.avatar, :thumb, height: 40, class: 'img img-rounded lazy'
+                      %span.avatar= avatar_image_tag pilot.avatar, :thumb, height: 35, class: 'img img-circle lazy'
                       = pilot.name
                     %td= boolean_tag pilot.admin?
                     %td= rights_tag pilot.glider_access, pilot.admin?
                     %td
                       = edit_link_to edit_pilot_rights_path(pilot)
-        = paginate @pilots
+            %tfoot
+              %tr
+                %td.footable-visible{ colspan: '4' }= paginate @pilots

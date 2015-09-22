@@ -51,7 +51,7 @@ module TagHelper
 
   def radio_tag(form, field, value)
     content_tag :div, class: 'form-group' do
-      content_tag :div, class: 'radio-custom radio-primary' do
+      content_tag :div, class: 'radio' do
         content = form.radio_button field, value
         content << form.label("#{field}_#{value}", t("pages.rights.radio.#{value}"))
         content
