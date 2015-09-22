@@ -43,7 +43,7 @@ describe 'The registration flow', type: :feature do
   private
 
   def show_registration_path
-    visit root_path
+    visit new_pilot_session_path
     click_link 'Create yours now!'
   end
 end
