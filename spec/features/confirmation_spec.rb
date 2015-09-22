@@ -18,7 +18,7 @@ describe 'The confirmation flow', type: :feature do
     fill_in 'Password confirmation', with: '123123123', match: :prefer_exact
     click_button 'Continue'
 
-    expect(page).to have_content('Setup payment')
+    expect(page).to have_content('Your email address has been successfully confirmed')
     expect(Pilot.first.confirmed_at).to_not be_nil
   end
 

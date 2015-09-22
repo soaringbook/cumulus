@@ -2,14 +2,6 @@ crumb :root do
   link I18n.t('global.title'), root_path
 end
 
-crumb :confirmation do
-  link I18n.t('global.confirmation.title'), root_path
-end
-
-crumb :payments do
-  link I18n.t('global.confirmation.labels.payment'), payments_path
-end
-
 ### Gliders
 
 crumb :gliders do

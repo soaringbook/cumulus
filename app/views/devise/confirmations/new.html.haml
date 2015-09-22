@@ -1,12 +1,9 @@
-- breadcrumb :confirmation
-
-- content_for :title, t('global.confirmation.title')
-
 .row
+  .col-lg-2
   .col-lg-8
     = panel do
       = panel_body do
-        %h2= t('global.confirmation.wizard_title')
+        %h2= t('global.confirmation.title')
         .progress
           .progress-bar.progress-bar-primary{ role: "progressbar", style: "width: 66%" }
 
@@ -23,3 +20,4 @@
               = f.input :first_name, required: false
               = f.input :last_name, required: false
               = f.submit t('global.confirmation.labels.continue'), class: 'btn btn-primary'
+  .col-lg-2

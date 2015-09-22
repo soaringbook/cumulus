@@ -1,14 +1,12 @@
-- breadcrumb :payments
-
-- content_for :title, t('global.confirmation.labels.payment')
 - content_for :head do
   = render 'payola/transactions/stripe_header'
 
 .row
+  .col-lg-2
   .col-lg-8
     = panel do
       = panel_body do
-        %h2= t('global.confirmation.wizard_title')
+        %h2= t('global.confirmation.title')
         .progress
           .progress-bar.progress-bar-primary{ role: "progressbar", style: "width: 70%" }
 
@@ -29,7 +27,7 @@
             .panel.panel-default
               .panel-heading= t('global.confirmation.labels.subscribe')
               .panel-body
-                %p= t('global.confirmation.labels.subscription_text')
+                %p= t('global.confirmation.labels.subscription_text').html_safe
                 = render 'payola/subscriptions/checkout',
                               plan: Plan.cumulus,
                               amount: number_to_currency(Plan.cumulus.decimal_amount),
@@ -37,3 +35,4 @@
                               email: current_pilot.email,
                               button_text: t('global.confirmation.labels.subscribe_button'),
                               button_class: 'btn btn-primary'
+  .col-lg-2
