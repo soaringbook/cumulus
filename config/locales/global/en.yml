@@ -61,7 +61,6 @@ en:
 
     confirmation:
       title: 'Activate your club'
-      wizard_title: 'Activation progress'
       steps:
         account: 'Your account'
         payments: 'Payment details'
@@ -69,7 +68,6 @@ en:
         security: 'Your credentials'
         you: 'Who are you?'
         continue: 'Continue'
-        payment: 'Setup payment'
         month: 'month'
         subscribe: 'Subscribe'
         subscribe_button: 'Subscribe now'
