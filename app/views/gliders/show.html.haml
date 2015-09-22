@@ -14,3 +14,29 @@
         %div
           %h2.no-margins= @glider.immatriculation.upcase
           %h4= @glider.name
+
+.row
+  .col-lg-3
+    .ibox
+      .ibox-content.information
+        %h3= t('pages.gliders.titles.information')
+        %p.small= t('pages.gliders.labels.information_text', name: @glider.immatriculation.upcase)
+        %p.small
+          %span
+            = boolean_tag @glider.self_launching
+            = Glider.human_attribute_name('self_launching')
+        %p.small
+          %span
+            = boolean_tag @glider.double_seater
+            = Glider.human_attribute_name('double_seater')
+        %p.small
+          %span
+            = boolean_tag @glider.external
+            = Glider.human_attribute_name('external')
+
+        %h4= Glider.human_attribute_name('pilot_ids')
+        - if @glider.pilots.empty?
+          %p.small= t('pages.gliders.labels.owned_by_club')
+        - else
+          - @glider.pilots.each do |pilot|
+            %p.small= pilot.name

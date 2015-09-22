@@ -114,3 +114,17 @@ table.table {
 .select2-container--default .select2-results__option--highlighted[aria-selected] {
   background-color: #18a689 !important;
 }
+
+/* Information layout */
+.information h4 {
+  margin-top: 2em !important;
+}
+
+.information i {
+  margin-right: 0.6em;
+}
+
+.profile-info {
+  height: 96px !important;
+  padding-top: 25px !important;
+}

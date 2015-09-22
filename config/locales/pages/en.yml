@@ -59,9 +59,12 @@ en:
         edit: 'Edit glider %{immatriculation}'
         general_information: 'General information'
         image: 'Image'
+        information: 'More information'
       labels:
+        information_text: 'Here is more information about %{name}, you can adjust these in the glider edit screen.'
         empty: 'No gliders found'
         no_pilots: 'No pilots found'
+        owned_by_club: 'This is a club glider'
         owners_placeholder: 'Select owners...'
         flights:
           one: 'Flight'
