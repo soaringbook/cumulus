@@ -50,7 +50,7 @@ Rails.application.routes.draw do
 
   ### Profile
 
-  resource :account, only: [:show, :edit, :update]
+  resource :account, only: [:show, :edit]
 
   ### Errors
 
