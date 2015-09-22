@@ -73,6 +73,17 @@ ol.breadcrumb li.active {
   display: inline-block !important;
 }
 
+
+/* Better table styling. */
 table td {
   vertical-align: middle !important;
 }
+
+table.table {
+  margin-bottom: 5px !important;
+}
+
+.pagination {
+  margin-bottom: 0 !important;
+}
+

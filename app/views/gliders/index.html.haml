@@ -42,4 +42,6 @@
                         = edit_link_to edit_glider_path(glider)
                       - if can? :destroy, glider
                         = delete_link_to glider
-        = paginate @gliders
+            %tfoot
+              %tr
+                %td.footable-visible{ colspan: '5' }= paginate @gliders
