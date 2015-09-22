@@ -12,6 +12,8 @@ en:
         double_seater: 'Double Seater'
         avatar: 'Image'
         remove_avatar: 'Remove the image'
+        pilot_ids: 'Owners'
+        external: 'External glider'
       pilot:
         email: 'Email'
         name: 'Name'
