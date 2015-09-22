@@ -6,15 +6,14 @@
   .col-lg-12
     = panel do
       = panel_body do
-        = wizard_tag do
-          = wizard_pearl_tag t('pages.import.steps.upload'), 'wb-upload', true
-          = wizard_pearl_tag t('pages.import.steps.review'), 'wb-inbox', true
-          = wizard_pearl_tag t('pages.import.steps.result'), 'wb-check'
+        %h2= t('pages.import.steps.review')
+        .progress
+          .progress-bar.progress-bar-primary{ role: "progressbar", style: "width: 66%" }
 
         .row
           .col-sm-12
             - if @valid_gliders.count > 0
-              = title_tag t('pages.import.review.valid_title'), 'wb-check'
+              = title_tag t('pages.import.review.valid_title'), 'fa-check'
               %p= t('pages.import.review.valid_text')
               .table-responsive
                 %table.table
@@ -39,7 +38,7 @@
                         %td= boolean_tag glider.double_seater
 
             - if @invalid_gliders.count > 0
-              = title_tag t('pages.import.review.invalid_title'), 'wb-close'
+              = title_tag t('pages.import.review.invalid_title'), 'fa-close'
               %p= t('pages.import.review.invalid_text')
               .table-responsive
                 %table.table
@@ -62,9 +61,9 @@
 
             %hr
             .row
-              .col-sm-6
+              .col-sm-8
                 %p= t('pages.import.review.import_text')
-              .col-sm-6
+              .col-sm-4
                 = simple_form_for :review, url: wizard_path(:result), method: :put, wrapper: :vertical_form do |f|
                   - @valid_gliders.each do |glider|
                     = f.simple_fields_for "records[]", glider do |task|
