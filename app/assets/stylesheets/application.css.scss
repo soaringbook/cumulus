@@ -17,6 +17,11 @@
  *= require font-awesome
  */
 
+/* Better confirmation application layout. */
+body.mini-navbar .no-left-menu {
+  margin: 0 !important;
+}
+
 /* Show a bold active breadcrumb. */
 ol.breadcrumb li.active {
   font-weight: bold;

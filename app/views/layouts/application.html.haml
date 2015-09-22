@@ -21,7 +21,8 @@
     #wrapper
       - if current_pilot && payment_completed?
         = render partial: 'layouts/left_navigation'
-      #page-wrapper.gray-bg
+      - left_class = payment_completed? ? '' : ' no-left-menu'
+      #page-wrapper{ class: "gray-bg#{left_class}" }
         = render partial: 'layouts/top_navigation'
         = render partial: 'layouts/content'
         = render partial: 'layouts/footer'
