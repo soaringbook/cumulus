@@ -40,7 +40,7 @@ module LinkHelper
   end
 
   def export_tag(&_block)
-    content_tag :div, class: 'dropdown' do
+    content_tag :div, class: 'dropdown inline-dropdown' do
       content = link_to '#', class: 'dropdown-toggle btn btn-white btn-sm', data: { toggle: 'dropdown' } do
         inner_content = content_tag :i, nil, class: 'fa fa-download'
         inner_content << " #{t('global.links.export_dropdown')} "
