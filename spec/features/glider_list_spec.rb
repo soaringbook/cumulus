@@ -17,6 +17,16 @@ describe 'The glider list flow', type: :feature do
     expect(page).to have_css('tbody tr', count: 1)
   end
 
+  it 'should download an xls with gliders' do
+    create(:glider, club: @pilot.club)
+    visit gliders_path
+
+    click_link 'Export to...'
+    click_link 'Excel'
+
+    expect(page.response_headers['Content-Type']).to eq('application/xls')
+  end
+
   it 'should only see gliders from my club' do
     create(:glider, club: @pilot.club)
     create(:glider)
