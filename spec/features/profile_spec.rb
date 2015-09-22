@@ -15,7 +15,7 @@ describe 'The profile flow', type: :feature do
 
     fill_in 'First name', with: 'Jake'
     within '#profile' do
-      click_button 'Update Pilot'
+      click_button 'Update profile'
     end
 
     expect(page).to have_content('Profile is successfully updated.')
@@ -25,9 +25,9 @@ describe 'The profile flow', type: :feature do
   it 'should fail to edit the profile' do
     visit edit_profile_path
 
-    fill_in 'First name', with: ''
+    fill_in 'Email', with: ''
     within '#profile' do
-      click_button 'Update Pilot'
+      click_button 'Update profile'
     end
 
     expect(page).to have_content('can\'t be blank')
@@ -39,7 +39,7 @@ describe 'The profile flow', type: :feature do
     fill_in 'Password', with: '123123123'
     fill_in 'Password confirmation', with: '123123123'
     within '#security' do
-      click_button 'Update Pilot'
+      click_button 'Update password'
     end
 
     expect(page).to have_content('Profile is successfully updated.')
@@ -50,7 +50,7 @@ describe 'The profile flow', type: :feature do
 
     fill_in 'Password', with: ''
     within '#security' do
-      click_button 'Update Pilot'
+      click_button 'Update password'
     end
 
     expect(page).to have_content('can\'t be blank')
@@ -60,7 +60,7 @@ describe 'The profile flow', type: :feature do
     visit edit_profile_path(tab: 'settings')
 
     within '#settings' do
-      click_button 'Update Pilot'
+      click_button 'Update settings'
     end
 
     expect(page).to have_content('Profile is successfully updated.')

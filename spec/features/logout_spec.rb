@@ -7,7 +7,9 @@ describe 'The logout flow', type: :feature do
   end
 
   it 'should log out' do
-    click_link 'Logout'
+    within '.navbar' do
+      click_link 'Logout'
+    end
 
     expect(page).to have_content('Sign in')
   end

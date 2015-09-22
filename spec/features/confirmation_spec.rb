@@ -44,18 +44,6 @@ describe 'The confirmation flow', type: :feature do
     expect(Pilot.first.confirmed_at).to be_nil
   end
 
-  it 'should fail to confirm a user when the name is invalid' do
-    current_email.click_link 'Confirm'
-    expect(page).to have_content('Activate your club')
-
-    fill_in 'Password',         with: '123123123', match: :prefer_exact
-    fill_in 'Confirm password', with: '123123123', match: :prefer_exact
-    click_button 'Continue'
-
-    expect(page).to have_content('Activate your club')
-    expect(Pilot.first.confirmed_at).to be_nil
-  end
-
   it 'should get a 404 error' do
     visit '/pilots/confirmation'
     expect(page).to have_content('Not found')

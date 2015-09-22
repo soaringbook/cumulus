@@ -6,7 +6,7 @@ describe 'The rights list flow', type: :feature do
   it 'should see an empty placeholder', js: true do
     visit rights_path
 
-    fill_in 'Search', with: 'ak'
+    fill_in 'Search for pilots...', with: 'ak'
     press_enter '#search'
 
     expect(page).to have_content('No pilots found')
@@ -33,7 +33,7 @@ describe 'The rights list flow', type: :feature do
     create(:pilot, email: 'jake@fousa.be',  club: @pilot.club)
     visit rights_path
 
-    fill_in 'Search', with: 'ak'
+    fill_in 'Search for pilots...', with: 'ak'
     press_enter '#search'
 
     expect(page).to have_css('tbody tr', count: 1)
@@ -46,7 +46,7 @@ describe 'The rights list flow', type: :feature do
     create(:pilot, email: 'jake2@fousa.be')
     visit rights_path
 
-    fill_in 'Search', with: 'ak'
+    fill_in 'Search for pilots...', with: 'ak'
     press_enter '#search'
 
     expect(page).to have_css('tbody tr', count: 1)

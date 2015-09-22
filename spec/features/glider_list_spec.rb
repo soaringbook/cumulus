@@ -30,7 +30,7 @@ describe 'The glider list flow', type: :feature do
     create(:glider, immatriculation: 'OO-NO', club: @pilot.club)
     visit gliders_path
 
-    fill_in 'Search', with: 'NA'
+    fill_in 'Search for gliders...', with: 'NA'
     press_enter '#search'
 
     expect(page).to have_css('tbody tr', count: 1)
@@ -43,7 +43,7 @@ describe 'The glider list flow', type: :feature do
     create(:glider, immatriculation: 'OO-NOA')
     visit gliders_path
 
-    fill_in 'Search', with: 'NA'
+    fill_in 'Search for gliders...', with: 'NA'
     press_enter '#search'
 
     expect(page).to have_css('tbody tr', count: 1)
