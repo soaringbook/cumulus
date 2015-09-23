@@ -17,11 +17,16 @@
                 %p= t('pages.rights.labels.section_text')
 
             .row
-              .col-sm-12
+              .col-sm-6
                 %h4= Pilot.human_attribute_name('glider_access').upcase
                 = radio_tag f, :glider_access, :gliders_not_accessible
                 = radio_tag f, :glider_access, :gliders_readable
                 = radio_tag f, :glider_access, :gliders_writable
+              .col-sm-6
+                %h4= Pilot.human_attribute_name('pilot_access').upcase
+                = radio_tag f, :pilot_access, :pilots_not_accessible
+                = radio_tag f, :pilot_access, :pilots_readable
+                = radio_tag f, :pilot_access, :pilots_writable
 
           %hr
           = f.submit class: 'btn btn-primary'

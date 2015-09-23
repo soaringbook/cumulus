@@ -15,11 +15,12 @@
                 %th= Pilot.human_attribute_name('name')
                 %th= Pilot.human_attribute_name('admin')
                 %th= Pilot.human_attribute_name('glider_access')
+                %th= Pilot.human_attribute_name('pilot_access')
                 %th{ style: 'width: 8em' }
             %tbody
               - if @pilots.count == 0
                 %tr.no-records-found
-                  %td{ colspan: 4 }= t 'pages.rights.labels.empty'
+                  %td{ colspan: 5 }= t 'pages.rights.labels.empty'
               - else
                 - @pilots.each do |pilot|
                   %tr
@@ -28,8 +29,9 @@
                       = pilot.name
                     %td= boolean_tag pilot.admin?
                     %td= rights_tag pilot.glider_access, pilot.admin?
+                    %td= rights_tag pilot.pilot_access, pilot.admin?
                     %td
                       = edit_link_to edit_pilot_rights_path(pilot)
             %tfoot
               %tr
-                %td.footable-visible{ colspan: '4' }= paginate @pilots
+                %td.footable-visible{ colspan: 5 }= paginate @pilots

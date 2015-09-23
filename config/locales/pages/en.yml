@@ -42,6 +42,9 @@ en:
         gliders_not_accessible: 'No access'
         gliders_readable: 'Read access'
         gliders_writable: 'Write access'
+        pilots_not_accessible: 'No access'
+        pilots_readable: 'Read access'
+        pilots_writable: 'Write access'
       labels:
         empty: 'No pilots found'
         readable: 'Read access'
