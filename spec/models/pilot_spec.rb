@@ -84,5 +84,41 @@ describe Pilot do
         it { should_not be_able_to(:manage, pilot.club) }
       end
     end
+
+    context 'Pilot rights' do
+      before { create(:pilot, club: pilot.club) }
+
+      context 'With admin rights' do
+        let(:pilot) { create(:pilot, admin: true) }
+
+        it { should be_able_to(:manage, Pilot) }
+        it { should be_able_to(:manage, pilot.club.pilots.first) }
+      end
+
+      context 'With write rights' do
+        let(:pilot) { create(:pilot, pilot_access: :pilots_writable) }
+
+        it { should be_able_to(:manage, Pilot) }
+        it { should be_able_to(:manage, pilot.club.pilots.first) }
+      end
+
+      context 'With read rights' do
+        let(:pilot) { create(:pilot, pilot_access: :pilots_readable) }
+
+        it { should_not be_able_to(:manage, Pilot) }
+        it { should_not be_able_to(:manage, pilot.club.pilots.first) }
+        it { should be_able_to(:read, Pilot) }
+        it { should be_able_to(:read, pilot.club.pilots.first) }
+      end
+
+      context 'With read rights' do
+        let(:pilot) { create(:pilot) }
+
+        it { should_not be_able_to(:manage, Pilot) }
+        it { should_not be_able_to(:manage, pilot.club.pilots.first) }
+        it { should_not be_able_to(:read, Pilot) }
+        it { should_not be_able_to(:read, pilot.club.pilots.first) }
+      end
+    end
   end
 end

@@ -27,6 +27,7 @@ class Pilot < ActiveRecord::Base
   ### Access
 
   enum glider_access: [:gliders_not_accessible, :gliders_readable, :gliders_writable]
+  enum pilot_access:  [:pilots_not_accessible,  :pilots_readable,  :pilots_writable]
 
   ### Locale
 
