@@ -52,6 +52,23 @@ en:
         notices:
           update: 'Access rights are successfully updated.'
 
+    pilots:
+      titles:
+        index: 'Pilots'
+        new: 'Add a new pilot'
+        edit: 'Edit pilot %{name}'
+        image: 'Image'
+      labels:
+        empty: 'No pilots found'
+        notices:
+          create: 'Pilot was successfully created.'
+          update: 'Pilot was successfully updated.'
+          destroy: 'Pilot was successfully destroyed.'
+      buttons:
+        import: 'Import pilots'
+      filename:
+        xls: '%{timestamp}-pilots-export'
+
     gliders:
       titles:
         index: 'Gliders'
@@ -66,12 +83,6 @@ en:
         no_pilots: 'No pilots found'
         owned_by_club: 'This is a club glider'
         owners_placeholder: 'Select owners...'
-        flights:
-          one: 'Flight'
-          other: 'Flights'
-        hours:
-          one: 'Hour'
-          other: 'Hours'
         notices:
           create: 'Glider was successfully created.'
           update: 'Glider was successfully updated.'

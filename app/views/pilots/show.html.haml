@@ -1,0 +1,16 @@
+- breadcrumb :pilot, @pilot, false
+
+- content_for :title, @pilot.name
+- if can? :update, @pilot
+  - content_for :actions do
+    = edit_action_link_to edit_pilot_path(@pilot)
+
+.row.m-b-lg.m-t-lg
+  .col-md-6
+    .profile-image
+      = avatar_image_tag @pilot.avatar, :thumb, class: 'img-circle circle-border m-b-md'
+    .profile-info
+      %div
+        %div
+          %h2.no-margins= @pilot.first_name
+          %h4= @pilot.last_name

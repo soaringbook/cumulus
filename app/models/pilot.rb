@@ -22,7 +22,7 @@ class Pilot < ActiveRecord::Base
 
   accepts_nested_attributes_for :club
 
-  default_scope { includes(:club) }
+  default_scope { includes(:club).order('pilots.last_name, pilots.first_name') }
 
   ### Access
 

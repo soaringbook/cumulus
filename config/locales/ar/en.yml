@@ -1,6 +1,9 @@
 en: 
   activerecord:
     models:
+      pilot:
+        one: 'Pilot'
+        other: 'Pilots'
       glider:
         one: 'Glider'
         other: 'Gliders'

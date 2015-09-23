@@ -8,12 +8,12 @@ Rails.application.routes.draw do
   as :pilot do
     patch '/pilots/confirmation' => 'confirmations#update', as: :update_pilot_confirmation, via: :patch
   end
-  devise_for :pilots, skip: 'registration', :controllers => { :confirmations => "confirmations" }
+  devise_for :pilots, path: 'club', skip: 'registration', :controllers => { :confirmations => "confirmations" }
 
   devise_scope :pilot do
     # Remove the edit registrations route.
     resource :registration, only: [:new, :create],
-                            path: 'pilots',
+                            path: 'club',
                             path_names: { new: 'sign_up' },
                             controller: 'registrations',
                             as: :pilot_registration
@@ -30,17 +30,20 @@ Rails.application.routes.draw do
 
   resource :payments, only: [:show]
 
-  ### Gliders
+  ### Import
 
   namespace :import do
     resources :gliders, only: [:index, :show, :update]
   end
+
+  ### Gliders
+
   resources :gliders
 
   ### Pilots
 
   resources :rights, only: :index
-  resources :pilots, only: [] do
+  resources :pilots do
     resource :rights, only: [:edit, :update]
   end
 
@@ -60,5 +63,5 @@ Rails.application.routes.draw do
 
   ### Root
 
-  root to: redirect('/pilots/sign_in')
+  root to: redirect('/club/sign_in')
 end

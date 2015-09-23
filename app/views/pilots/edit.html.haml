@@ -1,0 +1,7 @@
+- breadcrumb :pilot, @pilot, true
+
+- content_for :title, t('pages.pilots.titles.edit', name: @pilot.name)
+- content_for :actions do
+  = show_action_link_to @pilot
+
+= render 'form'

@@ -13,6 +13,7 @@ en:
       menu:
         dashboard: 'Dashboard'
         gliders: 'Gliders'
+        pilots: 'Pilots'
         admin: 'Admin Area'
         rights: 'Access Rights'
         account: 'Account'
@@ -26,6 +27,7 @@ en:
       delete_confirmation: 'Are you sure you want to delete this line?'
       search:
         gliders: 'Search for gliders...'
+        pilots: 'Search for pilots...'
         rights: 'Search for pilots...'
 
     links:
