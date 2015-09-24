@@ -34,6 +34,7 @@ Rails.application.routes.draw do
 
   namespace :import do
     resources :gliders, only: [:index, :show, :update]
+    resources :pilots, only: [:index, :show, :update]
   end
 
   ### Gliders

@@ -28,4 +28,14 @@ class Glider < ActiveRecord::Base
   def self.importable_fields
     %w(immatriculation name self_launching double_seater)
   end
+
+  def self.unique_import_key
+    :immatriculation
+  end
+
+  def handle_import!
+    # Handle require objects
+    self.double_seater = false if double_seater.nil?
+    self.self_launching = false if self_launching.nil?
+  end
 end

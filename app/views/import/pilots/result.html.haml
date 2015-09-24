@@ -1,0 +1,45 @@
+- breadcrumb :import_pilots
+
+- content_for :title, t('pages.import.title')
+
+.row
+  .col-lg-12
+    = panel do
+      = panel_body do
+        %h2= t('pages.import.steps.result')
+        .progress
+          .progress-bar.progress-bar-primary{ role: "progressbar", style: "width: 100%" }
+
+        .row
+          .col-sm-12
+            - if @pilots.count > 0
+              = title_tag t('pages.import.result.title'), 'fa-check'
+              %p= t('pages.import.result.text')
+              .table-responsive
+                %table.table
+                  %thead
+                    %tr
+                      %th= Pilot.human_attribute_name('email')
+                      %th= Pilot.human_attribute_name('name')
+                  %tbody
+                    - @pilots.each do |pilot|
+                      %tr
+                        %td= pilot.email
+                        %td= pilot.name
+
+            - if @failed_pilots.count > 0
+              = title_tag t('pages.import.result.failed'), 'fa-close'
+              %p= t('pages.import.result.failed_text')
+              .table-responsive
+                %table.table
+                  %thead
+                    %tr
+                      %th= Pilot.human_attribute_name('email')
+                      %th= Pilot.human_attribute_name('name')
+                  %tbody
+                    - @failed_pilots.each do |pilot|
+                      %tr
+                        %td= pilot.email
+                        %td= pilot.name
+
+            = link_to t('pages.import.result.overview'), pilots_path, class: 'btn btn-success pull-right'

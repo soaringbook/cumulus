@@ -104,7 +104,7 @@ en:
       upload:
         help:
           title: 'How to upload?'
-          select_text: "Select a 'comma seperated value' file that contains a list of gliders. You can find more information on this format on %{link}"
+          select_text: "Select a 'comma seperated value' file that contains a -to import- list. You can find more information on this format on %{link}"
           format_text: "For the glider batch import you need a <mark>CSV</mark> file in the following format:"
         errors:
           no_record: 'No valid records found'

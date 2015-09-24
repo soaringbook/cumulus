@@ -1,5 +1,6 @@
 class Pilot < ActiveRecord::Base
   include Searchable
+  include Importable
 
   extend FriendlyId
   friendly_id :name, use: :slugged
@@ -45,6 +46,20 @@ class Pilot < ActiveRecord::Base
     name = [first_name, last_name].compact.join ' '
     name = email if name.empty?
     name
+  end
+
+  ### Import
+
+  def self.importable_fields
+    %w(email first_name last_name)
+  end
+
+  def self.unique_import_key
+    :email
+  end
+
+  def handle_import!
+    skip_confirmation!
   end
 
   ### Devise
