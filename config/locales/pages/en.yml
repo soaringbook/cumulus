@@ -110,6 +110,7 @@ en:
         new: 'Add record'
         edit: 'Update record'
         ignore: 'Ignore record'
+        upload: 'Back to upload'
         valid_title: 'Valid records'
         valid_text: 'The records below are valid and will be added to the database on import.'
         invalid_title: 'Invalid records'

@@ -59,4 +59,6 @@
                       = task.input :id,         as: :hidden
                       - class_name.importable_fields.each do |field|
                         = task.input field.to_sym, as: :hidden
-                  = f.submit t('pages.import.review.import'), class: 'btn btn-primary pull-right'
+                  .pull-right
+                    = link_to t('pages.import.review.upload'), :back, class: 'btn btn-success'
+                    = f.submit t('pages.import.review.import'), class: 'btn btn-primary'
