@@ -13,7 +13,7 @@
                 = current_pilot.email
                 %b.caret
           %ul.dropdown-menu.animated.fadeInRight.m-t-xs
-            - if current_pilot && payment_completed?
+            - if current_pilot
               = menu_top_link_tag t('global.application.menu.profile'), profile_path
               %li.divider
             = menu_top_link_tag t('global.application.menu.logout'), destroy_pilot_session_path, method: :delete

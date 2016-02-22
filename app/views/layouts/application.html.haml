@@ -15,13 +15,11 @@
 
     = csrf_meta_tags
 
-    = render 'payola/transactions/stripe_header'
-
-  %body{ class: !payment_completed? || cookies[:mini_navbar] == 'true' ? 'mini-navbar' : nil }
+  %body{ class: !current_pilot || cookies[:mini_navbar] == 'true' ? 'mini-navbar' : nil }
     #wrapper
-      - if current_pilot && payment_completed?
+      - if current_pilot
         = render partial: 'layouts/left_navigation'
-      - left_class = payment_completed? ? '' : ' no-left-menu'
+      - left_class = current_pilot ? '' : ' no-left-menu'
       #page-wrapper{ class: "gray-bg#{left_class}" }
         = render partial: 'layouts/top_navigation'
         = render partial: 'layouts/content'
