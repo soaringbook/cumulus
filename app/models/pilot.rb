@@ -54,6 +54,10 @@ class Pilot < ActiveRecord::Base
     %w(email first_name last_name)
   end
 
+  def self.importable_display_columns
+    %w(email name)
+  end
+
   def self.unique_import_key
     :email
   end

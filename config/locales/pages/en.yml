@@ -67,8 +67,6 @@ en:
           create: 'Pilot was successfully created.'
           update: 'Pilot was successfully updated.'
           destroy: 'Pilot was successfully destroyed.'
-      buttons:
-        import: 'Import pilots'
       filename:
         xls: '%{timestamp}-pilots-export'
 
@@ -90,8 +88,6 @@ en:
           create: 'Glider was successfully created.'
           update: 'Glider was successfully updated.'
           destroy: 'Glider was successfully destroyed.'
-      buttons:
-        import: 'Import gliders'
       filename:
         xls: '%{timestamp}-gliders-export'
 
@@ -110,6 +106,7 @@ en:
           no_record: 'No valid records found'
           incorrect_format: 'The file format should ne .csv'
       review:
+        import: 'Import'
         new: 'Add record'
         edit: 'Update record'
         ignore: 'Ignore record'

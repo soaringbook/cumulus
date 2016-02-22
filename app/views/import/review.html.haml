@@ -1,0 +1,72 @@
+- breadcrumb "import_#{controller_name}".to_sym
+
+- content_for :title, t('pages.import.title')
+- class_name = controller_name.classify.constantize
+
+.row
+  .col-lg-12
+    = panel do
+      = panel_body do
+        %h2= t('pages.import.steps.review')
+        .progress
+          .progress-bar.progress-bar-primary{ role: "progressbar", style: "width: 66%" }
+
+        .row
+          .col-sm-12
+            - if @valid_objects.count > 0
+              = title_tag t('pages.import.review.valid_title'), 'fa-check'
+              %p= t('pages.import.review.valid_text')
+              .table-responsive
+                %table.table
+                  %thead
+                    %tr
+                      %th
+                      - class_name.importable_display_columns.each do |column|
+                        %th= class_name.human_attribute_name column
+                  %tbody
+                    - @valid_objects.each do |object|
+                      %tr
+                        %td
+                          - if object.id
+                            %span.label.label-warning= t('pages.import.review.edit')
+                          - else
+                            %span.label.label-success= t('pages.import.review.new')
+                        - class_name.importable_display_columns.each do |column|
+                          - if object.public_send(column).boolean?
+                            %td= boolean_tag object.public_send column
+                          - else
+                            %td= object.public_send column
+
+            - if @invalid_objects.count > 0
+              = title_tag t('pages.import.review.invalid_title'), 'fa-close'
+              %p= t('pages.import.review.invalid_text')
+              .table-responsive
+                %table.table
+                  %thead
+                    %tr
+                      %th
+                      - class_name.importable_display_columns.each do |column|
+                        %th= class_name.human_attribute_name column
+                  %tbody
+                    - @invalid_objects.each do |object|
+                      %tr
+                        %td
+                          %span.label.label-danger= t('pages.import.review.ignore')
+                        - class_name.importable_display_columns.each do |column|
+                          - if object.public_send(column).boolean?
+                            %td= boolean_tag object.public_send column
+                          - else
+                            %td= object.public_send column
+
+            %hr
+            .row
+              .col-sm-8
+                %p= t('pages.import.review.import_text')
+              .col-sm-4
+                = simple_form_for :review, url: wizard_path(:result), method: :put, wrapper: :vertical_form do |f|
+                  - @valid_objects.each do |object|
+                    = f.simple_fields_for "records[]", object do |task|
+                      = task.input :id,         as: :hidden
+                      - class_name.importable_fields.each do |field|
+                        = task.input field.to_sym, as: :hidden
+                  = f.submit t('pages.import.review.import'), class: 'btn btn-primary pull-right'

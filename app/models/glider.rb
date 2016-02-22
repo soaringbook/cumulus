@@ -29,6 +29,10 @@ class Glider < ActiveRecord::Base
     %w(immatriculation name self_launching double_seater)
   end
 
+  def self.importable_display_columns
+    %w(immatriculation name self_launching double_seater)
+  end
+
   def self.unique_import_key
     :immatriculation
   end

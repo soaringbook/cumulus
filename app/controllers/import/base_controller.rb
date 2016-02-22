@@ -35,7 +35,7 @@ module Import
     def handle_upload
       service = ImportService.new(resource_class, params[:import_object])
       if service.validate_for current_club
-        @valid_pilots, @invalid_pilots = service.records
+        @valid_objects, @invalid_objects = service.records
         render(:review)
       else
         @import_object = service.object
@@ -44,7 +44,7 @@ module Import
     end
 
     def handle_result
-      @pilots, @failed_pilots = resource_class.import(params[:review][:records], current_club)
+      @objects, @failed_objects = resource_class.import(params[:review][:records], current_club)
       render(:result)
     end
   end
