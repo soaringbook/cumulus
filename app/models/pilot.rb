@@ -19,7 +19,9 @@ class Pilot < ActiveRecord::Base
          :validatable,
          :confirmable
 
-  validates :club, presence: true
+  validates :club,       presence: true
+  validates :first_name, presence: true
+  validates :last_name,  presence: true
 
   accepts_nested_attributes_for :club
 
