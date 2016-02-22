@@ -1,0 +1,38 @@
+- breadcrumb "import_#{controller_name}".to_sym
+
+- content_for :title, t('pages.import.title')
+- class_name = controller_name.classify.constantize
+
+.row
+  .col-lg-12
+    = panel do
+      = panel_body do
+        %h2= t('pages.import.steps.result')
+        .progress
+          .progress-bar.progress-bar-primary{ role: "progressbar", style: "width: 100%" }
+
+        .row
+          .col-sm-12
+            - if @objects.count > 0
+              = title_tag t('pages.import.result.title'), 'fa-check'
+              %p= t('pages.import.result.text')
+              .table-responsive
+                %table.table
+                  %thead
+                    %tr= header_columns_for class_name
+                  %tbody
+                    - @objects.each do |object|
+                      %tr= data_columns_for class_name, object
+
+            - if @failed_objects.count > 0
+              = title_tag t('pages.import.result.failed'), 'fa-close'
+              %p= t('pages.import.result.failed_text')
+              .table-responsive
+                %table.table
+                  %thead
+                    %tr= header_columns_for class_name
+                  %tbody
+                    - @failed_objects.each do |object|
+                      %tr= data_columns_for class_name, object
+
+            = link_to t('pages.import.result.overview'), public_send("#{controller_name}_path"), class: 'btn btn-success pull-right'
