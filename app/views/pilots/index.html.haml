@@ -1,0 +1,43 @@
+- breadcrumb :pilots
+
+- content_for :title, t('pages.pilots.titles.index')
+- content_for :search do
+  = search_form_tag pilots_path, t('global.labels.search.pilots')
+
+.row
+  .col-lg-12
+    = panel do
+      = panel_heading do
+        = export_tag do
+          = export_xls_to pilots_path(format: :xls)
+        .pull-right
+          - if can? :create, Pilot
+            = add_link_to new_pilot_path
+            = import_link_to import_pilots_path
+      = panel_body do
+        .table-responsive
+          %table.table
+            %thead
+              %tr
+                %th= Pilot.human_attribute_name('name')
+                %th= Pilot.human_attribute_name('email')
+                %th{ style: 'width: 9em' }
+            %tbody
+              - if @pilots.count == 0
+                %tr.no-records-found
+                  %td{ colspan: 3 }= t 'pages.pilots.labels.empty'
+              - else
+                - @pilots.each do |pilot|
+                  %tr
+                    %td
+                      %span.avatar= avatar_image_tag pilot.avatar, :thumb, height: 35, class: 'img img-circle lazy'
+                      = link_to pilot.name, pilot
+                    %td= link_to pilot.email, "mailto:#{pilot.email}"
+                    %td
+                      - if can? :update, pilot
+                        = edit_link_to edit_pilot_path(pilot)
+                      - if can? :destroy, pilot
+                        = delete_link_to pilot
+            %tfoot
+              %tr
+                %td.footable-visible{ colspan: '3' }= paginate @pilots

@@ -1,5 +1,6 @@
 class Pilot < ActiveRecord::Base
   include Searchable
+  include Importable
 
   extend FriendlyId
   friendly_id :name, use: :slugged
@@ -22,11 +23,12 @@ class Pilot < ActiveRecord::Base
 
   accepts_nested_attributes_for :club
 
-  default_scope { includes(:club) }
+  default_scope { includes(:club).order('pilots.last_name, pilots.first_name') }
 
   ### Access
 
   enum glider_access: [:gliders_not_accessible, :gliders_readable, :gliders_writable]
+  enum pilot_access:  [:pilots_not_accessible,  :pilots_readable,  :pilots_writable]
 
   ### Locale
 
@@ -44,6 +46,24 @@ class Pilot < ActiveRecord::Base
     name = [first_name, last_name].compact.join ' '
     name = email if name.empty?
     name
+  end
+
+  ### Import
+
+  def self.importable_fields
+    %w(email first_name last_name)
+  end
+
+  def self.importable_display_columns
+    %w(email name)
+  end
+
+  def self.unique_import_key
+    :email
+  end
+
+  def handle_import!
+    skip_confirmation!
   end
 
   ### Devise

@@ -19,8 +19,13 @@
             = menu_top_link_tag t('global.application.menu.logout'), destroy_pilot_session_path, method: :delete
         .logo-element SB
       = menu_link_tag t('global.application.menu.dashboard'), 'dashboard', root_path, controller_name == 'dashboard'
+
+      - if can? :read, Pilot
+        = menu_link_tag t('global.application.menu.pilots'), 'user', pilots_path, controller_name == 'pilots'
+
       - if can? :read, Glider
         = menu_link_tag t('global.application.menu.gliders'), 'plane', gliders_path, controller_name == 'gliders'
+
       - if can? :update, current_pilot.club
         = menu_group_tag t('global.application.menu.admin'), 'gear', %w(accounts rights).include?(controller_name) do
           = menu_link_tag t('global.application.menu.account'), nil, edit_account_path, controller_name == 'accounts'

@@ -1,0 +1,18 @@
+sheet = workbook.create_worksheet
+sheet.name = t('pages.pilots.titles.index')
+
+sheet.row(0).push Pilot.human_attribute_name('email').upcase
+sheet.row(0).push Pilot.human_attribute_name('first_name').upcase
+sheet.row(0).push Pilot.human_attribute_name('last_name').upcase
+
+format = Spreadsheet::Format.new weight: :bold, size: 12
+format_row sheet.row(0), format
+sheet.row(0).set_format(3, format)
+
+format = Spreadsheet::Format.new size: 10
+@pilots.each_with_index do |pilot, index|
+  sheet.row(index+1).push pilot.email
+  sheet.row(index+1).push pilot.first_name
+  sheet.row(index+1).push pilot.last_name
+  format_row sheet.row(index+1), format
+end

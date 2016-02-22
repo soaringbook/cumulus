@@ -23,6 +23,22 @@ body.mini-navbar .no-left-menu {
   margin: 0 !important;
 }
 
+/* Make the pre scrollable. */
+pre {
+  overflow: auto !important;
+  word-wrap: normal !important;
+  white-space: pre !important;
+  background-color: transparent !important;
+  border: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Don't show the glow around a button. */
+.btn:focus {
+  outline: 0 !important;
+}
+
 /* Show a bold active breadcrumb. */
 ol.breadcrumb li.active {
   font-weight: bold;

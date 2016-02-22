@@ -5,6 +5,7 @@ class Ability
     pilot ||= Pilot.new
 
     allow_resource_access! pilot, :gliders
+    allow_resource_access! pilot, :pilots
 
     allow_admin_access! pilot, :club
   end

@@ -45,7 +45,7 @@ describe 'The confirmation flow', type: :feature do
   end
 
   it 'should get a 404 error' do
-    visit '/pilots/confirmation'
+    visit '/club/confirmation'
     expect(page).to have_content('Not found')
   end
 

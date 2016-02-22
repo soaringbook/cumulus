@@ -5,10 +5,10 @@ module Importable
 
   included do
     def self.import_file(file, club)
-      gliders = []
+      records = []
       CSV.foreach(file.path, headers: true) do |row|
-        # Lookup a glider with an existing immatriculation.
-        glider = where(club: club, immatriculation: row['immatriculation']).first_or_initialize
+        # Lookup a record with an existing immatriculation.
+        record = where(club: club, unique_import_key => row[unique_import_key.to_s]).first_or_initialize
 
         # Strip the key and value fields.
         row_hash = row.to_hash.each_with_object({}) do |(key, value), hash|
@@ -16,37 +16,35 @@ module Importable
         end
 
         # Update the attributes.
-        glider.attributes = row_hash.slice(*importable_fields)
-        glider.club = club
-        gliders << glider
+        record.attributes = row_hash.slice(*importable_fields)
+        record.club = club
+        records << record
       end
-      gliders
+      records
     end
 
     def self.import(records, club)
-      gliders = []
-      failed_gliders = []
+      valid_records = []
+      failed_records = []
       transaction do
         records.values.each do |record|
-          glider = where(club: club, id: record['id']).first_or_initialize
-          glider.attributes = record.slice(*importable_fields)
-          glider.club = club
+          imported_object = where(club: club, id: record['id']).first_or_initialize
+          imported_object.attributes = record.slice(*importable_fields)
+          imported_object.club = club
 
-          # Handle required columns.
-          glider.double_seater = false if glider.double_seater.nil?
-          glider.self_launching = false if glider.self_launching.nil?
+          imported_object.handle_import!
 
           # Error handling.
           begin
-            gliders << glider if glider.save
+            valid_records << imported_object if imported_object.save
           rescue ActiveRecord::StatementInvalid
-            failed_gliders << glider
+            failed_records << imported_object
             raise ActiveRecord::Rollback
           end
         end
       end
 
-      [gliders, failed_gliders]
+      [valid_records, failed_records]
     end
   end
 end
