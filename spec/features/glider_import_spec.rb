@@ -28,7 +28,7 @@ describe 'The glider import flow', type: :feature do
 
     expect(page).to have_css('tbody tr .label-success', count: 2)
 
-    click_button 'Import gliders'
+    click_button 'Import'
 
     expect(page).to have_content('IMPORT FINISHED')
     expect(Glider.count).to eq(2)
@@ -45,7 +45,7 @@ describe 'The glider import flow', type: :feature do
     expect(page).to have_css('tbody tr .label-success', count: 1)
     expect(page).to have_css('tbody tr .label-warning', count: 1)
 
-    click_button 'Import gliders'
+    click_button 'Import'
 
     expect(page).to have_content('IMPORT FINISHED')
     expect(Glider.count).to eq(2)
@@ -61,7 +61,7 @@ describe 'The glider import flow', type: :feature do
     expect(page).to have_css('tbody tr .label-success', count: 2)
     expect(page).to have_css('tbody tr .label-danger', count: 1)
 
-    click_button 'Import gliders'
+    click_button 'Import'
 
     expect(page).to have_content('IMPORT FINISHED')
     expect(Glider.count).to eq(2)
