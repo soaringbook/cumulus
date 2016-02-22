@@ -22,10 +22,6 @@ module Import
       end
     end
 
-    def self.controller_path
-      'import'
-    end
-
     private
 
     def authorize_resource!
