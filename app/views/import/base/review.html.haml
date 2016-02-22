@@ -49,16 +49,22 @@
                         = data_columns_for class_name, object
 
             %hr
-            .row
-              .col-sm-8
-                %p= t('pages.import.review.import_text')
-              .col-sm-4
-                = simple_form_for :review, url: wizard_path(:result), method: :put, wrapper: :vertical_form do |f|
-                  - @valid_objects.each do |object|
-                    = f.simple_fields_for "records[]", object do |task|
-                      = task.input :id,         as: :hidden
-                      - class_name.importable_fields.each do |field|
-                        = task.input field.to_sym, as: :hidden
+            - if @valid_objects.count > 0
+              .row
+                .col-sm-8
+                  %p= t('pages.import.review.import_text')
+                .col-sm-4
+                  = simple_form_for :review, url: wizard_path(:result), method: :put, wrapper: :vertical_form do |f|
+                    - @valid_objects.each do |object|
+                      = f.simple_fields_for "records[]", object do |task|
+                        = task.input :id,         as: :hidden
+                        - class_name.importable_fields.each do |field|
+                          = task.input field.to_sym, as: :hidden
+                    .pull-right
+                      = link_to t('pages.import.review.upload'), :back, class: 'btn btn-success'
+                      = f.submit t('pages.import.review.import'), class: 'btn btn-primary'
+            - else
+              .row
+                .col-sm-12
                   .pull-right
                     = link_to t('pages.import.review.upload'), :back, class: 'btn btn-success'
-                    = f.submit t('pages.import.review.import'), class: 'btn btn-primary'

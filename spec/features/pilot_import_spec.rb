@@ -67,4 +67,14 @@ describe 'The pilot import flow', type: :feature do
     expect(Pilot.count).to eq(3)
     expect(@pilot.club.pilots.count).to eq(3)
   end
+
+  it 'should import a csv with all invalid pilots' do
+    visit import_pilots_path
+
+    attach_csv 'Select your CSV file', 'pilots_all_invalid'
+    click_button 'Upload'
+
+    expect(page).to have_css('tbody tr .label-danger', count: 1)
+    expect(page).to_not have_css('input.btn-primary', count: 1)
+  end
 end

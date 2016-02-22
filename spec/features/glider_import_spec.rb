@@ -67,4 +67,14 @@ describe 'The glider import flow', type: :feature do
     expect(Glider.count).to eq(2)
     expect(@pilot.club.gliders.count).to eq(2)
   end
+
+  it 'should import a csv with all invalid gliders' do
+    visit import_gliders_path
+
+    attach_csv 'Select your CSV file', 'gliders_all_invalid'
+    click_button 'Upload'
+
+    expect(page).to have_css('tbody tr .label-danger', count: 1)
+    expect(page).to_not have_css('input.btn-primary', count: 1)
+  end
 end
