@@ -33,6 +33,7 @@ en:
     links:
       edit: 'Edit'
       new: 'Add'
+      close: 'Close'
       delete: 'Delete'
       import: 'Batch Import'
       export_dropdown: 'Export to...'

@@ -14,14 +14,10 @@
           .col-sm-6
             = title_tag t('pages.import.upload.help.title'), 'wb-help-circle'
             %p= t('pages.import.upload.help.select_text', link: link_to('Wikipedia', 'https://en.wikipedia.org/wiki/Comma-separated_values')).html_safe
-            %p= t('pages.import.upload.help.format_text').html_safe
-            %pre.well
-              = preserve do
-                :escaped
-                  immatriculation, name,   self_launching, double_seater
-                  OO-YDV,          ASW-19, false,          false
-                  OO-KDB,          Janus,  false,          true
-                  PH-1496,         Arcus,  true ,          true
+
+            %p= modal_button_tag 'example', t('pages.import.upload.help.example.button')
+            = modal_container 'example', 'file-text', t('pages.import.upload.help.example.title'), t('pages.import.upload.help.example.text').html_safe do
+              %pre= render partial: "import/#{controller_name}/example_csv"
 
           .col-sm-6
             = simple_form_for @import_object, url: wizard_path(:review), method: :put, wrapper: :vertical_form do |f|

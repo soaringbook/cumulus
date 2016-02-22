@@ -101,7 +101,10 @@ en:
         help:
           title: 'How to upload?'
           select_text: "Select a 'comma seperated value' file that contains a -to import- list. You can find more information on this format on %{link}"
-          format_text: "For this batch import you need a <mark>CSV</mark> file in the following format:"
+          example:
+            title: 'Example'
+            text: "For this batch import you need a <mark>CSV</mark> file in the following format:"
+            button: 'Show an example CSV file'
         errors:
           no_record: 'No valid records found'
           incorrect_format: 'The file format should ne .csv'
