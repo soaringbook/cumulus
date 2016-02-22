@@ -14,7 +14,7 @@ gem 'rails', '~> 4.2.3'
 # [bootstrap-sass](https://github.com/twbs/bootstrap-sass)
 gem "bootstrap-sass", "~> 3.3.5.1"
 
-# I like font-awesome. I like the asset pipeline. I like semantic versioning. 
+# I like font-awesome. I like the asset pipeline. I like semantic versioning.
 # [font-awesome-rails](https://github.com/bokmann/font-awesome-rails)
 gem "font-awesome-rails", "~> 4.4.0.0"
 
@@ -106,10 +106,6 @@ gem "cocoon", "~> 1.2.6"
 # [raygun4ruby](http://raygun.io)
 gem "raygun4ruby", "~> 1.1.6"
 
-# One-off and subscription payments for your Rails application
-# [payola-payments](https://www.payola.io)
-gem "payola-payments", "~> 1.3.2"
-
 group :development, :test do
   # Faker, a port of Data::Faker from Perl, is used to easily generate fake data
   # [faker](https://github.com/stympy/faker)
@@ -183,7 +179,7 @@ group :test do
   # [capybara-email](https://github.com/dockyard/capybara-email)
   gem 'capybara-email', '~> 2.4.0'
 
-  # Poltergeist is a driver for Capybara that allows you to run your tests on a 
+  # Poltergeist is a driver for Capybara that allows you to run your tests on a
   # [poltergeist](http://github.com/teampoltergeist/poltergeist)
   gem "poltergeist", "~> 1.6.0"
 
