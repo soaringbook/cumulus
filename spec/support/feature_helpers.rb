@@ -10,13 +10,8 @@ module FeatureHelpers
   end
 
   def login_as_pilot(pilot = nil)
-    allow_any_instance_of(ApplicationController).to receive(:payment_completed?).and_return(true)
     @pilot = pilot || create(:pilot, admin: true)
     login_as(@pilot, scope: :pilot)
-  end
-
-  def setup_plan
-    allow(Plan).to receive(:cumulus).and_return(build(:plan))
   end
 end
 

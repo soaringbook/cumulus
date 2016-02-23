@@ -40,42 +40,4 @@ describe ApplicationController do
       expect(I18n.locale).to eq(:nl)
     end
   end
-
-  context 'Subscription' do
-    before { sign_in create(:pilot) }
-    it { should_not redirect_for_login { get :dummy } }
-
-    it 'should return an invalid empty subscription' do
-      get :dummy
-      expect(controller.subscription_valid?).to be_falsy
-    end
-
-    it 'should return a invalid canceled subscription' do
-      get :dummy
-      allow_any_instance_of(ApplicationController).to receive_message_chain(:current_subscription, :state).and_return 'canceled'
-      allow_any_instance_of(ApplicationController).to receive_message_chain(:current_subscription, :stripe_status).and_return 'active'
-      expect(controller.subscription_valid?).to be_falsy
-    end
-
-    it 'should return a invalid unpaid subscription' do
-      get :dummy
-      allow_any_instance_of(ApplicationController).to receive_message_chain(:current_subscription, :state).and_return 'unpaid'
-      allow_any_instance_of(ApplicationController).to receive_message_chain(:current_subscription, :stripe_status).and_return 'active'
-      expect(controller.subscription_valid?).to be_falsy
-    end
-
-    it 'should return a invalid stripe canceled subscription' do
-      get :dummy
-      allow_any_instance_of(ApplicationController).to receive_message_chain(:current_subscription, :state).and_return 'active'
-      allow_any_instance_of(ApplicationController).to receive_message_chain(:current_subscription, :stripe_status).and_return 'canceled'
-      expect(controller.subscription_valid?).to be_falsy
-    end
-
-    it 'should return a valid subscription' do
-      get :dummy
-      allow_any_instance_of(ApplicationController).to receive_message_chain(:current_subscription, :state).and_return 'active'
-      allow_any_instance_of(ApplicationController).to receive_message_chain(:current_subscription, :stripe_status).and_return 'active'
-      expect(controller.subscription_valid?).to be_truthy
-    end
-  end
 end
