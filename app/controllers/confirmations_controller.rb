@@ -59,6 +59,6 @@ class ConfirmationsController < Devise::ConfirmationsController
     @confirmable.confirm
     set_flash_message :notice, :confirmed
     sign_in @confirmable, bypass: true
-    redirect_to payments_path
+    redirect_to authenticated_root_path
   end
 end

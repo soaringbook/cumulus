@@ -13,10 +13,6 @@ Rails.application.routes.draw do
     root 'dashboard#show', as: :authenticated_root
   end
 
-  ### Stripe confirmation
-
-  resource :payments, only: [:show]
-
   ### Import
 
   namespace :import do
