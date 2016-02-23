@@ -7,7 +7,6 @@
 //
 //= require jquery/jquery-2.1.1.js
 //= require jquery_ujs
-//= require payola
 //= require bootstrap-sprockets
 //= require metisMenu/jquery.metisMenu.js
 //= require pace/pace.min.js

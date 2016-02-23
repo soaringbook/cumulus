@@ -25,7 +25,7 @@ describe PilotsController do
       it { should render_template_name('new') { post :create, pilot: { email: nil } } }
       it { should render_template_name('edit') { put :update, id: pilot.id, pilot: { email: nil } } }
 
-      it { should redirect_to_path(new_pilot_path) { post :create, pilot: { email: Faker::Internet.email } } }
+      it { should redirect_to_path(new_pilot_path) { post :create, pilot: { email: Faker::Internet.email, first_name: Faker::Name.name, last_name: Faker::Name.name } } }
       it { should redirect_to_path(edit_pilot_path(pilot)) { put :update, id: pilot.id, pilot: { first_name: Faker::Name.name } } }
       it { should redirect_to_path(pilots_path) { delete :destroy, id: pilot.id } }
     end

@@ -5,12 +5,8 @@ class ApplicationController < ActionController::Base
 
   before_action :authenticate_pilot!
   before_action :set_locale
-  before_action :redirect_to_payments_if_needed
 
-  helper_method :payment_completed?,
-                :current_club,
-                :current_subscription,
-                :subscription_valid?
+  helper_method :current_club
 
   ## Locale
 
@@ -22,25 +18,6 @@ class ApplicationController < ActionController::Base
 
   def current_club
     current_pilot.try :club
-  end
-
-  def redirect_to_payments_if_needed
-    redirect_to payments_path unless payment_completed?
-  end
-
-  def payment_completed?
-    current_subscription
-  end
-
-  def current_subscription
-    current_club.try(:subscription)
-  end
-
-  def subscription_valid?
-    current_subscription &&
-      (current_subscription.state != 'canceled' &&
-       current_subscription.state != 'unpaid' &&
-       current_subscription.stripe_status != 'canceled')
   end
 
   ## Authorization

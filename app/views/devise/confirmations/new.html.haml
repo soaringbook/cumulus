@@ -4,8 +4,6 @@
     = panel do
       = panel_body do
         %h2= t('global.confirmation.title')
-        .progress
-          .progress-bar.progress-bar-primary{ role: "progressbar", style: "width: 66%" }
 
         = simple_form_for resource, as: resource_name, url: update_pilot_confirmation_path, html: { method: 'patch' }, id: 'activation-form' do |f|
           = hidden_field_tag :confirmation_token, @confirmation_token

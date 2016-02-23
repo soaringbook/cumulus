@@ -1,6 +1,5 @@
 class ErrorsController < ApplicationController
   skip_before_action :authenticate_pilot!
-  skip_before_action :redirect_to_payments_if_needed
 
   layout 'error'
 

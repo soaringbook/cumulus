@@ -2,7 +2,7 @@
 .row.border-bottom{ class: top_class }
   %nav.navbar.navbar-static-top{ role: "navigation", style: "margin-bottom: 0"}
     .navbar-header
-      - if current_club && payment_completed?
+      - if current_club
         %a.navbar-minimalize.minimalize-styl-2.btn.btn-primary{ href: "#" }
           %i.fa.fa-bars
       - if yield(:search)

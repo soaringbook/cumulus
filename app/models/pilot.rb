@@ -12,14 +12,15 @@ class Pilot < ActiveRecord::Base
   has_and_belongs_to_many :gliders
 
   devise :database_authenticatable,
-         :registerable,
          :recoverable,
          :rememberable,
          :trackable,
          :validatable,
          :confirmable
 
-  validates :club, presence: true
+  validates :club,       presence: true
+  validates :first_name, presence: true
+  validates :last_name,  presence: true
 
   accepts_nested_attributes_for :club
 

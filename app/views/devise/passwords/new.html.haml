@@ -7,4 +7,5 @@
 
   %p.text-muted.text-center
     %small= t 'global.password_forget.labels.already_a_club'
-  = link_to t('global.password_forget.links.sign_in'), new_session_path(resource_name), class: 'btn btn-sm btn-white btn-block'
+  = link_to new_session_path(resource_name) do
+    %small= t('global.password_forget.links.sign_in')
