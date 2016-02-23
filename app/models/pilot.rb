@@ -12,7 +12,6 @@ class Pilot < ActiveRecord::Base
   has_and_belongs_to_many :gliders
 
   devise :database_authenticatable,
-         :registerable,
          :recoverable,
          :rememberable,
          :trackable,

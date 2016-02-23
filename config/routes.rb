@@ -4,16 +4,7 @@ Rails.application.routes.draw do
   as :pilot do
     patch '/pilots/confirmation' => 'confirmations#update', as: :update_pilot_confirmation, via: :patch
   end
-  devise_for :pilots, path: 'club', skip: 'registration', :controllers => { :confirmations => "confirmations" }
-
-  devise_scope :pilot do
-    # Remove the edit registrations route.
-    resource :registration, only: [:new, :create],
-                            path: 'club',
-                            path_names: { new: 'sign_up' },
-                            controller: 'registrations',
-                            as: :pilot_registration
-  end
+  devise_for :pilots, path: 'club', controllers: { confirmations: 'confirmations' }
 
   ### Dashboard
 
