@@ -4,6 +4,7 @@ The Soaring Book web backend.
 
 ![](https://travis-ci.org/soaringbook/cumulus.svg)
 [![Test Coverage](https://codeclimate.com/github/soaringbook/cumulus/badges/coverage.svg)](https://codeclimate.com/github/soaringbook/cumulus/coverage)
+![](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)
 
 
 ## BOOTSTRAP
