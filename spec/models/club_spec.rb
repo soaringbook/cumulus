@@ -24,6 +24,26 @@ describe Club do
     end
   end
 
+  context 'Active' do
+    it 'should be an active club until today' do
+      club = create(:club, active_until: Date.today)
+      expect(club.active?).to be_truthy
+      expect(club.inactive?).to be_falsy
+    end
+
+    it 'should be an active club until tomorrow' do
+      club = create(:club, active_until: Date.today + 1.day)
+      expect(club.active?).to be_truthy
+      expect(club.inactive?).to be_falsy
+    end
+
+    it 'should be an inactive club' do
+      club = create(:club, active_until: Date.today - 1.day)
+      expect(club.active?).to be_falsy
+      expect(club.inactive?).to be_truthy
+    end
+  end
+
   context 'Associations' do
     it { should have_many(:pilots).dependent(:destroy) }
     it { should have_many(:gliders).dependent(:destroy) }

@@ -12,6 +12,16 @@ class Club < ActiveRecord::Base
 
   default_scope { order('clubs.short_name') }
 
+  ### Active
+
+  def active?
+    active_until >= Date.today
+  end
+
+  def inactive?
+    !active?
+  end
+
   ### Search
 
   def self.searchable_fields
