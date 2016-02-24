@@ -10,11 +10,12 @@ module ImportHelper
   def data_columns_for(class_name, object)
     content = ''
     class_name.importable_display_columns.each do |column|
-      if object.public_send(column).boolean?
-        content << content_tag(:td, boolean_tag(object.public_send(column)))
-      else
-        content << content_tag(:td, object.public_send(column))
-      end
+      value = object.public_send(column)
+      content << if value.boolean?
+                   content_tag(:td, boolean_tag(value))
+                 else
+                   content_tag(:td, value)
+                 end
     end
     content.html_safe
   end

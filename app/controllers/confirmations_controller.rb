@@ -31,13 +31,10 @@ class ConfirmationsController < Devise::ConfirmationsController
     end
 
     return if @confirmable.errors.empty?
-
     self.resource = @confirmable
-    if resource.new_record?
-      fail ActionController::RoutingError.new('Not Found')
-    else
-      render 'devise/confirmations/new'
-    end
+
+    raise ActionController::RoutingError.new('Not Found') if resource.new_record?
+    render 'devise/confirmations/new'
   end
 
   protected
