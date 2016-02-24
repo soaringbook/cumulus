@@ -133,7 +133,7 @@ group :production do
 
   # Puma is a simple, fast, threaded, and highly concurrent HTTP 1.1 server for
   # [puma](http://puma.io)
-  gem 'puma', '~> 2.13.4'
+  gem 'puma', '~> 2.16.0'
 
   # Skylight is a smart profiler for Rails apps
   # [skylight](http://www.skylight.io)
