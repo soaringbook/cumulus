@@ -14,8 +14,8 @@ en:
         dashboard: 'Dashboard'
         gliders: 'Gliders'
         pilots: 'Pilots'
-        admin: 'Admin Area'
-        super_admin: "Super Admin Area"
+        admin: 'Club'
+        super_admin: "Soaring Book"
         rights: 'Access Rights'
         account: 'Account'
         profile: 'Profile'
