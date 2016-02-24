@@ -35,8 +35,8 @@ describe PilotsController do
       let(:pilot) { create(:pilot, club: @pilot.club) }
 
       context 'Strong params' do
-        it { should permit(:first_name, :last_name, :avatar, :remove_avatar).for(:create) }
-        it { should permit(:first_name, :last_name, :avatar, :remove_avatar).for(:update, params: { id: pilot.id }) }
+        it { should permit(:first_name, :last_name, :avatar, :remove_avatar).for(:create, params: { pilot: { first_name: '' } }).on(:pilot) }
+        it { should permit(:first_name, :last_name, :avatar, :remove_avatar).for(:update, params: { id: pilot.id, pilot: { first_name: '' } }).on(:pilot) }
       end
     end
 

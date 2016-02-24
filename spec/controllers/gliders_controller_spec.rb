@@ -35,8 +35,8 @@ describe GlidersController do
       let(:glider) { create(:glider, club: @pilot.club) }
 
       context 'Strong params' do
-        it { should permit(:immatriculation, :name, :self_launching, :double_seater, :avatar, :remove_avatar, :external).for(:create) }
-        it { should permit(:immatriculation, :name, :self_launching, :double_seater, :avatar, :remove_avatar, :external).for(:update, params: { id: glider.id }) }
+        it { should permit(:immatriculation, :name, :self_launching, :double_seater, :avatar, :remove_avatar, :external).for(:create, params: { glider: { name: '' } }).on(:glider) }
+        it { should permit(:immatriculation, :name, :self_launching, :double_seater, :avatar, :remove_avatar, :external).for(:update, params: { id: glider.id, glider: { name: '' } }).on(:glider) }
       end
     end
 

@@ -19,7 +19,7 @@ describe ProfilesController do
     it { should redirect_to_path(edit_profile_path(tab: 'something')) { put :update, tab: 'something', pilot: { first_name: 'Jake' } } }
 
     context 'Strong params' do
-      it { should permit(:email, :first_name, :last_name, :password, :password_confirmation, :avatar, :remove_avatar, :locale).for(:update) }
+      it { should permit(:email, :first_name, :last_name, :password, :password_confirmation, :avatar, :remove_avatar, :locale).for(:update, params: { pilot: { first_name: '' } }).on(:pilot) }
     end
   end
 

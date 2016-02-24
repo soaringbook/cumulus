@@ -22,7 +22,7 @@ describe RightsController do
       before { sign_in create(:pilot, admin: true) }
 
       context 'Strong params' do
-        it { should permit(:admin, :glider_access, :pilot_access).for(:update, params: { pilot_id: @pilot.id }) }
+        it { should permit(:admin, :glider_access, :pilot_access).for(:update, params: { pilot_id: @pilot.id, pilot: { admin: true } }).on(:pilot) }
       end
     end
 
