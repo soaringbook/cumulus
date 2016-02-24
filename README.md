@@ -3,7 +3,6 @@
 The Soaring Book web backend.
 
 ![](https://travis-ci.org/soaringbook/cumulus.svg)
-[![Code Climate](https://codeclimate.com/github/soaringbook/cumulus/badges/gpa.svg)](https://codeclimate.com/github/soaringbook/cumulus)
 [![Test Coverage](https://codeclimate.com/github/soaringbook/cumulus/badges/coverage.svg)](https://codeclimate.com/github/soaringbook/cumulus/coverage)
 
 
@@ -19,7 +18,7 @@ Copy the `.env.sample` to `.env` in order to use the correct environment variabl
 
 ## SERVER
 
-Use [Pow](http://pow.cx) to serve the application, or you just start the server with the `rails s` command. 
+Use [Pow](http://pow.cx) to serve the application, or you just start the server with the `rails s` command.
 
 ## TESTING
 
