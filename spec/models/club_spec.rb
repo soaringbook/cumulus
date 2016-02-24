@@ -16,4 +16,11 @@ describe Club do
     it { should have_many(:pilots).dependent(:destroy) }
     it { should have_many(:gliders).dependent(:destroy) }
   end
+
+  context 'Searching' do
+    it 'should find a club by short name' do
+      create(:club, short_name: 'short name')
+      expect(Club.search('rt n').count).to eq(1)
+    end
+  end
 end
