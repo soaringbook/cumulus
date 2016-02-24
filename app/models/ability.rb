@@ -8,9 +8,15 @@ class Ability
     allow_resource_access! pilot, :pilots
 
     allow_admin_access! pilot, :club
+    allow_super_admin_access! pilot
   end
 
   private
+
+  def allow_super_admin_access!(pilot)
+    return unless pilot.super_admin?
+    can :manage, Club
+  end
 
   def allow_admin_access!(pilot, resource)
     return unless pilot.admin?
