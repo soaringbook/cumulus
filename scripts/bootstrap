@@ -35,6 +35,10 @@ run 'brew link --force qt'
 describe('Installing imagemagick')
 run 'brew install imagemagick'
 
+describe('Installing libxml')
+run 'brew install libxml2'
+run 'bundle config build.nokogiri "--use-system-libraries --with-xml2-include=/usr/local/opt/libxml2/include/libxml2"'
+
 describe('Installing bundle')
 run 'bundle install'
 
