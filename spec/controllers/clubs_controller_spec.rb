@@ -29,8 +29,8 @@ describe ClubsController do
       let(:club) { create(:club) }
 
       context 'Strong params' do
-        it { should permit(:short_name).for(:create, params: { club: { short_name: '' } }).on(:club) }
-        it { should permit(:short_name).for(:update, params: { id: club, club: { short_name: '' } }).on(:club) }
+        it { should permit(:short_name, :active_until).for(:create, params: { club: { short_name: '' } }).on(:club) }
+        it { should permit(:short_name, :active_until).for(:update, params: { id: club, club: { short_name: '' } }).on(:club) }
       end
     end
 
@@ -58,7 +58,7 @@ describe ClubsController do
         it { should render_template_name('new') { post :create, club: { short_name: nil } } }
         it { should render_template_name('edit') { put :update, id: club.id, club: { short_name: nil } } }
 
-        it { should redirect_to_path(clubs_path) { post :create, club: { short_name: Faker::Name.name } } }
+        it { should redirect_to_path(clubs_path) { post :create, club: { short_name: Faker::Name.name, active_until: Date.today.strftime('%Y-%m-%d') } } }
         it { should redirect_to_path(edit_club_path(club.short_name)) { put :update, id: club.id, club: { short_name: Faker::Name.name } } }
       end
     end

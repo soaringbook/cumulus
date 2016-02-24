@@ -8,6 +8,7 @@ class Club < ActiveRecord::Base
   has_many :gliders, dependent: :destroy
 
   validates :short_name, presence: true, uniqueness: true, length: { minimum: 3 }
+  validates :active_until, date: true
 
   default_scope { order('clubs.short_name') }
 

@@ -34,6 +34,10 @@ gem 'uglifier', '~> 2.7.1'
 # [coffee-rails](https://github.com/rails/coffee-rails)
 gem 'coffee-rails', '~> 4.1.0'
 
+# A simple, ORM agnostic, Ruby 1.9 compatible date validator for Rails 3, base
+# [date_validator](http://github.com/codegram/date_validator)
+gem "date_validator", "~> 0.9.0"
+
 # This gem provides jQuery and the jQuery-ujs driver for your Rails 4+ applica
 # [jquery-rails](http://rubygems.org/gems/jquery-rails)
 gem 'jquery-rails', '~> 4.1.0'

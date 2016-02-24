@@ -6,6 +6,18 @@ describe Club do
     it { should validate_uniqueness_of(:short_name) }
     it { should validate_length_of(:short_name).is_at_least(3) }
 
+    it 'should validate an incorrect active until date' do
+      club = build(:club, active_until: nil)
+      expect(club.valid?).to be_falsy
+      expect(club.errors[:active_until].first).to eq('is not a date')
+    end
+
+    it 'should validate a correct active until date' do
+      club = build(:club, active_until: Date.today)
+      expect(club.valid?).to be_truthy
+      expect(club.errors.count).to eq(0)
+    end
+
     it 'should have a valid factory' do
       club = create(:club)
       expect(club.valid?).to be_truthy
