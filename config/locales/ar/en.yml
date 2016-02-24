@@ -1,6 +1,9 @@
-en: 
+en:
   activerecord:
     models:
+      club:
+        one: 'Club'
+        other: 'Clubs'
       pilot:
         one: 'Pilot'
         other: 'Pilots'
@@ -8,6 +11,8 @@ en:
         one: 'Glider'
         other: 'Gliders'
     attributes:
+      club:
+        short_name: 'Abbreviation'
       glider:
         immatriculation: 'Immatriculation'
         name: 'Type'

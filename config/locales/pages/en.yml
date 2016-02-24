@@ -16,6 +16,20 @@ en:
           canceled: 'Canceled'
           trialing: 'In trial'
 
+    clubs:
+      titles:
+        index: 'Clubs'
+        new: 'Add a new club'
+        edit: 'Edit club %{short_name}'
+        information: 'More information'
+      labels:
+        information_text: 'Here is more information about %{short_name}, you can adjust these in the club edit screen.'
+        empty: 'No clubs found'
+        notices:
+          create: 'Club was successfully created.'
+          update: 'Club was successfully updated.'
+          destroy: 'Club was successfully destroyed.'
+
     profiles:
       titles:
         show: 'Your profile'

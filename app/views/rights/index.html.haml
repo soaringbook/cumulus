@@ -31,7 +31,8 @@
                     %td= rights_tag pilot.glider_access, pilot.admin?
                     %td= rights_tag pilot.pilot_access, pilot.admin?
                     %td
-                      = edit_link_to edit_pilot_rights_path(pilot)
+                      .pull-right
+                        = edit_link_to edit_pilot_rights_path(pilot)
             %tfoot
               %tr
                 %td.footable-visible{ colspan: 5 }= paginate @pilots

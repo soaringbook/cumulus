@@ -34,10 +34,11 @@
                       = link_to pilot.name, pilot
                     %td= link_to pilot.email, "mailto:#{pilot.email}"
                     %td
-                      - if can? :update, pilot
-                        = edit_link_to edit_pilot_path(pilot)
-                      - if can? :destroy, pilot
-                        = delete_link_to pilot
+                      .pull-right
+                        - if can? :update, pilot
+                          = edit_link_to edit_pilot_path(pilot)
+                        - if can? :destroy, pilot
+                          = delete_link_to pilot
             %tfoot
               %tr
                 %td.footable-visible{ colspan: '3' }= paginate @pilots

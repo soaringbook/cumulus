@@ -1,0 +1,36 @@
+- breadcrumb :clubs
+
+- content_for :title, t('pages.clubs.titles.index')
+- content_for :search do
+  = search_form_tag clubs_path, t('global.labels.search.clubs')
+
+.row
+  .col-lg-12
+    = panel do
+      = panel_heading do
+        .col-lg-12
+          .pull-right
+            - if can? :create, Club
+              = add_link_to new_club_path
+      = panel_body do
+        .table-responsive
+          %table.table
+            %thead
+              %tr
+                %th= Club.human_attribute_name('short_name')
+                %th{ style: 'width: 9em' }
+            %tbody
+              - if @clubs.count == 0
+                %tr.no-records-found
+                  %td{ colspan: 5 }= t 'pages.clubs.labels.empty'
+              - else
+                - @clubs.each do |club|
+                  %tr
+                    %td= link_to club.short_name.upcase, club
+                    %td
+                      .pull-right
+                        - if can? :update, club
+                          = edit_link_to edit_club_path(club)
+            %tfoot
+              %tr
+                %td.footable-visible{ colspan: '5' }= paginate @clubs

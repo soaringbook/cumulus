@@ -15,8 +15,12 @@ module MenuHelper
     end
   end
 
-  def menu_link_tag(name, icon, path, active)
-    content_tag :li, class: (active ? ' active' : nil) do
+  def menu_link_tag(name, icon, path, active, special = false)
+    li_class = [
+      active ? 'active' : nil,
+      special ? 'special_link' : nil
+    ].compact.join ' '
+    content_tag :li, class: li_class do
       link_to path do
         if icon
           content = content_tag(:i, nil, class: "fa fa-#{icon}")

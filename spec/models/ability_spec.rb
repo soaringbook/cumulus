@@ -5,6 +5,18 @@ describe Ability do
   subject(:ability) { Ability.new(pilot) }
   let(:pilot) { nil }
 
+  context 'Super admin rights' do
+    before { @club = create(:club) }
+
+    context 'With admin rights' do
+      let(:pilot) { create(:pilot, super_admin: true) }
+
+      it { should be_able_to(:manage, Club) }
+      it { should be_able_to(:manage, pilot.club) }
+      it { should be_able_to(:manage, @club) }
+    end
+  end
+
   context 'Glider rights' do
     before { create(:glider, club: pilot.club) }
 

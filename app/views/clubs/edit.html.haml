@@ -1,0 +1,7 @@
+- breadcrumb :club, @club, true
+
+- content_for :title, t('pages.clubs.titles.edit', short_name: @club.short_name.upcase)
+- content_for :actions do
+  = show_action_link_to @club
+
+= render 'form'
