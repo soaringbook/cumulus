@@ -5,9 +5,10 @@
         = simple_form_for @club, wrapper: :vertical_form do |f|
           .row
             .col-sm-6
-              .row
-                .col-sm-12
-                  = f.input :short_name, required: false, autofocus: true
+              = f.input :short_name, required: false, autofocus: true
+          .row
+            .col-sm-6
+              = date_selection_tag f, :active_until
 
           %hr
           = f.submit class: 'btn btn-primary'

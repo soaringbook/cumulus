@@ -19,6 +19,7 @@
 //= require inspinia.js
 //= require url_handling
 //= require retina_tag
+//= require bootstrap-datepicker/core
 
 $(function() {
   // Change the url when clicking a tab.
@@ -28,4 +29,9 @@ $(function() {
 
   // Set the button tooltip.
   $('.btn-tooltip').tooltip({ container: "body" });
+
+  // Change the datapicker defaults.
+  $('input[data-provide=datepicker]').datepicker({
+    format: "dd-mm-yyyy"
+  });
 });
