@@ -20,6 +20,10 @@ Rails.application.routes.draw do
     resources :pilots, only: [:index, :show, :update]
   end
 
+  ### Clubs
+
+  resources :clubs, except: [:destroy]
+
   ### Gliders
 
   resources :gliders

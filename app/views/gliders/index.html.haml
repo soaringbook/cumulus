@@ -38,10 +38,11 @@
                     %td= boolean_tag glider.self_launching
                     %td= boolean_tag glider.double_seater
                     %td
-                      - if can? :update, glider
-                        = edit_link_to edit_glider_path(glider)
-                      - if can? :destroy, glider
-                        = delete_link_to glider
+                      .pull-right
+                        - if can? :update, glider
+                          = edit_link_to edit_glider_path(glider)
+                        - if can? :destroy, glider
+                          = delete_link_to glider
             %tfoot
               %tr
                 %td.footable-visible{ colspan: '5' }= paginate @gliders

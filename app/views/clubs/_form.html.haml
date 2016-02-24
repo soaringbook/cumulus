@@ -1,0 +1,13 @@
+.row
+  .col-sm-12
+    = panel do
+      = panel_body do
+        = simple_form_for @club, wrapper: :vertical_form do |f|
+          .row
+            .col-sm-6
+              .row
+                .col-sm-12
+                  = f.input :short_name, required: false, autofocus: true
+
+          %hr
+          = f.submit class: 'btn btn-primary'

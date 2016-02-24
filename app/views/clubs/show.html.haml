@@ -1,0 +1,17 @@
+- breadcrumb :club, @club, false
+
+- content_for :title, @club.short_name.upcase
+- if can? :update, @club
+  - content_for :actions do
+    = edit_action_link_to edit_club_path(@club)
+
+.row.m-b-lg.m-t-lg
+  .col-md-6
+    %h2.no-margins= @club.short_name.upcase
+
+.row
+  .col-lg-3
+    .ibox
+      .ibox-content.information
+        %h3= t('pages.clubs.titles.information')
+        %p.small= t('pages.clubs.labels.information_text', short_name: @club.short_name.upcase)

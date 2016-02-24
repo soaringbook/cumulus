@@ -27,6 +27,9 @@
         = menu_link_tag t('global.application.menu.gliders'), 'plane', gliders_path, controller_name == 'gliders'
 
       - if can? :update, current_pilot.club
-        = menu_group_tag t('global.application.menu.admin'), 'gear', %w(accounts rights).include?(controller_name) do
+        = menu_group_tag t('global.application.menu.admin'), 'cog', %w(accounts rights).include?(controller_name) do
           = menu_link_tag t('global.application.menu.account'), nil, edit_account_path, controller_name == 'accounts'
           = menu_link_tag t('global.application.menu.rights'), nil, rights_path, controller_name == 'rights'
+
+      - if can? :manage, Club
+        = menu_link_tag t('global.application.menu.super_admin'), 'cogs', clubs_path, %w(clubs).include?(controller_name)

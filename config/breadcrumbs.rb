@@ -2,6 +2,29 @@ crumb :root do
   link I18n.t('global.title'), root_path
 end
 
+### Clubs
+
+crumb :clubs do
+  link I18n.t('pages.clubs.titles.index'), clubs_path
+end
+
+crumb :club do |club, editable|
+  if editable
+    if club.new_record?
+      # The add page.
+      link I18n.t('global.links.new'), new_club_path
+    else
+      # The edit page.
+      link club.short_name.upcase, club_path(club)
+      link I18n.t('global.links.edit'), edit_club_path(club)
+    end
+  else
+    # The show page.
+    link club.short_name.upcase, club_path(club)
+  end
+  parent :clubs
+end
+
 ### Pilots
 
 crumb :pilots do
