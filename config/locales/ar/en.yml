@@ -13,6 +13,7 @@ en:
     attributes:
       club:
         short_name: 'Abbreviation'
+        active_until: 'Active until'
       glider:
         immatriculation: 'Immatriculation'
         name: 'Type'

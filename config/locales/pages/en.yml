@@ -25,6 +25,7 @@ en:
       labels:
         information_text: 'Here is more information about %{short_name}, you can adjust these in the club edit screen.'
         empty: 'No clubs found'
+        inactive: 'inactive'
         notices:
           create: 'Club was successfully created.'
           update: 'Club was successfully updated.'

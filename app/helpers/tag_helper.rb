@@ -58,4 +58,17 @@ module TagHelper
       end
     end
   end
+
+  def date_selection_tag(form, field)
+    form.input :active_until do
+      content_tag :div, class: 'input-group' do
+        content = content_tag :span, class: 'input-group-addon' do
+          content_tag :i, nil, class: 'fa fa-calendar'
+        end
+        value = form.object.public_send(field)
+        formatted_value = value.nil? ? nil : l(form.object.public_send(field), format: :form)
+        content << form.input_field(field, as: :string, class: 'form-control', data: { provide: 'datepicker' }, value: formatted_value)
+      end
+    end
+  end
 end

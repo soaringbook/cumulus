@@ -18,6 +18,7 @@
             %thead
               %tr
                 %th= Club.human_attribute_name('short_name')
+                %th= Club.human_attribute_name('active_until')
                 %th{ style: 'width: 9em' }
             %tbody
               - if @clubs.count == 0
@@ -27,6 +28,10 @@
                 - @clubs.each do |club|
                   %tr
                     %td= link_to club.short_name.upcase, club
+                    %td
+                      = l club.active_until, format: :long
+                      - if club.inactive?
+                        %span.label.label-warning= t(:inactive, scope: [:pages, :clubs, :labels]).upcase
                     %td
                       .pull-right
                         - if can? :update, club

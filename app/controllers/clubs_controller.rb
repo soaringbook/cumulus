@@ -42,6 +42,6 @@ class ClubsController < ApplicationController
   end
 
   def club_params
-    params.require(:club).permit(:short_name)
+    params.require(:club).permit(:short_name, :active_until)
   end
 end
