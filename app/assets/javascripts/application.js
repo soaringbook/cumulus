@@ -32,6 +32,7 @@ $(function() {
 
   // Change the datapicker defaults.
   $('input[data-provide=datepicker]').datepicker({
-    format: "dd-mm-yyyy"
+    format: "dd-mm-yyyy",
+    orientation: "bottom auto"
   });
 });
