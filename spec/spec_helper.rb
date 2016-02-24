@@ -1,9 +1,12 @@
+require 'simplecov'
+SimpleCov.start
+
+require 'codeclimate-test-reporter'
+CodeClimate::TestReporter.start
+
 require 'capybara/rspec'
 require 'capybara/email/rspec'
 require 'capybara/poltergeist'
-require 'codeclimate-test-reporter'
-
-CodeClimate::TestReporter.start
 
 Capybara.ignore_hidden_elements = false
 

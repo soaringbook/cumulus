@@ -547,6 +547,7 @@ DEPENDENCIES
   sass-rails (~> 5.0.4)
   shoulda-matchers (~> 3.1.1)
   simple_form (~> 3.2.1)
+  simplecov (~> 0.11.2)
   skylight (~> 0.10.3)
   spreadsheet_on_rails (~> 1.0.0)
   spring (~> 1.6.3)

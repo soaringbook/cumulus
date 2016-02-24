@@ -159,6 +159,10 @@ group :development do
 end
 
 group :test do
+  # Code coverage for Ruby 1.9+ with a powerful configuration library and automa
+  # [simplecov](http://github.com/colszowka/simplecov)
+  gem "simplecov", "~> 0.11.2", require: false
+
   # help to kill N+1 queries and unused eager loading.
   # [bullet](http://github.com/flyerhzm/bullet)
   gem 'bullet', '~> 5.0.0'
