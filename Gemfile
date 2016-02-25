@@ -122,6 +122,10 @@ group :development, :test do
   # Rails application preloader
   # [spring](http://github.com/rails/spring)
   gem 'spring', '~> 1.6.3'
+
+  # help to kill N+1 queries and unused eager loading.
+  # [bullet](http://github.com/flyerhzm/bullet)
+  gem 'bullet', '~> 5.0.0'
 end
 
 group :development, :production do
@@ -170,10 +174,6 @@ group :test do
   # Code coverage for Ruby 1.9+ with a powerful configuration library and automa
   # [simplecov](http://github.com/colszowka/simplecov)
   gem "simplecov", "~> 0.11.2", require: false
-
-  # help to kill N+1 queries and unused eager loading.
-  # [bullet](http://github.com/flyerhzm/bullet)
-  gem 'bullet', '~> 5.0.0'
 
   # RSpec for Rails
   # [rspec-rails](http://github.com/rspec/rspec-rails)
