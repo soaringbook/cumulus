@@ -7,6 +7,7 @@ describe 'The club edit flow', type: :feature do
     visit new_club_path
 
     fill_in 'Abbreviation', with: 'aaa'
+    fill_in 'Active until', with: '20-02-2017'
     click_button 'Add Club'
 
     expect(page).to have_content('Club was successfully created')
