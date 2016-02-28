@@ -1,0 +1,11 @@
+#myModal.modal.inmodal{"aria-hidden" => "true", :role => "dialog", :tabindex => "-1"}
+  .modal-dialog
+    .modal-content.animated.bounceInRight
+      .modal-header
+        %button.close{"data-dismiss" => "modal", :type => "button"}
+          %span{"aria-hidden" => "true"} ×
+          %span.sr-only Close
+        %i.fa.fa-laptop.modal-icon
+        %h4.modal-title= yield :title if content_for? :title
+        %small.font-bold= yield :subtitle if content_for? :subtitle
+      = yield

@@ -29,4 +29,12 @@ class ApplicationController < ActionController::Base
   rescue_from CanCan::AccessDenied do |_exception|
     redirect_to error_403_path
   end
+
+  ## Modals
+
+  def respond_modal_with(*args, &blk)
+    options = args.extract_options!
+    options[:responder] = ModalResponderService
+    respond_with *args, options, &blk
+  end
 end
