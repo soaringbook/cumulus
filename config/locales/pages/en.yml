@@ -26,6 +26,10 @@ en:
         information_text: 'Here is more information about %{short_name}, you can adjust these in the club edit screen.'
         empty: 'No clubs found'
         inactive: 'inactive'
+        invite:
+          button: 'Invite pilot'
+          title: 'Invite a pilot'
+          subtitle: 'Invite a pilot by filling in the form below. Be aware, the pilot below will be an <mark>admin</mark> of this club.'
         notices:
           create: 'Club was successfully created.'
           update: 'Club was successfully updated.'

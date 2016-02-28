@@ -26,7 +26,9 @@ Rails.application.routes.draw do
 
   ### Clubs
 
-  resources :clubs, except: [:destroy]
+  resources :clubs, except: [:destroy] do
+    resources :pilots, only: [:new, :create], controller: 'clubs/pilots'
+  end
 
   ### Gliders
 
