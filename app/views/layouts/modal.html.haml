@@ -1,4 +1,4 @@
-#myModal.modal.inmodal.fade{"aria-hidden" => "true", :role => "dialog", :tabindex => "-1"}
+.modal.inmodal{"aria-hidden" => "true", :role => "dialog", :tabindex => "-1"}
   .modal-dialog
     .modal-content
       .modal-header
@@ -9,4 +9,4 @@
         %i{ class: "fa fa-#{icon} modal-icon" }
         %h4.modal-title= yield :title if content_for? :title
         %small.font-bold= yield :subtitle if content_for? :subtitle
-      = yield
+      .modal-rendered-content= yield

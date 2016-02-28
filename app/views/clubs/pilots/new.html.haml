@@ -2,17 +2,4 @@
 - content_for :title, t('pages.clubs.labels.invite.title')
 - content_for :subtitle, t('pages.clubs.labels.invite.subtitle').html_safe
 
-= simple_form_for @pilot, wrapper: :vertical_form do |f|
-  = modal_body_tag do
-    .row
-      .col-sm-12
-        = f.input :email, required: false, autofocus: true
-    .row
-      .col-sm-6
-        = f.input :first_name, required: false
-      .col-sm-6
-        = f.input :last_name,  required: false
-
-  = modal_footer_tag do
-    .pull-left= f.submit t('pages.clubs.labels.invite.button'), class: 'btn btn-primary'
-    .pull-right= modal_close_tag
+= render partial: 'form', locals: { pilot: @pilot, club: @club }

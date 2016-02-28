@@ -30,6 +30,7 @@ en:
           button: 'Invite pilot'
           title: 'Invite a pilot'
           subtitle: 'Invite a pilot by filling in the form below. Be aware, the pilot below will be an <mark>admin</mark> of this club.'
+          create: 'Pilot was successfully invited.'
         notices:
           create: 'Club was successfully created.'
           update: 'Club was successfully updated.'
