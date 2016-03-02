@@ -1,0 +1,8 @@
+- content_for :icon, 'file-text'
+- content_for :title, t('pages.import.upload.help.example.title')
+- content_for :subtitle, t('pages.import.upload.help.example.text').html_safe
+
+= modal_body_tag do
+  %pre= render partial: "import/#{controller_name}/example_csv"
+= modal_footer_tag do
+  .pull-right= modal_close_tag

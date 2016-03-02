@@ -4,6 +4,8 @@ module Import
 
     before_action :authorize_resource!
 
+    respond_to :html, :json
+
     steps :upload,
           :review,
           :result
@@ -11,6 +13,10 @@ module Import
     def show
       @import_object = ImportObject.new
       render(:upload)
+    end
+
+    def csv
+      respond_modal_with @import_object
     end
 
     def update

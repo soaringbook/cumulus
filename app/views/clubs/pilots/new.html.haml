@@ -1,0 +1,5 @@
+- content_for :icon, 'user'
+- content_for :title, t('pages.clubs.labels.invite.title')
+- content_for :subtitle, t('pages.clubs.labels.invite.subtitle').html_safe
+
+= render partial: 'form', locals: { pilot: @pilot, club: @club }

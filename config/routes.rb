@@ -16,13 +16,19 @@ Rails.application.routes.draw do
   ### Import
 
   namespace :import do
-    resources :gliders, only: [:index, :show, :update]
-    resources :pilots, only: [:index, :show, :update]
+    resources :gliders, only: [:index, :show, :update] do
+      get 'csv', on: :collection
+    end
+    resources :pilots, only: [:index, :show, :update] do
+      get 'csv', on: :collection
+    end
   end
 
   ### Clubs
 
-  resources :clubs, except: [:destroy]
+  resources :clubs, except: [:destroy] do
+    resources :pilots, only: [:new, :create], controller: 'clubs/pilots'
+  end
 
   ### Gliders
 

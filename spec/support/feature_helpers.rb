@@ -10,7 +10,7 @@ module FeatureHelpers
   end
 
   def login_as_pilot(pilot = nil)
-    @pilot = pilot || create(:pilot, admin: true)
+    @pilot = pilot || create(:pilot, admin: true, first_name: '111111', last_name: '22222', email: '111@2222.be')
     login_as(@pilot, scope: :pilot)
   end
 end

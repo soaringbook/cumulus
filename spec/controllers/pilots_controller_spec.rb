@@ -78,6 +78,21 @@ describe PilotsController do
         it { expect { delete :destroy, id: pilot.id }.to raise_exception(CanCan::AccessDenied) }
       end
     end
+
+    context 'Inactive' do
+      let(:club) { create(:club, active_until: Date.today - 1.day) }
+      let(:pilot) { create(:pilot, club: club, admin: true) }
+
+      before { sign_in pilot }
+
+      it { expect { get :index }.not_to raise_error }
+      it { expect { get :show, id: pilot.id }.not_to raise_error }
+      it { expect { get :new }.to raise_exception(CanCan::AccessDenied) }
+      it { expect { post :create, pilot: { first_name: nil } }.to raise_exception(CanCan::AccessDenied) }
+      it { expect { get :edit, id: pilot.id }.to raise_exception(CanCan::AccessDenied) }
+      it { expect { put :update, id: pilot.id, pilot: { first_name: nil } }.to raise_exception(CanCan::AccessDenied) }
+      it { expect { delete :destroy, id: pilot.id }.to raise_exception(CanCan::AccessDenied) }
+    end
   end
 
   context 'Routing' do

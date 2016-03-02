@@ -20,6 +20,7 @@
 //= require url_handling
 //= require retina_tag
 //= require bootstrap-datepicker/core
+//= require modals
 
 $(function() {
   // Change the url when clicking a tab.
