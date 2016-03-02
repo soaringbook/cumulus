@@ -26,9 +26,9 @@ class Ability
   end
 
   def allow_resource_access!(pilot, resources)
-    if pilot.admin? || pilot.public_send("#{resources}_writable?")
+    if (pilot.admin? || pilot.public_send("#{resources}_writable?")) && pilot.club.active?
       allow_access! pilot, :manage, resources
-    elsif pilot.public_send("#{resources}_readable?")
+    elsif pilot.admin? || pilot.public_send("#{resources}_readable?")
       allow_access! pilot, :read, resources
     end
   end

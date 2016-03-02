@@ -89,6 +89,21 @@ describe GlidersController do
         it { expect { delete :destroy, id: glider.id }.to raise_exception(CanCan::AccessDenied) }
       end
     end
+
+    context 'Inactive' do
+      let(:club) { create(:club, active_until: Date.today - 1.day) }
+      let(:glider) { create(:glider, club: club) }
+
+      before { sign_in create(:pilot, admin: true, club: club) }
+
+      it { expect { get :index }.not_to raise_error }
+      it { expect { get :show, id: glider.id }.not_to raise_error }
+      it { expect { get :new }.to raise_exception(CanCan::AccessDenied) }
+      it { expect { post :create, glider: { name: nil } }.to raise_exception(CanCan::AccessDenied) }
+      it { expect { get :edit, id: glider.id }.to raise_exception(CanCan::AccessDenied) }
+      it { expect { put :update, id: glider.id, glider: { name: nil } }.to raise_exception(CanCan::AccessDenied) }
+      it { expect { delete :destroy, id: glider.id }.to raise_exception(CanCan::AccessDenied) }
+    end
   end
 
   context 'Routing' do

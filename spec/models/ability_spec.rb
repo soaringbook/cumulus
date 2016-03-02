@@ -106,4 +106,27 @@ describe Ability do
       it { should_not be_able_to(:read, pilot.club.pilots.first) }
     end
   end
+
+  context 'Inactive club' do
+    let(:club) { create(:club, active_until: Date.today - 1.day) }
+    let(:pilot) { create(:pilot, club: club, admin: true) }
+
+    context 'Gliders' do
+      let(:glider) { create(:glider, club: club) }
+
+      it { should_not be_able_to(:manage, Glider) }
+      it { should_not be_able_to(:manage, glider) }
+      it { should be_able_to(:read, Glider) }
+      it { should be_able_to(:read, glider) }
+    end
+
+    context 'Pilots' do
+      let(:other_pilot) { create(:pilot, club: club) }
+
+      it { should_not be_able_to(:manage, Pilot) }
+      it { should_not be_able_to(:manage, other_pilot) }
+      it { should be_able_to(:read, Pilot) }
+      it { should be_able_to(:read, other_pilot) }
+    end
+  end
 end
