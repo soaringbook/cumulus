@@ -14,19 +14,20 @@
             .col-sm-12
               %ul.list-group.list-group-full
                 %li.list-group-item
-                  = t('pages.accounts.labels.subscription_status')
-                  - if true
-                    %span.badge.badge-success= 'paid'
+                  = t('pages.accounts.labels.account_status')
+                  - if current_club.active?
+                    %span.badge.badge-primary= t('pages.accounts.labels.valid_status')
                   - else
-                    %span.badge.badge-danger= 'unpaid'
+                    %span.badge.badge-danger= t('pages.accounts.labels.invalid_status')
                 - if true
                   %li.list-group-item
-                    = t('pages.accounts.labels.trial_status')
-                    %span.badge.badge-success 12/02/2015
+                    = t('pages.accounts.labels.valid_until')
+                    - if current_club.active?
+                      %span.badge.badge-primary= l current_club.active_until, format: :long
+                    - else
+                      %span.badge.badge-danger= l current_club.active_until, format: :long
 
           .row
             .col-sm-12
               - if true
-                %p= t 'pages.accounts.labels.cancel_text'
-              - else
-                %p= t 'pages.accounts.labels.cancel_text'
+                %p= t 'pages.accounts.labels.valid_description'

@@ -7,14 +7,11 @@ en:
         change_subscription: 'Change subscription'
         tabs:
           payment: 'Payment'
-        cancel_text: 'You can cancel your subscription at any time. When cancelling your subscription your data will remain visible. You will not be able to perform any updates to the data though.'
-        subscription_status: 'Subscription status'
-        trial_status: 'Trial status'
-        trial_ended: 'Ended'
-        statuses:
-          active: 'Active'
-          canceled: 'Canceled'
-          trialing: 'In trial'
+        valid_until: 'Active until'
+        account_status: 'Account status'
+        valid_status: 'Active'
+        invalid_status: 'Inactive'
+        valid_description: 'When your validity date expires, you can still read all your data. But you will be unable to perform any updates.'
 
     clubs:
       titles:
