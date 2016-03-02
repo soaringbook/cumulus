@@ -12,7 +12,7 @@ module Clubs
     end
 
     def create
-      @pilot = current_club.pilots.build(pilot_params)
+      @pilot = @club.pilots.build(pilot_params)
       @pilot.admin = true
       @pilot.save
     end
