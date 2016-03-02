@@ -29,8 +29,8 @@ describe 'The rights list flow', type: :feature do
   end
 
   it 'should be able to search the pilots', js: true do
-    create(:pilot, email: 'jelly@fousa.be', club: @pilot.club)
-    create(:pilot, email: 'jake@fousa.be',  club: @pilot.club)
+    create(:pilot, email: 'jelly@fousa.be', first_name: 'ok', last_name: 'ok', club: @pilot.club)
+    create(:pilot, email: 'jake@fousa.be', first_name: 'ok', last_name: 'ok', club: @pilot.club)
     visit rights_path
 
     fill_in 'Search for pilots...', with: 'ak'

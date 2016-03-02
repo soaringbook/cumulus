@@ -32,6 +32,6 @@ describe 'The club list flow', type: :feature do
     fill_in 'Search for clubs...', with: 'NA'
     press_enter '#search'
 
-    expect(page).to have_css('tbody tr', count: 1)
+    expect(page).to have_css('tbody tr', count: 2)
   end
 end

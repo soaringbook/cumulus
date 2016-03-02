@@ -30,8 +30,8 @@ describe 'The pilot list flow', type: :feature do
   end
 
   it 'should be able to search the pilots', js: true do
-    create(:pilot, first_name: 'Name', club: @pilot.club)
-    create(:pilot, first_name: 'No', club: @pilot.club)
+    create(:pilot, first_name: 'Name', last_name: 'test', email: 'a@b.be', club: @pilot.club)
+    create(:pilot, first_name: 'No', last_name: 'test', email: 'c@b.be', club: @pilot.club)
     visit pilots_path
 
     fill_in 'Search for pilots...', with: 'Na'
