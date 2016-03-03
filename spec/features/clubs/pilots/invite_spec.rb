@@ -32,6 +32,6 @@ describe 'The club pilots invite flow', type: :feature do
     sleep 1 # Fix for triggering email from JS.
     open_email('jake@snake.be')
     expect(current_email).to be_nil
-    expect(page).to have_content("can't be blank")
+    expect(page).to have_content("Email")
   end
 end
