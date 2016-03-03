@@ -1,0 +1,39 @@
+.row
+  .col-lg-6
+    = tab_container do
+      = tabs_tag do
+        = tab_link_to t('pages.accounts.labels.tabs.status'), 'cube', 'status', params['tab'] == 'status'
+        = tab_link_to t('pages.accounts.labels.tabs.settings'), 'cog', 'settings', params['tab'] == 'settings'
+
+      = tab_content do
+        = tab_pane 'status', params['tab'] == 'status' do
+          .row
+            .col-sm-12
+              %ul.list-group.list-group-full
+                %li.list-group-item
+                  = t('pages.accounts.labels.account_status')
+                  - if @club.active?
+                    %span.badge.badge-primary= t('pages.accounts.labels.valid_status')
+                  - else
+                    %span.badge.badge-danger= t('pages.accounts.labels.invalid_status')
+                - if true
+                  %li.list-group-item
+                    = t('pages.accounts.labels.valid_until')
+                    - if @club.active?
+                      %span.badge.badge-primary= l @club.active_until, format: :long
+                    - else
+                      %span.badge.badge-danger= l @club.active_until, format: :long
+
+          .row
+            .col-sm-12
+              - if true
+                %p= t 'pages.accounts.labels.valid_description'
+
+        = tab_pane 'settings', params['tab'] == 'settings' do
+          = simple_form_for @club, url: account_path, wrapper: :vertical_form do |f|
+            = hidden_field_tag 'tab', 'settings'
+            .row
+              .col-sm-6
+                = f.input :short_name, required: false, autofocus: true
+            %hr
+            = f.submit t('pages.accounts.buttons.submit_settings'), class: 'btn btn-primary'
