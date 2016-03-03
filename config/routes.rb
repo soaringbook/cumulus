@@ -47,7 +47,7 @@ Rails.application.routes.draw do
 
   ### Profile
 
-  resource :account, only: [:show, :edit]
+  resource :account, only: [:show, :edit, :update]
 
   ### Errors
 

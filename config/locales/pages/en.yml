@@ -2,16 +2,21 @@ en:
   pages:
     accounts:
       title: 'Edit club account'
+      buttons:
+        submit_settings: 'Update settings'
       labels:
         club: "Edit %{name}'s account"
         change_subscription: 'Change subscription'
         tabs:
-          payment: 'Payment'
+          status: 'Status'
+          settings: 'Settings'
         valid_until: 'Active until'
         account_status: 'Account status'
         valid_status: 'Active'
         invalid_status: 'Inactive'
         valid_description: 'When your validity date expires, you can still read all your data. But you will be unable to perform any updates.'
+        notices:
+          update: 'Your club is successfully updated.'
 
     clubs:
       titles:

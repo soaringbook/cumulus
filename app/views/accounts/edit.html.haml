@@ -2,32 +2,4 @@
 
 - content_for :title, t('pages.accounts.labels.club', name: current_club.short_name.upcase)
 
-.row
-  .col-lg-5
-    = tab_container do
-      = tabs_tag do
-        = tab_link_to t('pages.accounts.labels.tabs.payment'), 'payment', 'payment', params['tab'] == 'payment'
-
-      = tab_content do
-        = tab_pane 'payment', params['tab'] == 'payment' do
-          .row
-            .col-sm-12
-              %ul.list-group.list-group-full
-                %li.list-group-item
-                  = t('pages.accounts.labels.account_status')
-                  - if current_club.active?
-                    %span.badge.badge-primary= t('pages.accounts.labels.valid_status')
-                  - else
-                    %span.badge.badge-danger= t('pages.accounts.labels.invalid_status')
-                - if true
-                  %li.list-group-item
-                    = t('pages.accounts.labels.valid_until')
-                    - if current_club.active?
-                      %span.badge.badge-primary= l current_club.active_until, format: :long
-                    - else
-                      %span.badge.badge-danger= l current_club.active_until, format: :long
-
-          .row
-            .col-sm-12
-              - if true
-                %p= t 'pages.accounts.labels.valid_description'
+= render 'form'

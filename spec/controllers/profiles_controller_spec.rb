@@ -26,6 +26,6 @@ describe ProfilesController do
   context 'Routing' do
     it { should route(:get, '/profile').to(action: :show) }
     it { should route(:get, '/profile/edit').to(action: :edit) }
-    it { should route(:get, '/profile/edit').to(action: :edit) }
+    it { should route(:put, '/profile').to(action: :update) }
   end
 end
