@@ -13,6 +13,16 @@ describe ApplicationController do
     end
   end
 
+  context 'Headers' do
+    it 'should set the correct x-frame options header.' do
+      get :dummy
+      expect(response.headers['X-Frame-Options']).to eq('SAMEORIGIN')
+      expect(response.headers['X-Content-Type-Options']).to eq('nosniff')
+      expect(response.headers['X-XSS-Protection']).to eq('1; mode=block')
+      expect(response.headers['Content-Security-Policy']).to eq('default-src *')
+    end
+  end
+
   context 'Not authenticated' do
     it { should redirect_for_login { get :dummy } }
   end

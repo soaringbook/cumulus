@@ -57,5 +57,8 @@ module Cumulus
       Devise::Mailer.layout "mailer"
       Devise::ConfirmationsController.layout "application"
     end
+
+    # Set the correct headers.
+    config.action_dispatch.default_headers['Content-Security-Policy'] = "default-src *"
   end
 end
